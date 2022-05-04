@@ -64,7 +64,37 @@
         
           
             
-              <category>math</category>
+              <category>密码学</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>SpoofWebGL</title>
+        <link>https://summersummer3.github.io/posts/spoofwebgl/</link>
+        <pubDate>Wed, 01 Apr 2020 14:03:23 +0000</pubDate>
+        <author>techsum8@live.com (Techsum)</author>
+        <atom:modified>Wed, 01 Apr 2020 14:03:23 +0000</atom:modified>
+        <guid>https://summersummer3.github.io/posts/spoofwebgl/</guid>
+        <description>背景 由于很多headless浏览器的webgl信息比较明显，如果源站尝试采集webgl参数会暴露自动化工具的特征，所以黑产攻击中需要去欺骗w</description>
+        
+        <dc:creator>Techsum</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>黑产工具</category>
+            
+          
+        
+        
+          
+            
+              <category>反自动化</category>
             
           
         

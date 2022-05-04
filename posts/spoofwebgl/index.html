@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ECDSA与SM2 – Techsum&#39;s Blog</title>
+    <title>SpoofWebGL – Techsum&#39;s Blog</title>
     
 
 
@@ -653,7 +653,7 @@
     
     var baseurl = JSON.parse("\"https://summersummer3.github.io/\"");
     
-    var permalink = JSON.parse("\"https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/\"");
+    var permalink = JSON.parse("\"https://summersummer3.github.io/posts/spoofwebgl/\"");
     
     var langprefix = JSON.parse("\"\"");
     var searchResults = null;
@@ -1331,24 +1331,24 @@
 
 
     
-<meta name="description" content="椭圆曲线算法入门及ECDSA与SM2算法详解" />
+<meta name="description" content="SpoofWebGL" />
 
 
-<meta name="keywords" content="密码学">
+<meta name="keywords" content="黑产工具">
 
 <meta name="created" content="2020-04-01T14:03:23&#43;0000">
 <meta name="modified" content="2020-04-01T14:03:23&#43;0000">
 <meta property="article:published_time" content="2020-04-01T14:03:23&#43;0000">
 
 <meta name="author" content="Techsum">
-<meta property="article:author" content="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/@Techsum">
+<meta property="article:author" content="https://summersummer3.github.io/posts/spoofwebgl/@Techsum">
 
 
 <meta property="og:site_name" content="Techsum&#39;s Blog">
-<meta property="og:title" content="ECDSA与SM2">
-<meta property="og:url" content="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/">
+<meta property="og:title" content="SpoofWebGL">
+<meta property="og:url" content="https://summersummer3.github.io/posts/spoofwebgl/">
 <meta property="og:type" content="article">
-<meta property="og:description" content="椭圆曲线算法入门及ECDSA与SM2算法详解">
+<meta property="og:description" content="SpoofWebGL">
 
 <meta name="generator" content="Hugo 0.98.0" />
 <meta name="msapplication-TileColor" content="#fff">
@@ -1359,7 +1359,7 @@
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
 
-<link rel="canonical" href="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/">
+<link rel="canonical" href="https://summersummer3.github.io/posts/spoofwebgl/">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -1385,12 +1385,12 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "ECDSA与SM2",
+    "headline": "SpoofWebGL",
     "datePublished": "2020-04-01T14:03:23Z",
     "dateModified": "2020-04-01T14:03:23Z",
-    "url" : "https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/",
-    "description": "椭圆曲线算法入门及ECDSA与SM2算法详解",
-    "keywords": ["密码学"],
+    "url" : "https://summersummer3.github.io/posts/spoofwebgl/",
+    "description": "SpoofWebGL",
+    "keywords": ["黑产工具"],
     "author": {
       "@type": "Person",
       "name": "Techsum"
@@ -1704,7 +1704,7 @@
   
   <li  class="is-active" >
     
-      <span>ECDSA与SM2</span>
+      <span>SpoofWebGL</span>
     
   </li>
   
@@ -1716,14 +1716,14 @@
   <div class="single ">
     <div class="single__nojs"></div>
     <script>document.querySelector('.single').classList.remove('hide'); document.querySelector('.single__nojs').classList.add('hide');</script>
-    <h2 class="single__title" data-ani="true">ECDSA与SM2</h2>
+    <h2 class="single__title" data-ani="true">SpoofWebGL</h2>
     <h3 class="single__subtitle"></h3>
     <div class="single__meta">
       
 <div class="single__infos">
   <time class="single__info" title="">📅&nbsp; </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;8&nbsp; </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;10&nbsp; </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="">✍️&nbsp;Techsum</span>
   
@@ -1738,266 +1738,466 @@
   🏷️
   
 
-  <li><a href="https://summersummer3.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" class="single__tag" title="密码学">#密码学</a></li>
+  <li><a href="https://summersummer3.github.io/tags/%E9%BB%91%E4%BA%A7%E5%B7%A5%E5%85%B7/" class="single__tag" title="黑产工具">#黑产工具</a></li>
 
 </ul>
 
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <h2 id="椭圆曲线基本学习">椭圆曲线基本学习</h2>
-<p>文章：https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/#elliptic-curves</p>
-<p>书籍：密码学原理与实践 第6章</p>
-<h3 id="椭圆曲线方程">椭圆曲线方程</h3>
-<p>$$<br />
-\left\lbrace (x, y) \in \mathbb{R}^2\ |\ y^2 = x^3 + ax + b,\ 4 a^3 + 27 b^2 \ne 0 \right\rbrace\ \cup\ \left\lbrace 0 \right\rbrace<br />
-$$</p>
-<h3 id="群与阿贝尔群">群与阿贝尔群</h3>
-<p>​	$\mathbb{G}$ 是一个 <strong>群 (Group)</strong> 如果该集合上定义了一种运算 $ + $:</p>
-<ol>
-<li><strong>封闭性</strong>: $a \in \mathbb{G}, b \in \mathbb{G}$ ,则 $a + b \in \mathbb{G}$ ;</li>
-<li><strong>结合律:</strong> $a \in \mathbb{G}, b \in \mathbb{G}, c \in \mathbb{G}$, $ (a + b) + c = a + (b +c)$ ;</li>
-<li>存在<strong>单位元</strong> $0 \in \mathbb{G}$, 使得 $a \in \mathbb{G}$，$a + 0 = 0 + a = a$;</li>
-<li>每一个元素存在<strong>逆元</strong>：对于集合内任意元素$a, \exists b \in \mathbb{G}$ 满足 $a + b = 0$，记做$a = -b$</li>
-</ol>
-<p>如果该群还满足:</p>
-<ol start="5">
-<li><strong>交换律：</strong> $a \in \mathbb{G}, b \in \mathbb{G}$， $a + b = b + a$</li>
-</ol>
-<p>则该群被称为<strong>阿贝尔群</strong>.</p>
-<h3 id="有限域">有限域</h3>
-<p>$\mathbb{F}$ 是一个 <strong>域(Field)</strong> 如果该集合上定义了两种运算 $(\cdot\ ;+)$</p>
-<ol>
-<li><strong>封闭性:</strong> $a \in \mathbb{F}, b \in \mathbb{F}$，则 $a + b \in \mathbb{G}; a \cdot b \in \mathbb{G}$</li>
-<li><strong>结合律:</strong> $a \in \mathbb{F}, b \in \mathbb{F}, c \in \mathbb{F}$，$ (a + b) + c = a + (b +c);\ (a \cdot b) \cdot c = a \cdot (b \cdot c)$</li>
-<li>存在<strong>加法单位元</strong> $0 \in \mathbb{F}$，使得 $a \in \mathbb{F}$，$a + 0 = 0 + a = a$</li>
-<li>存在<strong>乘法单位元</strong> $e \in \mathbb{F}$，使得 $a \in \mathbb{F}$，$a \cdot e = e \cdot a = a$</li>
-<li><strong>交换律：</strong> $a \in \mathbb{F}, b \in \mathbb{F}$， $a + b = b + a$，$a \cdot b = b \cdot a$</li>
-<li><strong>逆元:</strong> 对于集合内任意元素$a, \exists b \in \mathbb{F}; \exists c \in \mathbb{F}$ 满足 $a + b = 0; a \cdot c = e$， 记做$a = -b;\ a = c^{-1}$，$0^{-1}$无意义</li>
-<li><strong>分配律:</strong>  $a \in \mathbb{F}, b \in \mathbb{F}, c \in \mathbb{F}$；$a \cdot (b + c) = a \cdot b + a \cdot c$</li>
-</ol>
-<p>注意：加法逆元定义减法，乘法逆元定义除法</p>
-<p><strong>有限域</strong>指的是元素有限的域，属于计算机和密码学的基本数学原理之一</p>
-<p>典型的有限域例子：$\mathbb{F}_p = {0, 1, &hellip;, p-1}$,  $p$为质数，</p>
-<p>定义 (+)：$a + b \mod p$</p>
-<p>定义 ($\cdot$)：$a \cdot b \mod p$</p>
-<p>计算 $a ^ {-1}$ : 拓展欧几里得算法</p>
-<h3 id="椭圆曲线上的群">椭圆曲线上的群</h3>
-<ol>
-<li>曲线上的点的集合组成群</li>
-<li>$x$无穷远点为单位元$0$</li>
-<li>点$P$与它的逆$Q$关于直线$x = 0$对称</li>
-<li><strong>加法</strong>定义：$P + Q + R = 0$，如果这三点是非0点，且在同一条直线上(即一条直线与该曲线相交于三点，无穷远点为0)  $=&gt; P + Q = -R$</li>
-</ol>
-<p>加法同样需要满足结合律.</p>
-<h3 id="几何意义上的加法">几何意义上的加法</h3>
-<p>最重要的情况:</p>
-<ol>
-<li>如果 $P=Q, P + Q$，物理意义是切线, 与曲线交于另一点$R$, 满足：$2P = -R$</li>
-<li>如果$P, Q$直线的第三点刚好为$P\ or\ Q$，则也将包含一条切线，计算相同: $P + Q + P = 0\ =&gt; P + Q = -P$</li>
-</ol>
-<h3 id="代数意义上的加法">代数意义上的加法</h3>
-<h4 id="不同两点相加">不同两点相加</h4>
-<p>$P(P_x, P_y), Q(Q_x, Q_y)，P\ \ne Q$, 求  $T(T_x, T_y) = P + Q$</p>
-<p>曲线方程：$y^2 = x^3 +ax + b$</p>
-<ol>
-<li>
-<p>计算斜率 $k = \frac{P_y - Q_y}{P_x - Q_x}$</p>
-</li>
-<li>
-<p>曲线方程连立上直线方程 $y = kx + c$</p>
-<p>=&gt; $ 0 = x^3 - k^2x^2 + (a - 2kc)x + b - c^2$</p>
-</li>
-<li>
-<p>铭记三次求根公式之三根之和是二次项系数的相反数: $T_x = k^2 - P_x - Q_x$</p>
-</li>
-<li>
-<p>由于斜率 $k = \frac{T_y - P_y}{T_x - P_x}$，$T_y = k(T_x - P_x) + P_y$</p>
-</li>
-</ol>
-<h4 id="相同两点相加">相同两点相加</h4>
-<p>$P(P_x, P_y)$，求 $T(T_x,T_y) = P + P = 2P$</p>
-<p>和上面基本相同，但计算直线斜率需要根据切线计算</p>
-<p>对曲线方程两边求隐微分:</p>
-<p>$\mathrm{d}(y^2) = \mathrm{d}(x^3 +ax + b)$ =&gt; $2y\mathrm{d}y = (3x^2 + a)\mathrm{d}x$</p>
-<p>将$P_x, P_y$带入，获得斜率:</p>
-<p>$k = \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{3P_x^2 + a}{2P_y}$</p>
-<p>所以 $T_x = k^2 - 2P_x$，$T_y = k(T_x - P_x) + P_y$</p>
-<h4 id="标量积">标量积</h4>
-<p>$P(P_x, P_y)$，求 $nP = \underbrace{P + P + P + &hellip; + P}_{\text{n times}}$，$n &gt; 2$</p>
-<ol>
-<li>
-<p>将 $n$ 用二进制表示；以151为例子，$151_{10} = 10010111_2 = 2^0 + 2^1 + 2^2 + 2^4 + 2^7$</p>
-</li>
-<li>
-<p>$nP = P + 2P + 2^2P + 2^4P + 2^7P$</p>
-</li>
-<li>
-<p>根据上面两项计算规则，分别计算$P, 2P，P + 2P$</p>
-</li>
-<li>
-<p>计算$2^2P = 4P = 2 \cdot 2P$，对$2P$做相同点相加即可</p>
-</li>
-<li>
-<p>同理计算$2^3P = 8P = 2 \cdot 4P$，$2^4P = 16P = 2 \cdot 8P$, 依次类推，每计算到一个二进制中为$1$的阶数， 完成一次两点相加即可</p>
-</li>
-</ol>
-<h3 id="曲线上的有限域">曲线上的有限域</h3>
-<p>取几何曲线上的坐标$(x, y)$，$x, y \in \mathbb{F}_p$, $p$ 是一个质数，形成一条离散曲线：<br />
-$$<br />
-\begin{array}{rcl}<br />
-\left\lbrace(x, y) \in (\mathbb{F}_p)^2 \right. &amp; \left. | \right. &amp; \left. y^2 \equiv x^3 + ax + b \pmod{p}, \right.<br />
-\left. 4a^3 + 27b^2 \not\equiv 0 \pmod{p}\right\rbrace\ \cup\ \left\lbrace0\right\rbrace<br />
-\end{array}<br />
-$$</p>
-<p>从连续曲线上的加法可以推出<strong>有限域上的加法公式</strong>：</p>
-<p>$P(P_x, P_y), Q(Q_x, Q_y)，P\ \ne Q$, 求  $T(T_x, T_y) = P + Q$<br />
-$$<br />
-\begin{array}{rcl}<br />
-k &amp; = &amp;(P_y - Q_y)(P_x - Q_x)^{-1} \bmod{p} \<br />
-T_x &amp; = &amp; (k^2 - P_x - Q_x) \bmod{p} \<br />
-T_y &amp; = &amp; [P_y + k(T_x - P_x)] \bmod{p} \<br />
-\end{array}<br />
-$$<br />
-若$P\ = Q$<br />
-$$<br />
-k = (3 P_x^2 + a)(2 P_y)^{-1} \bmod{p}<br />
-$$</p>
-<h3 id="曲线上的循环子群">曲线上的循环子群</h3>
-<h4 id="循环子群的阶">循环子群的阶</h4>
-<p>对于离散曲线上的任意点$P$, 存在最小的 $n$ 使得 $nP = 0$, 此时 $n$ 称作以 $P$ 为基点的循环子群的阶</p>
-<h4 id="找基点的方法">找基点的方法</h4>
-<ol>
-<li>计算椭圆曲线的阶$N$ (Schoof&rsquo;s algorithm: <a href="https://en.wikipedia.org/wiki/Schoof's_algorithm">https://en.wikipedia.org/wiki/Schoof%27s_algorithm</a>)</li>
-<li>选择一个阶为$n$的子群。n必须是素数且必须是$N$的因子</li>
-<li>计算辅因子 $h = N/n$</li>
-<li>在曲线上选择一个随机的点 $T$</li>
-<li>计算$G = hT$，点乘</li>
-<li>如果$G = 0$, 返回4， 否则找到基点 $G$, 子群的阶为 $n$, $h$ 被称为辅因子</li>
-</ol>
-<p><strong>原理</strong>:  根据拉格朗日定理，$n$ 整除 $N$ 且 $n$ 为质因子，且任意点 $T$  满足$NT = 0$， 则：$n(hT) = 0$ 恒成立, 那么若$hT\ \ne 0$，则 $hT$ 作为基点的阶一定为$n$. ($n$ 一定是素数, 否则不成立)</p>
-<h3 id="曲线上的离散对数问题">曲线上的离散对数问题</h3>
-<p>对于曲线上的基点 $G$， 已知 $n$ 计算 $P = nG$ 是容易的</p>
-<p>但是已知$P, G$, 计算 $n$ 是很困难的</p>
-<h2 id="ecdh--ecdsa">ECDH &amp; ECDSA</h2>
-<h3 id="ecdh">ECDH</h3>
-<ol>
-<li>CA选用共同曲线，并下发相同基点$G$，其阶数为 $n$, 则私钥的取值范围为$d \in {1, &hellip;, n - 1}$</li>
-<li>Alice随机选择私钥$d_A$，计算 Pubkey: $P_A = d_AG$, 通过非安全信道传递给Bob</li>
-<li>Bob随机选择私钥$d_B$，计算 Pubkey: $P_B = d_BG$，通过非安全信道传递给Alice</li>
-<li>Alice和Bob分别计算$S = d_AP_b = d_BP_A = d_Ad_BG$， 共享秘密成功</li>
-</ol>
-<p>秘密共享成功后可以每次通信时明文传递salt, 每次通过 $key = KDF(salt + S)$，得到具体通信对称秘钥，加密通讯(TLS/SSL)</p>
-<p>通过服务器动态生成的ECDH一般称作<strong>ECDHE</strong></p>
-<h3 id="ecdsa">ECDSA</h3>
-<p>定义依然继承上文，$n$ 为 $G$ 作为基点的子群阶数</p>
-<p>定义 $bit(x)$ 为表示 $x$ 需要的比特数；注意计算DSA时，若摘要值的比特数 $bits(digest(plain_test)) &gt; bits(n)$，则需要截取摘要值的低 $bits(n)$ 进行签名.</p>
-<h4 id="符号标记">符号标记</h4>
-<p>截取前n-bits函数 ： $trun_{bit(n)}(digest)$</p>
-<p>截取后的摘要值：$z = trun_{bit(n)}(digest(plain_test))$，$digest$ 需要选择安全摘要算法：内部要求<strong>SHA-256</strong>以上</p>
-<p>私钥：$d$</p>
-<p>公钥：$P = dG$</p>
-<h4 id="签名算法">签名算法</h4>
-<ol>
-<li>
-<p>随机选择 $k \in {1, &hellip;, n -1 }$</p>
-</li>
-<li>
-<p>计算$T = kG = (T_x, T_y)$</p>
-</li>
-<li>
-<p>计算数字 $r = T_x \mod n$， 若$r = 0$则返回1</p>
-</li>
-<li>
-<p>计算$s = k^{-1}(z + rd) \mod n$, 如果$s = 0$，返回1</p>
-</li>
-<li>
-<p>最后签名：$(r, s)$</p>
-</li>
-</ol>
-<h4 id="验证算法">验证算法</h4>
-<ol>
-<li>计算 $u_1 = s^{-1}z \mod n$</li>
-<li>计算 $u_2 = s^{-1}r \mod n$</li>
-<li>计算 $T&rsquo; = u_1G\ +\ u_2P$</li>
-</ol>
-<p>若$T&rsquo;_x = r \mod n$，验签成功，否则失败</p>
-<h4 id="正确性">正确性</h4>
-<p>我们尝试计算的其实还是$T = kG$，若此时 $z$ 是正确摘要值，则有:</p>
-<p>$k = s^{-1}(z + rd)\ mod\ n\ =&gt;\ k = s^{-1}z + s^{-1}rd \mod n$</p>
-<p>带入上式  $T = s^{-1}zG + s^{-1}rdG = u_1G + u_2(dG) = u1G + u_2P$</p>
-<p>所以若 $z$ 发生改变，则此时计算出来的 $T&rsquo;_x\ \ne\ r \mod n$</p>
-<h4 id="随机数相等下的私钥复原">随机数相等下的私钥复原</h4>
-<p>若每次取出的随机数 $k$ 都相等：</p>
-<p>获取两份签名与摘要：$z_1, (r_1, s_1)$ 和 $z_2, (r_2, s_2)$</p>
-<p>容易得到: $r_1 = r_2 = (kG)_x \mod n$</p>
-<p>之后通过 $s_1 - s_2$ 计算 $k$：</p>
-<p>$s_1 - s_2 = k^{-1}(z_1 + rd - z_2 - rd) \mod n$</p>
-<p>$=&gt; k = (z_1 - z_2)(s_1 - s_2)^{-1} \mod n$</p>
-<p>之后计算 $d$ 就很简单了:</p>
-<p>$ d = r^{-1}(s_1k - z_1) \mod n$</p>
-<h4 id="通过签名恢复公钥">通过签名恢复公钥</h4>
-<p>若已知曲线上 $x = r$ 对应的两点 $R, R&rsquo;$，则可以从签名$(s, r)$中恢复公钥$P$:</p>
-<p>$s = k^{-1}(z + rd) \mod n$</p>
-<p>$=&gt; skG = (z + rd)G$</p>
-<p>注意 $kG = R$ 或者 $kG = R&rsquo;$, 分别作为备选带入上式，同时$P = dG$:</p>
-<p>$=&gt;\ sR - zG = r(dG)\ =&gt; P = r^{-1}(sR - zG)$</p>
-<p>or $=&gt;\ P = r^{-1}(sR&rsquo; - zG)$</p>
-<h5 id="实现方法">实现方法</h5>
-<p><strong>点压缩</strong>：增加2bit来标识，一个用来标识 $R_x = r\mod n$ 或者 $R_x = r$，另一个标识$R_y$是基数还是偶数：</p>
-<p>因为$R, R&rsquo;$关于 $x$ 轴对称，$R_y + R&rsquo;_y = 0 \mod p$， 所以$R_y ,P&rsquo;_y$为一基一偶，可用一个bit标识</p>
-<p>这样可以达到多用增加一个byte(04标记等)，来达成无需传递公钥即可验签</p>
-<p>相关算法与代码：https://busy.org/@oflyhigh/397bw1</p>
-<h4 id="伪造签名">伪造签名</h4>
-<h5 id="构造e方法">构造e方法</h5>
-<ol>
-<li>随机选择 $a, b \in {1, &hellip; n}$, 计算$T = aG + bP, r = T_x$</li>
-<li>计算 $s = rb^{-1}, e = arb^{-1}$</li>
-<li>若$e$ 为伪造摘要值, 可伪造合法签名 $(r, s)$</li>
-</ol>
-<p><strong>正确性</strong>:</p>
-<p>$u_1 = s^{-1}e \mod \ n$</p>
-<p>$u_2 = s^{-1}r \mod\ n$</p>
-<p>将$s, e$带入</p>
-<p>$u_1G + u_2P = (rb^{-1})^{-1}(arb^{-1})G + (rb^{-1})^{-1}rP = (rr^{-1})(bb^{-1})aG + (rr^{-1})bP = aG + bP = T$</p>
-<p>由于$r = T_x \mod n$，校验通过</p>
-<p>相关算法与代码：https://github.com/GoldSaintEagle/ECDSA-SM2-Signing-Attack</p>
-<h2 id="sm2签名">SM2签名</h2>
-<p>标记不变，$z = SM3(message)$ 是消息的摘要值（国密要求摘要使用SM3），$d$ 是私钥， $P = dG$是公钥</p>
-<h3 id="签名算法-1">签名算法</h3>
-<ol>
-<li>
-<p>随机选择 $k \in {1, &hellip;, n -1 }$</p>
-</li>
-<li>
-<p>计算$T = kG = (T_x, T_y)$</p>
-</li>
-<li>
-<p>计算数字 $r = T_x + z \mod n$， 若$r = 0$则返回1</p>
-</li>
-<li>
-<p>计算$s = (1 + d)^{-1}(k - rd) \mod n$, 如果$s = 0$，返回1</p>
-</li>
-<li>
-<p>最后签名：$(r, s)$</p>
-</li>
-</ol>
-<h3 id="验证算法-1">验证算法</h3>
-<ol>
-<li>计算消息值摘要$z&rsquo; = SM3(message)$</li>
-<li>计算$T&rsquo; = sG + (r + s)P$</li>
-<li>判断$r\ ?= T&rsquo;_x + z \mod n$</li>
-</ol>
-<h3 id="正确性-1">正确性</h3>
-<p>首先计算 $k$ :</p>
-<p>$s = (1 + d)^{-1}(k - rd) \mod n$</p>
-<p>=&gt; $s(1 + d) + rd = k \mod n$ =&gt; $s + (s + r)d = k \mod n$</p>
-<p>所以 ：</p>
-<p>$T = kG = sG + (s + r)(dG) = sG + (s + r)P = T'$</p>
-<p>因此可以推导：</p>
-<p>$r = (T_x + z) = (T&rsquo;_x + z) \mod n$</p>
-<p>所以如果$r = T&rsquo;_x + z&rsquo; \mod n$， 则 $z&rsquo;$ 验签通过，否则 $z&rsquo;$ 摘要有误</p>
+      <h2 id="背景">背景</h2>
+<p>由于很多headless浏览器的webgl信息比较明显，如果源站尝试采集webgl参数会暴露自动化工具的特征，所以黑产攻击中需要去欺骗webgl的信息上报。</p>
+<p>目前在github上可以找到一个spoof webgl的项目，star数并不多，但其思路应该是比较主流的hook webgl相关接口的方式。本文主要对该工具的使用和源码进行分析。</p>
+<p>这份代码并不完美，甚至能找到几处bug，但不妨碍我们学习其思想；github地址：https://github.com/siejqa/spoofHeadless</p>
+<h2 id="背景知识简单介绍">背景知识简单介绍</h2>
+<h3 id="webgl和参数采集">Webgl和参数采集</h3>
+<p>简单来说webgl就是浏览器给前端js代码调用的渲染绘图API，该API可以在在html canvas元素中使用，可以调用到硬件进行加速，所以webgl的参数通常与硬件强相关。更具体的介绍和教程可以参考：https://www.w3cschool.cn/webgl/i4gf1oh1.html</p>
+<p>具体采集webgl的参数时，需要首先先获取canvas下的webgl Context，使用getContext接口。而采集具体参数是使用getParameter函数完成，getParameter接受一个整数，每个整数对应一个属性；以获取GPU型号为例：</p>
+<pre tabindex="0"><code>// 获取webgl context
+var gl = document.createElement(&#34;canvas&#34;).getContext(&#34;webgl&#34;)
+// 采集GPU render：编号为37446
+gl.getExtension(&#34;WEBGL_debug_renderer_info&#34;)[&#34;UNMASKED_RENDERER_WEBGL&#34;]
+gl.getParameter(37446)
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/22992094-9213205f25e041e2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+<p>完整的getParameter常量表可以参考：https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Constants</p>
+<h3 id="webdriver">Webdriver</h3>
+<p>webdriver本质上是浏览器根据w3c实现的一套操作浏览器的接口，而每个浏览器都有一个特定的 WebDriver 实现，如chrome webdriver：https://chromedriver.chromium.org/downloads</p>
+<p>而目前比较广义的定义（或者说黑产使用的方式），通常是指puppeteer/selenium这类，集成了多种浏览器，并提供高级api供上层应用调用的自动化工具；可以直接使用python(selenium)和nodejs(puppeteer)来编写脚本，完成webdriver的控制，从而完成浏览器上的自动化操作。相关资料可以自行搜索学习。</p>
+<h2 id="spoofwebgl使用方法">SpoofWebGL使用方法</h2>
+<p>此处介绍如何在selenium使用SpoofWebGL工具，当然该工具简单改造后可以在所有的webdriver上使用。</p>
+<ul>
+<li>将项目clone下来之后，使用可以看到src文件夹下有两个文件，其中manifest.json是extension的配置文件，injected是源码。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/22992094-de907ade969358ff?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+<ul>
+<li>之后用zip命令将src文件夹打包：zip -rj extension.zip src/</li>
+<li>将zip后缀名改成.crx(chrome extension的后缀名) ：mv extension.zip extension.crx</li>
+<li>编写webdriver脚本如下（注意要先安装好selenium和chrome webdriver），去观察我们的webgl参数读取情况（注意原项目中使用的是firefox的webdriver，所以脚本要做修改）：</li>
+</ul>
+<pre tabindex="0"><code>from selenium import webdriver
 
+opt = webdriver.ChromeOptions()
+
+extension_path = &#39;./extension.crx&#39;
+opt.add_extension(extension_path)
+
+driver = webdriver.Chrome(options=opt)
+# Check what data is spoofed
+driver.get(&#39;https://browserleaks.com/webgl&#39;)
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/22992094-bbd3fbc1c140cde4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+<p>可以看到这个vendor和render已经不太正常了；</p>
+<ul>
+<li>作为对比，注释掉options直接启动，会显示本机的真实GPU：</li>
+</ul>
+<pre tabindex="0"><code>from selenium import webdriver
+
+# opt = webdriver.ChromeOptions()
+# 
+# extension_path = &#39;./extension.crx&#39;
+# opt.add_extension(extension_path)
+
+driver = webdriver.Chrome()
+# Check what data is spoofed
+driver.get(&#39;https://browserleaks.com/webgl&#39;)
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/22992094-44ebbcd3c3892b3d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+<p>注：此处是使用浏览器界面模式打开的，实际上如果是启动headless模式，该renderer会和本机的有差别，这也是为什么要使用spoof webgl的原因</p>
+<h2 id="源码分析">源码分析</h2>
+<p>总结来说，该extension是将webgl相关的接口全部进行了hook，本质技术难度上并不大，且可以很容易进行定制化。下面开始对hook方法进行分析</p>
+<h3 id="webdriver相关绕过">webdriver相关绕过</h3>
+<p>开始的第一部分跟webgl检测关系不大，主要是用defineProperty方法对navigator下一些字段进行了hook，绕过webdriver相关的一些检测；主要是设置上浏览器语言，以及将Navigator.webdriver置为false：</p>
+<pre tabindex="0"><code>Object.defineProperty(navigator, &#39;languages&#39;, {
+    get: function () {
+        var availableLanguages = Array(&#39;en&#39;, &#39;pl&#39;, &#39;cs&#39;, &#39;ru&#39;, &#39;fr&#39;, &#39;fr-fr&#39;, &#39;lb&#39;, &#39;no&#39;)
+        return [&#39;en-US&#39;, get_random_item(availableLanguages)];
+    },
+});
+//  fake webdriver property (headless has it as true)
+Object.defineProperty(navigator, &#39;webdriver&#39;, {
+    get: () =&gt; false,
+});
+</code></pre><h3 id="webgl-hook">WebGL Hook</h3>
+<p>根据上文中webgl调用示例可知调用webgl接口采集参数主要分为三步：</p>
+<ul>
+<li>使用<em>getContext</em>获取webgl Context</li>
+<li>使用<em>context.getExtension</em>获取webgl拓展的编号</li>
+<li>使用<em>context.getParameter</em>获取具体参数的值</li>
+</ul>
+<p>对应步骤我们查看该脚本的hook方法：</p>
+<h4 id="htmlcanvaselementgetcontext-hook"><em>HTMLCanvasElement.getContext</em> Hook</h4>
+<p>要hook该方法，我们需要先定义一个类，如下：</p>
+<pre tabindex="0"><code>function WebGLRenderingContext(canvas) {
+    this.canvas = canvas;
+    this.drawingBufferWidth = canvas.width;
+    this.drawingBufferHeight = canvas.height;
+};
+</code></pre><p>之后将WebGLRenderingContext中的基本属性和方法进行初始化，即对Object.prototype.attribute进行赋值一个空函数。注意，基础属性本质上都是一些编号，如上文中的例子一样，他是用来传入getParameter做入参的。</p>
+<pre tabindex="0"><code>// 原webgl Context中的基本方法集合
+var functions = [
+    &#39;viewport&#39;,
+    &#39;vertexAttribPointer&#39;,
+    &#39;vertexAttrib4fv&#39;,
+    &#39;vertexAttrib4f&#39;,
+    &#39;vertexAttrib3fv&#39;,
+    ...
+ ]
+
+// 原webgl Context中的基本属性集合，这里挑选一些经常被收集的作为例子
+var enumerates = {
+    ...
+    &#39;VERSION&#39;: 7938,
+    ...
+    &#39;UNMASKED_VENDOR_WEBGL&#39;: 37445,
+    &#39;UNMASKED_RENDERER_WEBGL&#39;: 37446,
+    ...
+    &#39;DEPTH_BITS&#39;: 3414,
+    &#39;GREEN_BITS&#39;: 3411,
+    &#39;BLUE_BITS&#39;: 3412,
+    ...
+    &#39;STENCIL_BITS&#39;: 3415,
+    ...
+    &#39;MAX_VERTEX_UNIFORM_VECTORS&#39;: 36347,
+    &#39;MAX_VERTEX_TEXTURE_IMAGE_UNITS&#39;: 35660,
+    &#39;MAX_VERTEX_ATTRIBS&#39;: 34921,
+    &#39;MAX_VARYING_VECTORS&#39;: 36348,
+    &#39;MAX_TEXTURE_SIZE&#39;: 3379,
+    &#39;MAX_TEXTURE_IMAGE_UNITS&#39;: 34930,
+    &#39;MAX_RENDERBUFFER_SIZE&#39;: 34024,
+    &#39;MAX_FRAGMENT_UNIFORM_VECTORS&#39;: 36349,
+    &#39;MAX_CUBE_MAP_TEXTURE_SIZE&#39;: 34076,
+    &#39;MAX_COMBINED_TEXTURE_IMAGE_UNITS&#39;: 35661,
+    ...
+
+};
+
+// 将原本的函数全部替换成空函数
+functions.forEach(function (func) {
+    WebGLRenderingContext.prototype[func] = function () {
+        return {};
+    };
+});
+
+Object.keys(enumerates).forEach(function (key) {
+    WebGLRenderingContext.prototype[key] = enumerates[key];
+});
+</code></pre><p>实际上原脚本之后马上对<em>context.getExtension</em>完成了赋值，那此处其实顺序不影响执行结果，所以我们留在下一节描述。</p>
+<p>进入hook的代码，实际上<em>document.createElement(&ldquo;canvas&rdquo;).getContext(&quot;<strong>webgl</strong>&quot;)<em>调用到的是</em>HTMLCanvasElement.getContext</em>方法，所以对该方法进行Hook：</p>
+<pre tabindex="0"><code>try {
+    const getContext = HTMLCanvasElement.prototype.getContext; 
+    // 利用重定义HTMLCanvasElement.prototype.getContext完成Hook，是常见的hook方法
+    HTMLCanvasElement.prototype.getContext = function () {
+        // 获取第一个入参，通常为&#34;webgl&#34;，&#39;webgl-experimental&#39;等
+        var name = arguments[0];
+        console.log(&#34;HTMLCanvasElement app requested extension: &#34; + name);
+        console.log(JSON.stringify(arguments, null, 4));
+        if (name == &#39;webgl&#39; || name == &#39;webgl-experimental&#39; || name == &#39;experimental-webgl&#39; || name == &#39;moz-webgl&#39;) {
+            // 最终返回了上文中自定义的类WebGLRenderingContext，完成hook
+            var y = new WebGLRenderingContext(this);
+            console.log(&#34;WEBGL &#34; + y);
+            console.log(JSON.stringify(y, null, 4));
+            return y;
+        }
+        // 其他的webgl类型不支持，返回原始数据
+        if (name == &#39;webgl2&#39; || name == &#39;experimental-webgl2&#39; || name == &#39;fake-webgl&#39;) {
+            console.log(&#34;WEBGL2&#34;)
+            return null;
+        }
+        var ext = getContext.apply(this, arguments);
+        console.log(&#34;HTMLCanvasElement extension &#34; + name + &#34; &#34; + (ext ? &#34;found&#34; : &#34;not found&#34;));
+        console.log(ext);
+        return ext;
+    }
+} catch (e) { }
+</code></pre><h4 id="contextgetextension定义"><em>context.getExtension</em>定义</h4>
+<p>实际上很简单，只需要get对应属性时返回指定编号即可，此处以上文中的&quot;WEBGL_debug_renderer_info&quot;为例子：</p>
+<pre tabindex="0"><code>var extensions = {
+    // ratified
+    ...
+    &#39;WEBGL_debug_renderer_info&#39;: {
+        &#39;UNMASKED_VENDOR_WEBGL&#39;: 37445,
+        &#39;UNMASKED_RENDERER_WEBGL&#39;: 37446
+    },
+    ...
+}
+
+WebGLRenderingContext.prototype.getExtension = function (ext) {
+    console.log(&#34;WebGLRenderingContext.getExtension&#34; + ext);
+    return extensions[ext];
+};
+</code></pre><p>注意此处有一些特例是&quot;WEBGL_lose_context&quot;和</p>
+<p>&ldquo;WEBGL_draw_buffers&rdquo;, 他们的属性内部包含方法，需要定义一下：</p>
+<pre tabindex="0"><code>function loseContext () {
+}
+function restoreContext () {
+}
+function drawBuffersWEBGL () {
+}
+
+var extensions = {
+    // ratified
+    ...
+    &#39;WEBGL_lose_context&#39;: {
+        loseContext,
+        restoreContext
+    },
+    ...
+
+    &#39;WEBGL_draw_buffers&#39;: {
+        &#39;MAX_DRAW_BUFFERS_WEBGL&#39;: 34852,
+        &#39;MAX_COLOR_ATTACHMENTS_WEBGL&#39;: 36063,
+        ...
+        drawBuffersWEBGL
+    },
+}
+</code></pre><h4 id="contextgetparameter-定义完成取值的hook"><em>context.getParameter</em> 定义，完成取值的Hook</h4>
+<p>代码可以拆解如下：</p>
+<ul>
+<li>定义部分，拿到getParameter的参数：</li>
+</ul>
+<pre tabindex="0"><code>try {
+    const getParameter = WebGLRenderingContext.prototype.getParameter;
+    WebGLRenderingContext.prototype.getParameter = function () {
+        var name = arguments[0];
+        console.log(&#34;WebGLRenderingContext - getParameter: &#34; + name);
+        ...
+} catch (a) { }
+</code></pre><ul>
+<li>Hook UNMASKED_VENDOR_WEBGL 和UNMASKED_RENDERER_WEBGL 参数，从一个备选列表中随机返回一个vendor/renderer，可以很好的防止收集信息结果过度集中，也可以很方便的进行拓展：</li>
+</ul>
+<pre tabindex="0"><code>function get_random_item(list) {
+    return list[Math.floor((Math.random() * list.length))];
+}
+
+WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    // UNMASKED_VENDOR_WEBGL
+    if (name == 37445) {
+        var options = [&#39;Intel Open Source Technology Center&#39;, &#39;X.Org&#39;, &#39;Vendor Google Inc.&#39;];
+        return get_random_item(options);
+    } else if (name == 37446) {
+        // UNMASKED_RENDERER_WEBGL
+        var options = [&#39;Mesa DRI Intel(R) Ivybridge Mobile&#39;, &#39;AMD KAVERI (DRM 2.43.0 / 4.4.0-119-generic, LLVM 5.0.0)&#39;, &#39;Renderer Google SwiftShader&#39;, &#39;AMD ARUBA (DRM 2.43.0 / 4.4.0-119-generic, LLVM 5.0.0)&#39;, &#39;Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2)&#39;, &#39;Gallium 0.4 on AMD KAVERI (DRM 2.43.0 / 4.4.0-83-generic, LLVM 3.8.0)&#39;];
+        return get_random_item(options);
+    }
+    ...
+}
+</code></pre><ul>
+<li>Hook 一些基础属性, 如RENDERER / VENDOR / SHADING_LANGUAGE_VERSION /</li>
+</ul>
+<p>VERSION</p>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else if (name == 7937 || name == 7936) {
+        // RENDERER // VENDOR
+        return &#39;Mozilla&#39;;
+    } else if (name == 35724) {
+        // SHADING_LANGUAGE_VERSION
+        return &#39;WebGL GLSL ES 1.0&#39;;
+    } else if (name == 7937 || name == 7938) {
+        // VERSION
+        return &#39;WebGL 1.0&#39;;
+    }
+    ...
+}
+</code></pre><ul>
+<li>Hook ALIASED_LINE_WIDTH_RANGE / ALIASED_POINT_SIZE_RANGE, 会返回一个float array，size为2；这里代码有点小问题，不影响功能，name == 7937是VERSION，不过在上面已经判断过了，不会进到这个分支：</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else if (name == 7937 || name == 33901 || name == 33902) {
+        // ALIASED_LINE_WIDTH_RANGE // ALIASED_POINT_SIZE_RANGE
+        var option = new Float32Array([1, 8192]);
+        return option;
+    }
+    ...
+}
+</code></pre><ul>
+<li>针对一些webgl位宽信息进行Hook，返回随机值[2, 4, 8, 16]中1个，具体参数见注释：</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else if (name == 3413 || name == 3412 || name == 3411 || name == 3410 || name == 34852) {
+        // ALPHA_BITS // BLUE_BITS // GREEN_BITS // RED_BITS // MAX_DRAW_BUFFERS_WEBGL
+        return get_random_item([2, 4, 8, 16]);
+    }
+    ...
+}
+</code></pre><ul>
+<li>针对一些位宽信息进行Hook，返回固定值，参数见注释</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else if (name == 3415) 
+        // STENCIL_BITS
+        return 0;
+    } else if (name == 3414) {
+        // DEPTH_BITS
+        return 24;
+    }
+    ...
+}
+</code></pre><ul>
+<li>接下来是该脚本bug的地方，Hook出现问题，如果使用该脚本不加修改，很容易通过此bug识别；原因主要在于以下hook的三个参数值理论上是返回一个整数，但不知为何作者这里使用了get_random_items, 但没有给第二个参数，所以n会为undefined，导致固定返回一个Array：<a href="%E6%88%91%E7%94%9A%E8%87%B3%E6%80%80%E7%96%91%E6%98%AF%E4%BD%9C%E8%80%85%E7%95%99%E7%9A%84%E6%9A%97%E6%A1%A9">undefined</a>；修复也很简单，换成get_random_item即可。源代码如下：</li>
+</ul>
+<pre tabindex="0"><code>function get_random_items(list, n) {
+    var result = new Array(n),
+        len = list.length,
+        taken = new Array(len);
+    if (n &gt; len)
+        n = len
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = list[x in taken ? taken[x] : x];
+        // 比较巧妙的取随机多个值的方式，留一个array标记如果下次再取到其下标会从目前未取成的最后一个元素
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+}
+
+WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else if (name == 34047 || name == 34921) {
+        // MAX_TEXTURE_MAX_ANISOTROPY_EXT // MAX_VERTEX_ATTRIBS
+        return get_random_items([2, 4, 8, 16]);
+    } else if (name == 35661) {
+        // MAX_COMBINED_TEXTURE_IMAGE_UNITS
+        return get_random_items([128, 192, 256]);
+    }
+    ...
+}
+</code></pre><ul>
+<li>对一些其他的MAX相关属性进行Hook，返回随机值，具体属性见注释</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    } else if (name == 34076 || name == 34024 || name == 3379) {
+        // MAX_CUBE_MAP_TEXTURE_SIZE // MAX_RENDERBUFFER_SIZE
+        return get_random_item([16384, 32768]) ;
+    } else if (name == 36349 || name == 36347) {
+        // MAX_FRAGMENT_UNIFORM_VECTORS // MAX_VERTEX_UNIFORM_VECTORS
+        return get_random_item([4096, 8192]);
+    } else if (name == 34930 || name == 36348 || name == 35660) {
+        // MAX_TEXTURE_IMAGE_UNITS // MAX_VARYING_VECTORS // MAX_VERTEX_TEXTURE_IMAGE_UNITS
+        return get_random_item([16, 32, 64]);
+    }
+    ...
+}
+</code></pre><ul>
+<li>对MAX_VIEWPORT_DIMS进行Hook，会返回一个长度为2且两个值相等的Int32Array，同样此处随机取值：</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else if (name == 3386) {
+        // MAX_VIEWPORT_DIMS
+        var value = get_random_item([8192, 16384, 32768])
+        var options = new Int32Array([value, value]);
+        return options;
+    }
+    ...
+}
+</code></pre><ul>
+<li>最后，剩下的参数统一随机从[0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]随机取值返回(此处还有个冗余分支STENCIL_BITS，上面已经判断过了，属于冗余代码)</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+    else {
+        console.log(&#34;Retuning random value for: &#34; + name);
+        return get_random_item([0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]);
+    }
+    ...
+}
+</code></pre><ul>
+<li>最后的迷惑操作：理论上此处已经涵盖了所有的case返回，但是最后还多了个跑不到的分支：</li>
+</ul>
+<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
+    ...
+     var ext = getParameter.apply(this, arguments);
+     console.log(&#34;WebGLRenderingContext extension &#34; + name + &#34; &#34; + (ext ? &#34;found&#34; : &#34;not found&#34;));
+     console.log(JSON.stringify(ext, null, 4));
+
+     return ext;
+}
+</code></pre><p>说实话我猜测此处他是想模拟一些参数，他们在getParameter之前必须先调用getExtension方法后才可以获取，但是此处加在最后属实看不懂，个人理解应该放在这个大if&hellip;else&hellip;前面；有时间我可以好好修复一下这个项目😂😂</p>
+<h4 id="其他的一些被hook的方法">其他的一些被Hook的方法</h4>
+<ul>
+<li>getSupportedExtension：比较简单，随机从extensions中间选择随机个keys并返回，出现异常则将所有的keys都返回。</li>
+</ul>
+<pre tabindex="0"><code>// extensions的keys可以参见getExtension部分
+const getSupportedExtensions = WebGLRenderingContext.prototype.getSupportedExtensions;
+WebGLRenderingContext.prototype.getSupportedExtensions = function () {
+    try {
+        console.log(&#34;WebGLRenderingContext.getSupportedExtensions&#34;)
+        var availableExtensions = Object.keys(extensions);
+        console.log(availableExtensions);
+        var itemsToGet = Math.floor(Math.random() * (availableExtensions.length - 6) + 5);
+        console.log(itemsToGet);
+        var selectedExtensions = get_random_items(availableExtensions, itemsToGet);
+        console.log(selectedExtensions);
+        return selectedExtensions;
+    } catch (a) {
+        console.log(a)
+        return Object.keys(extensions);
+    }
+}
+</code></pre><ul>
+<li>针对一些headless浏览器有可能会出现canvas的一些属性异常（broken会为0），如canvas的width和height，以及offset，进行Hook，还是使用defineProperty重写get方法对属性进行hook：</li>
+</ul>
+<pre tabindex="0"><code>// in case of broken image return random height/width
+var size = 0;
+[&#39;height&#39;, &#39;width&#39;].forEach(property =&gt; {
+    const imageDescriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, property);
+    Object.defineProperty(HTMLImageElement.prototype, property, {
+        imageDescriptor,
+        get: function () {
+            // 如果canvas破损，则返回随机size
+            if (this.complete &amp;&amp; this.naturalHeight == 0) {
+                if (!size) {
+                    // 返回随机的长/宽
+                    size = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
+                }
+                return size;
+            }
+            // 未破损则返回正常size
+            return imageDescriptor.get.apply(this);
+        },
+    });
+}); 
+
+// hairline feature (headless can&#39;t render it normally)
+const imageDescriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, &#39;offsetHeight&#39;);
+Object.defineProperty(HTMLElement.prototype, &#39;offsetHeight&#39;, {
+    ...imageDescriptor,
+    get: function () {
+        if (this.id == &#39;modernizr&#39;) {
+            return 1;
+        }
+        return imageDescriptor.get.apply(this);
+    },
+});
+</code></pre><h3 id="插件执行">插件执行</h3>
+<p>方法比较简单，将整个大函数作为字符串，最后在html document中新建一个script tag，<em>script</em>.textContent赋值为字符串即可：</p>
+<pre tabindex="0"><code>var scriptCode = &#39;(&#39; + function () {
+    ...
+    function WebGLRenderingContext(canvas) {
+        ...
+    };
+    ...
+    WebGLRenderingContext.prototype.getExtension = function (ext) {
+        ...
+    };
+    ...
+    WebGLRenderingContext.prototype.getParameter = function () {
+        ...
+    }
+    ...
+} + &#39;)();&#39;; // 转成字符串，可直接执行
+
+// 新建script节点插入document中，即自动执行
+var script = document.createElement(&#39;script&#39;);
+script.textContent = scriptCode;
+(document.head || document.documentElement).appendChild(script);
+// 最后move掉代码即可
+script.remove();
+</code></pre>
     </article>
     
     
@@ -2196,13 +2396,13 @@ $$</p>
     
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsummersummer3.github.io%2fposts%2fecdsa%25E4%25B8%258Esm2%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsummersummer3.github.io%2fposts%2fspoofwebgl%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg>
         </a>
       
     
       
-        <a href="https://twitter.com/intent/tweet?text=ECDSA%e4%b8%8eSM2&url=https%3a%2f%2fsummersummer3.github.io%2fposts%2fecdsa%25E4%25B8%258Esm2%2f&hashtags=%e5%af%86%e7%a0%81%e5%ad%a6&via=Techsum" title="Twitter" aria-label="Twitter Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://twitter.com/intent/tweet?text=SpoofWebGL&url=https%3a%2f%2fsummersummer3.github.io%2fposts%2fspoofwebgl%2f&hashtags=%e9%bb%91%e4%ba%a7%e5%b7%a5%e5%85%b7&via=Techsum" title="Twitter" aria-label="Twitter Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="twitter" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917 2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487 0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244 13.986-14.637z"/></svg>
         </a>
       
@@ -2331,14 +2531,14 @@ $$</p>
 <nav class="pagination-single">
   
     
-      <a href="https://summersummer3.github.io/posts/spoofwebgl/" class="pagination-single__left">
-        <div class="pagination-single__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
-        </div>
-        <div class="pagination-single__left-title">SpoofWebGL</div>      
-      </a>
-    
     <div class="grow"></div>
+    
+      <a href="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">ECDSA与SM2</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>
@@ -2696,51 +2896,26 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#椭圆曲线基本学习">椭圆曲线基本学习</a>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#背景知识简单介绍">背景知识简单介绍</a>
       <ul>
-        <li><a href="#椭圆曲线方程">椭圆曲线方程</a></li>
-        <li><a href="#群与阿贝尔群">群与阿贝尔群</a></li>
-        <li><a href="#有限域">有限域</a></li>
-        <li><a href="#椭圆曲线上的群">椭圆曲线上的群</a></li>
-        <li><a href="#几何意义上的加法">几何意义上的加法</a></li>
-        <li><a href="#代数意义上的加法">代数意义上的加法</a>
-          <ul>
-            <li><a href="#不同两点相加">不同两点相加</a></li>
-            <li><a href="#相同两点相加">相同两点相加</a></li>
-            <li><a href="#标量积">标量积</a></li>
-          </ul>
-        </li>
-        <li><a href="#曲线上的有限域">曲线上的有限域</a></li>
-        <li><a href="#曲线上的循环子群">曲线上的循环子群</a>
-          <ul>
-            <li><a href="#循环子群的阶">循环子群的阶</a></li>
-            <li><a href="#找基点的方法">找基点的方法</a></li>
-          </ul>
-        </li>
-        <li><a href="#曲线上的离散对数问题">曲线上的离散对数问题</a></li>
+        <li><a href="#webgl和参数采集">Webgl和参数采集</a></li>
+        <li><a href="#webdriver">Webdriver</a></li>
       </ul>
     </li>
-    <li><a href="#ecdh--ecdsa">ECDH &amp; ECDSA</a>
+    <li><a href="#spoofwebgl使用方法">SpoofWebGL使用方法</a></li>
+    <li><a href="#源码分析">源码分析</a>
       <ul>
-        <li><a href="#ecdh">ECDH</a></li>
-        <li><a href="#ecdsa">ECDSA</a>
+        <li><a href="#webdriver相关绕过">webdriver相关绕过</a></li>
+        <li><a href="#webgl-hook">WebGL Hook</a>
           <ul>
-            <li><a href="#符号标记">符号标记</a></li>
-            <li><a href="#签名算法">签名算法</a></li>
-            <li><a href="#验证算法">验证算法</a></li>
-            <li><a href="#正确性">正确性</a></li>
-            <li><a href="#随机数相等下的私钥复原">随机数相等下的私钥复原</a></li>
-            <li><a href="#通过签名恢复公钥">通过签名恢复公钥</a></li>
-            <li><a href="#伪造签名">伪造签名</a></li>
+            <li><a href="#htmlcanvaselementgetcontext-hook"><em>HTMLCanvasElement.getContext</em> Hook</a></li>
+            <li><a href="#contextgetextension定义"><em>context.getExtension</em>定义</a></li>
+            <li><a href="#contextgetparameter-定义完成取值的hook"><em>context.getParameter</em> 定义，完成取值的Hook</a></li>
+            <li><a href="#其他的一些被hook的方法">其他的一些被Hook的方法</a></li>
           </ul>
         </li>
-      </ul>
-    </li>
-    <li><a href="#sm2签名">SM2签名</a>
-      <ul>
-        <li><a href="#签名算法-1">签名算法</a></li>
-        <li><a href="#验证算法-1">验证算法</a></li>
-        <li><a href="#正确性-1">正确性</a></li>
+        <li><a href="#插件执行">插件执行</a></li>
       </ul>
     </li>
   </ul>
@@ -2871,24 +3046,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      ignoreHtmlClass: 'tex2jax_ignore',
-      processHtmlClass: 'tex2jax_process'
-    }
-  };
-  </script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
 
 
 
@@ -3149,7 +3306,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     
-    var lib = JSON.parse("[\"mathjax\"]");
+    var lib = JSON.parse("null");
 
     if (lib && lib.includes('mermaid')) {
       
