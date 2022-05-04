@@ -1,0 +1,6 @@
+[cn]
+  title = "Techsum's Blog"
+  languageName = "Chinese"
+  weight = 1
+  languagedir = "ltr"
+  contentdir = "content/cn"
