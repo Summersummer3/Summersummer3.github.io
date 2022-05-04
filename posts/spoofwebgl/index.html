@@ -1723,7 +1723,7 @@
 <div class="single__infos">
   <time class="single__info" title="">📅&nbsp; </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;10&nbsp; </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;11&nbsp; </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="">✍️&nbsp;Techsum</span>
   
@@ -1753,12 +1753,23 @@
 <h3 id="webgl和参数采集">Webgl和参数采集</h3>
 <p>简单来说webgl就是浏览器给前端js代码调用的渲染绘图API，该API可以在在html canvas元素中使用，可以调用到硬件进行加速，所以webgl的参数通常与硬件强相关。更具体的介绍和教程可以参考：https://www.w3cschool.cn/webgl/i4gf1oh1.html</p>
 <p>具体采集webgl的参数时，需要首先先获取canvas下的webgl Context，使用getContext接口。而采集具体参数是使用getParameter函数完成，getParameter接受一个整数，每个整数对应一个属性；以获取GPU型号为例：</p>
-<pre tabindex="0"><code>// 获取webgl context
-var gl = document.createElement(&#34;canvas&#34;).getContext(&#34;webgl&#34;)
-// 采集GPU render：编号为37446
-gl.getExtension(&#34;WEBGL_debug_renderer_info&#34;)[&#34;UNMASKED_RENDERER_WEBGL&#34;]
-gl.getParameter(37446)
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/22992094-9213205f25e041e2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 获取webgl context
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">gl</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;canvas&#34;</span><span class="p">).</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">&#34;webgl&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 采集GPU render：编号为37446
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">gl</span><span class="p">.</span><span class="nx">getExtension</span><span class="p">(</span><span class="s2">&#34;WEBGL_debug_renderer_info&#34;</span><span class="p">)[</span><span class="s2">&#34;UNMASKED_RENDERER_WEBGL&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">gl</span><span class="p">.</span><span class="nx">getParameter</span><span class="p">(</span><span class="mi">37446</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="images/blog/1/1.png" alt="" /></p>
 <p>完整的getParameter常量表可以参考：https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Constants</p>
 <h3 id="webdriver">Webdriver</h3>
 <p>webdriver本质上是浏览器根据w3c实现的一套操作浏览器的接口，而每个浏览器都有一个特定的 WebDriver 实现，如chrome webdriver：https://chromedriver.chromium.org/downloads</p>
@@ -1768,54 +1779,102 @@ gl.getParameter(37446)
 <ul>
 <li>将项目clone下来之后，使用可以看到src文件夹下有两个文件，其中manifest.json是extension的配置文件，injected是源码。</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/22992094-de907ade969358ff?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+<p><img src="images/blog/1/2.png" alt="image" /></p>
 <ul>
 <li>之后用zip命令将src文件夹打包：zip -rj extension.zip src/</li>
 <li>将zip后缀名改成.crx(chrome extension的后缀名) ：mv extension.zip extension.crx</li>
 <li>编写webdriver脚本如下（注意要先安装好selenium和chrome webdriver），去观察我们的webgl参数读取情况（注意原项目中使用的是firefox的webdriver，所以脚本要做修改）：</li>
 </ul>
-<pre tabindex="0"><code>from selenium import webdriver
-
-opt = webdriver.ChromeOptions()
-
-extension_path = &#39;./extension.crx&#39;
-opt.add_extension(extension_path)
-
-driver = webdriver.Chrome(options=opt)
-# Check what data is spoofed
-driver.get(&#39;https://browserleaks.com/webgl&#39;)
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/22992094-bbd3fbc1c140cde4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">opt</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">extension_path</span> <span class="o">=</span> <span class="s1">&#39;./extension.crx&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">opt</span><span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="n">extension_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">opt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Check what data is spoofed</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://browserleaks.com/webgl&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="images/blog/1/3.png" alt="image" /></p>
 <p>可以看到这个vendor和render已经不太正常了；</p>
 <ul>
 <li>作为对比，注释掉options直接启动，会显示本机的真实GPU：</li>
 </ul>
-<pre tabindex="0"><code>from selenium import webdriver
-
-# opt = webdriver.ChromeOptions()
-# 
-# extension_path = &#39;./extension.crx&#39;
-# opt.add_extension(extension_path)
-
-driver = webdriver.Chrome()
-# Check what data is spoofed
-driver.get(&#39;https://browserleaks.com/webgl&#39;)
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/22992094-44ebbcd3c3892b3d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># opt = webdriver.ChromeOptions()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># extension_path = &#39;./extension.crx&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># opt.add_extension(extension_path)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Check what data is spoofed</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://browserleaks.com/webgl&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="images/blog/1/4.png" alt="image" /></p>
 <p>注：此处是使用浏览器界面模式打开的，实际上如果是启动headless模式，该renderer会和本机的有差别，这也是为什么要使用spoof webgl的原因</p>
 <h2 id="源码分析">源码分析</h2>
 <p>总结来说，该extension是将webgl相关的接口全部进行了hook，本质技术难度上并不大，且可以很容易进行定制化。下面开始对hook方法进行分析</p>
 <h3 id="webdriver相关绕过">webdriver相关绕过</h3>
 <p>开始的第一部分跟webgl检测关系不大，主要是用defineProperty方法对navigator下一些字段进行了hook，绕过webdriver相关的一些检测；主要是设置上浏览器语言，以及将Navigator.webdriver置为false：</p>
-<pre tabindex="0"><code>Object.defineProperty(navigator, &#39;languages&#39;, {
-    get: function () {
-        var availableLanguages = Array(&#39;en&#39;, &#39;pl&#39;, &#39;cs&#39;, &#39;ru&#39;, &#39;fr&#39;, &#39;fr-fr&#39;, &#39;lb&#39;, &#39;no&#39;)
-        return [&#39;en-US&#39;, get_random_item(availableLanguages)];
-    },
-});
-//  fake webdriver property (headless has it as true)
-Object.defineProperty(navigator, &#39;webdriver&#39;, {
-    get: () =&gt; false,
-});
-</code></pre><h3 id="webgl-hook">WebGL Hook</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">navigator</span><span class="p">,</span> <span class="s1">&#39;languages&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">availableLanguages</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;pl&#39;</span><span class="p">,</span> <span class="s1">&#39;cs&#39;</span><span class="p">,</span> <span class="s1">&#39;ru&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;fr-fr&#39;</span><span class="p">,</span> <span class="s1">&#39;lb&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;en-US&#39;</span><span class="p">,</span> <span class="nx">get_random_item</span><span class="p">(</span><span class="nx">availableLanguages</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//  fake webdriver property (headless has it as true)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">navigator</span><span class="p">,</span> <span class="s1">&#39;webdriver&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">get</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="webgl-hook">WebGL Hook</h3>
 <p>根据上文中webgl调用示例可知调用webgl接口采集参数主要分为三步：</p>
 <ul>
 <li>使用<em>getContext</em>获取webgl Context</li>
@@ -1825,379 +1884,812 @@ Object.defineProperty(navigator, &#39;webdriver&#39;, {
 <p>对应步骤我们查看该脚本的hook方法：</p>
 <h4 id="htmlcanvaselementgetcontext-hook"><em>HTMLCanvasElement.getContext</em> Hook</h4>
 <p>要hook该方法，我们需要先定义一个类，如下：</p>
-<pre tabindex="0"><code>function WebGLRenderingContext(canvas) {
-    this.canvas = canvas;
-    this.drawingBufferWidth = canvas.width;
-    this.drawingBufferHeight = canvas.height;
-};
-</code></pre><p>之后将WebGLRenderingContext中的基本属性和方法进行初始化，即对Object.prototype.attribute进行赋值一个空函数。注意，基础属性本质上都是一些编号，如上文中的例子一样，他是用来传入getParameter做入参的。</p>
-<pre tabindex="0"><code>// 原webgl Context中的基本方法集合
-var functions = [
-    &#39;viewport&#39;,
-    &#39;vertexAttribPointer&#39;,
-    &#39;vertexAttrib4fv&#39;,
-    &#39;vertexAttrib4f&#39;,
-    &#39;vertexAttrib3fv&#39;,
-    ...
- ]
-
-// 原webgl Context中的基本属性集合，这里挑选一些经常被收集的作为例子
-var enumerates = {
-    ...
-    &#39;VERSION&#39;: 7938,
-    ...
-    &#39;UNMASKED_VENDOR_WEBGL&#39;: 37445,
-    &#39;UNMASKED_RENDERER_WEBGL&#39;: 37446,
-    ...
-    &#39;DEPTH_BITS&#39;: 3414,
-    &#39;GREEN_BITS&#39;: 3411,
-    &#39;BLUE_BITS&#39;: 3412,
-    ...
-    &#39;STENCIL_BITS&#39;: 3415,
-    ...
-    &#39;MAX_VERTEX_UNIFORM_VECTORS&#39;: 36347,
-    &#39;MAX_VERTEX_TEXTURE_IMAGE_UNITS&#39;: 35660,
-    &#39;MAX_VERTEX_ATTRIBS&#39;: 34921,
-    &#39;MAX_VARYING_VECTORS&#39;: 36348,
-    &#39;MAX_TEXTURE_SIZE&#39;: 3379,
-    &#39;MAX_TEXTURE_IMAGE_UNITS&#39;: 34930,
-    &#39;MAX_RENDERBUFFER_SIZE&#39;: 34024,
-    &#39;MAX_FRAGMENT_UNIFORM_VECTORS&#39;: 36349,
-    &#39;MAX_CUBE_MAP_TEXTURE_SIZE&#39;: 34076,
-    &#39;MAX_COMBINED_TEXTURE_IMAGE_UNITS&#39;: 35661,
-    ...
-
-};
-
-// 将原本的函数全部替换成空函数
-functions.forEach(function (func) {
-    WebGLRenderingContext.prototype[func] = function () {
-        return {};
-    };
-});
-
-Object.keys(enumerates).forEach(function (key) {
-    WebGLRenderingContext.prototype[key] = enumerates[key];
-});
-</code></pre><p>实际上原脚本之后马上对<em>context.getExtension</em>完成了赋值，那此处其实顺序不影响执行结果，所以我们留在下一节描述。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">WebGLRenderingContext</span><span class="p">(</span><span class="nx">canvas</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">canvas</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">drawingBufferWidth</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">drawingBufferHeight</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后将WebGLRenderingContext中的基本属性和方法进行初始化，即对Object.prototype.attribute进行赋值一个空函数。注意，基础属性本质上都是一些编号，如上文中的例子一样，他是用来传入getParameter做入参的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 原webgl Context中的基本方法集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">functions</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;viewport&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;vertexAttribPointer&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;vertexAttrib4fv&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;vertexAttrib4f&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;vertexAttrib3fv&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 原webgl Context中的基本属性集合，这里挑选一些经常被收集的作为例子
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">enumerates</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;VERSION&#39;</span><span class="o">:</span> <span class="mi">7938</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;UNMASKED_VENDOR_WEBGL&#39;</span><span class="o">:</span> <span class="mi">37445</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;UNMASKED_RENDERER_WEBGL&#39;</span><span class="o">:</span> <span class="mi">37446</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;DEPTH_BITS&#39;</span><span class="o">:</span> <span class="mi">3414</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;GREEN_BITS&#39;</span><span class="o">:</span> <span class="mi">3411</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;BLUE_BITS&#39;</span><span class="o">:</span> <span class="mi">3412</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;STENCIL_BITS&#39;</span><span class="o">:</span> <span class="mi">3415</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_VERTEX_UNIFORM_VECTORS&#39;</span><span class="o">:</span> <span class="mi">36347</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_VERTEX_TEXTURE_IMAGE_UNITS&#39;</span><span class="o">:</span> <span class="mi">35660</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_VERTEX_ATTRIBS&#39;</span><span class="o">:</span> <span class="mi">34921</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_VARYING_VECTORS&#39;</span><span class="o">:</span> <span class="mi">36348</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_TEXTURE_SIZE&#39;</span><span class="o">:</span> <span class="mi">3379</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_TEXTURE_IMAGE_UNITS&#39;</span><span class="o">:</span> <span class="mi">34930</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_RENDERBUFFER_SIZE&#39;</span><span class="o">:</span> <span class="mi">34024</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_FRAGMENT_UNIFORM_VECTORS&#39;</span><span class="o">:</span> <span class="mi">36349</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_CUBE_MAP_TEXTURE_SIZE&#39;</span><span class="o">:</span> <span class="mi">34076</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;MAX_COMBINED_TEXTURE_IMAGE_UNITS&#39;</span><span class="o">:</span> <span class="mi">35661</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 将原本的函数全部替换成空函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">functions</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">func</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">enumerates</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">enumerates</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>实际上原脚本之后马上对<em>context.getExtension</em>完成了赋值，那此处其实顺序不影响执行结果，所以我们留在下一节描述。</p>
 <p>进入hook的代码，实际上<em>document.createElement(&ldquo;canvas&rdquo;).getContext(&quot;<strong>webgl</strong>&quot;)<em>调用到的是</em>HTMLCanvasElement.getContext</em>方法，所以对该方法进行Hook：</p>
-<pre tabindex="0"><code>try {
-    const getContext = HTMLCanvasElement.prototype.getContext; 
-    // 利用重定义HTMLCanvasElement.prototype.getContext完成Hook，是常见的hook方法
-    HTMLCanvasElement.prototype.getContext = function () {
-        // 获取第一个入参，通常为&#34;webgl&#34;，&#39;webgl-experimental&#39;等
-        var name = arguments[0];
-        console.log(&#34;HTMLCanvasElement app requested extension: &#34; + name);
-        console.log(JSON.stringify(arguments, null, 4));
-        if (name == &#39;webgl&#39; || name == &#39;webgl-experimental&#39; || name == &#39;experimental-webgl&#39; || name == &#39;moz-webgl&#39;) {
-            // 最终返回了上文中自定义的类WebGLRenderingContext，完成hook
-            var y = new WebGLRenderingContext(this);
-            console.log(&#34;WEBGL &#34; + y);
-            console.log(JSON.stringify(y, null, 4));
-            return y;
-        }
-        // 其他的webgl类型不支持，返回原始数据
-        if (name == &#39;webgl2&#39; || name == &#39;experimental-webgl2&#39; || name == &#39;fake-webgl&#39;) {
-            console.log(&#34;WEBGL2&#34;)
-            return null;
-        }
-        var ext = getContext.apply(this, arguments);
-        console.log(&#34;HTMLCanvasElement extension &#34; + name + &#34; &#34; + (ext ? &#34;found&#34; : &#34;not found&#34;));
-        console.log(ext);
-        return ext;
-    }
-} catch (e) { }
-</code></pre><h4 id="contextgetextension定义"><em>context.getExtension</em>定义</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">getContext</span> <span class="o">=</span> <span class="nx">HTMLCanvasElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getContext</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 利用重定义HTMLCanvasElement.prototype.getContext完成Hook，是常见的hook方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">HTMLCanvasElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getContext</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取第一个入参，通常为&#34;webgl&#34;，&#39;webgl-experimental&#39;等
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;HTMLCanvasElement app requested extension: &#34;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;webgl&#39;</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;webgl-experimental&#39;</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;experimental-webgl&#39;</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;moz-webgl&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 最终返回了上文中自定义的类WebGLRenderingContext，完成hook
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebGLRenderingContext</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;WEBGL &#34;</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 其他的webgl类型不支持，返回原始数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;webgl2&#39;</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;experimental-webgl2&#39;</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="s1">&#39;fake-webgl&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;WEBGL2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">ext</span> <span class="o">=</span> <span class="nx">getContext</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;HTMLCanvasElement extension &#34;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">ext</span> <span class="o">?</span> <span class="s2">&#34;found&#34;</span> <span class="o">:</span> <span class="s2">&#34;not found&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ext</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">ext</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="contextgetextension定义"><em>context.getExtension</em>定义</h4>
 <p>实际上很简单，只需要get对应属性时返回指定编号即可，此处以上文中的&quot;WEBGL_debug_renderer_info&quot;为例子：</p>
-<pre tabindex="0"><code>var extensions = {
-    // ratified
-    ...
-    &#39;WEBGL_debug_renderer_info&#39;: {
-        &#39;UNMASKED_VENDOR_WEBGL&#39;: 37445,
-        &#39;UNMASKED_RENDERER_WEBGL&#39;: 37446
-    },
-    ...
-}
-
-WebGLRenderingContext.prototype.getExtension = function (ext) {
-    console.log(&#34;WebGLRenderingContext.getExtension&#34; + ext);
-    return extensions[ext];
-};
-</code></pre><p>注意此处有一些特例是&quot;WEBGL_lose_context&quot;和</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">extensions</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ratified
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;WEBGL_debug_renderer_info&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;UNMASKED_VENDOR_WEBGL&#39;</span><span class="o">:</span> <span class="mi">37445</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;UNMASKED_RENDERER_WEBGL&#39;</span><span class="o">:</span> <span class="mi">37446</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getExtension</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ext</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;WebGLRenderingContext.getExtension&#34;</span> <span class="o">+</span> <span class="nx">ext</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">extensions</span><span class="p">[</span><span class="nx">ext</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意此处有一些特例是&quot;WEBGL_lose_context&quot;和</p>
 <p>&ldquo;WEBGL_draw_buffers&rdquo;, 他们的属性内部包含方法，需要定义一下：</p>
-<pre tabindex="0"><code>function loseContext () {
-}
-function restoreContext () {
-}
-function drawBuffersWEBGL () {
-}
-
-var extensions = {
-    // ratified
-    ...
-    &#39;WEBGL_lose_context&#39;: {
-        loseContext,
-        restoreContext
-    },
-    ...
-
-    &#39;WEBGL_draw_buffers&#39;: {
-        &#39;MAX_DRAW_BUFFERS_WEBGL&#39;: 34852,
-        &#39;MAX_COLOR_ATTACHMENTS_WEBGL&#39;: 36063,
-        ...
-        drawBuffersWEBGL
-    },
-}
-</code></pre><h4 id="contextgetparameter-定义完成取值的hook"><em>context.getParameter</em> 定义，完成取值的Hook</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">loseContext</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">restoreContext</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">drawBuffersWEBGL</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">extensions</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ratified
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;WEBGL_lose_context&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">loseContext</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">restoreContext</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;WEBGL_draw_buffers&#39;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;MAX_DRAW_BUFFERS_WEBGL&#39;</span><span class="o">:</span> <span class="mi">34852</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;MAX_COLOR_ATTACHMENTS_WEBGL&#39;</span><span class="o">:</span> <span class="mi">36063</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">drawBuffersWEBGL</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="contextgetparameter-定义完成取值的hook"><em>context.getParameter</em> 定义，完成取值的Hook</h4>
 <p>代码可以拆解如下：</p>
 <ul>
 <li>定义部分，拿到getParameter的参数：</li>
 </ul>
-<pre tabindex="0"><code>try {
-    const getParameter = WebGLRenderingContext.prototype.getParameter;
-    WebGLRenderingContext.prototype.getParameter = function () {
-        var name = arguments[0];
-        console.log(&#34;WebGLRenderingContext - getParameter: &#34; + name);
-        ...
-} catch (a) { }
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">getParameter</span> <span class="o">=</span> <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;WebGLRenderingContext - getParameter: &#34;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Hook UNMASKED_VENDOR_WEBGL 和UNMASKED_RENDERER_WEBGL 参数，从一个备选列表中随机返回一个vendor/renderer，可以很好的防止收集信息结果过度集中，也可以很方便的进行拓展：</li>
 </ul>
-<pre tabindex="0"><code>function get_random_item(list) {
-    return list[Math.floor((Math.random() * list.length))];
-}
-
-WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    // UNMASKED_VENDOR_WEBGL
-    if (name == 37445) {
-        var options = [&#39;Intel Open Source Technology Center&#39;, &#39;X.Org&#39;, &#39;Vendor Google Inc.&#39;];
-        return get_random_item(options);
-    } else if (name == 37446) {
-        // UNMASKED_RENDERER_WEBGL
-        var options = [&#39;Mesa DRI Intel(R) Ivybridge Mobile&#39;, &#39;AMD KAVERI (DRM 2.43.0 / 4.4.0-119-generic, LLVM 5.0.0)&#39;, &#39;Renderer Google SwiftShader&#39;, &#39;AMD ARUBA (DRM 2.43.0 / 4.4.0-119-generic, LLVM 5.0.0)&#39;, &#39;Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2)&#39;, &#39;Gallium 0.4 on AMD KAVERI (DRM 2.43.0 / 4.4.0-83-generic, LLVM 3.8.0)&#39;];
-        return get_random_item(options);
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">get_random_item</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">list</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">))];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// UNMASKED_VENDOR_WEBGL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">37445</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Intel Open Source Technology Center&#39;</span><span class="p">,</span> <span class="s1">&#39;X.Org&#39;</span><span class="p">,</span> <span class="s1">&#39;Vendor Google Inc.&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">37446</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// UNMASKED_RENDERER_WEBGL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mesa DRI Intel(R) Ivybridge Mobile&#39;</span><span class="p">,</span> <span class="s1">&#39;AMD KAVERI (DRM 2.43.0 / 4.4.0-119-generic, LLVM 5.0.0)&#39;</span><span class="p">,</span> <span class="s1">&#39;Renderer Google SwiftShader&#39;</span><span class="p">,</span> <span class="s1">&#39;AMD ARUBA (DRM 2.43.0 / 4.4.0-119-generic, LLVM 5.0.0)&#39;</span><span class="p">,</span> <span class="s1">&#39;Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2)&#39;</span><span class="p">,</span> <span class="s1">&#39;Gallium 0.4 on AMD KAVERI (DRM 2.43.0 / 4.4.0-83-generic, LLVM 3.8.0)&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Hook 一些基础属性, 如RENDERER / VENDOR / SHADING_LANGUAGE_VERSION /</li>
 </ul>
 <p>VERSION</p>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else if (name == 7937 || name == 7936) {
-        // RENDERER // VENDOR
-        return &#39;Mozilla&#39;;
-    } else if (name == 35724) {
-        // SHADING_LANGUAGE_VERSION
-        return &#39;WebGL GLSL ES 1.0&#39;;
-    } else if (name == 7937 || name == 7938) {
-        // VERSION
-        return &#39;WebGL 1.0&#39;;
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">7937</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">7936</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// RENDERER // VENDOR
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="s1">&#39;Mozilla&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">35724</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// SHADING_LANGUAGE_VERSION
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="s1">&#39;WebGL GLSL ES 1.0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">7937</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">7938</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// VERSION
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="s1">&#39;WebGL 1.0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Hook ALIASED_LINE_WIDTH_RANGE / ALIASED_POINT_SIZE_RANGE, 会返回一个float array，size为2；这里代码有点小问题，不影响功能，name == 7937是VERSION，不过在上面已经判断过了，不会进到这个分支：</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else if (name == 7937 || name == 33901 || name == 33902) {
-        // ALIASED_LINE_WIDTH_RANGE // ALIASED_POINT_SIZE_RANGE
-        var option = new Float32Array([1, 8192]);
-        return option;
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">7937</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">33901</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">33902</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ALIASED_LINE_WIDTH_RANGE // ALIASED_POINT_SIZE_RANGE
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Float32Array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8192</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">option</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>针对一些webgl位宽信息进行Hook，返回随机值[2, 4, 8, 16]中1个，具体参数见注释：</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else if (name == 3413 || name == 3412 || name == 3411 || name == 3410 || name == 34852) {
-        // ALPHA_BITS // BLUE_BITS // GREEN_BITS // RED_BITS // MAX_DRAW_BUFFERS_WEBGL
-        return get_random_item([2, 4, 8, 16]);
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">3413</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">3412</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">3411</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">3410</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">34852</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ALPHA_BITS // BLUE_BITS // GREEN_BITS // RED_BITS // MAX_DRAW_BUFFERS_WEBGL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>针对一些位宽信息进行Hook，返回固定值，参数见注释</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else if (name == 3415) 
-        // STENCIL_BITS
-        return 0;
-    } else if (name == 3414) {
-        // DEPTH_BITS
-        return 24;
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">3415</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1">// STENCIL_BITS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">3414</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// DEPTH_BITS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="mi">24</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>接下来是该脚本bug的地方，Hook出现问题，如果使用该脚本不加修改，很容易通过此bug识别；原因主要在于以下hook的三个参数值理论上是返回一个整数，但不知为何作者这里使用了get_random_items, 但没有给第二个参数，所以n会为undefined，导致固定返回一个Array：<a href="%E6%88%91%E7%94%9A%E8%87%B3%E6%80%80%E7%96%91%E6%98%AF%E4%BD%9C%E8%80%85%E7%95%99%E7%9A%84%E6%9A%97%E6%A1%A9">undefined</a>；修复也很简单，换成get_random_item即可。源代码如下：</li>
 </ul>
-<pre tabindex="0"><code>function get_random_items(list, n) {
-    var result = new Array(n),
-        len = list.length,
-        taken = new Array(len);
-    if (n &gt; len)
-        n = len
-    while (n--) {
-        var x = Math.floor(Math.random() * len);
-        result[n] = list[x in taken ? taken[x] : x];
-        // 比较巧妙的取随机多个值的方式，留一个array标记如果下次再取到其下标会从目前未取成的最后一个元素
-        taken[x] = --len in taken ? taken[len] : len;
-    }
-    return result;
-}
-
-WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else if (name == 34047 || name == 34921) {
-        // MAX_TEXTURE_MAX_ANISOTROPY_EXT // MAX_VERTEX_ATTRIBS
-        return get_random_items([2, 4, 8, 16]);
-    } else if (name == 35661) {
-        // MAX_COMBINED_TEXTURE_IMAGE_UNITS
-        return get_random_items([128, 192, 256]);
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">get_random_items</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">len</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">taken</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="nx">len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span> <span class="o">=</span> <span class="nx">len</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nx">n</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">result</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">=</span> <span class="nx">list</span><span class="p">[</span><span class="nx">x</span> <span class="k">in</span> <span class="nx">taken</span> <span class="o">?</span> <span class="nx">taken</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">:</span> <span class="nx">x</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 比较巧妙的取随机多个值的方式，留一个array标记如果下次再取到其下标会从目前未取成的最后一个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">taken</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">=</span> <span class="o">--</span><span class="nx">len</span> <span class="k">in</span> <span class="nx">taken</span> <span class="o">?</span> <span class="nx">taken</span><span class="p">[</span><span class="nx">len</span><span class="p">]</span> <span class="o">:</span> <span class="nx">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">34047</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">34921</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// MAX_TEXTURE_MAX_ANISOTROPY_EXT // MAX_VERTEX_ATTRIBS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">get_random_items</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">35661</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// MAX_COMBINED_TEXTURE_IMAGE_UNITS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">get_random_items</span><span class="p">([</span><span class="mi">128</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">256</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>对一些其他的MAX相关属性进行Hook，返回随机值，具体属性见注释</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    } else if (name == 34076 || name == 34024 || name == 3379) {
-        // MAX_CUBE_MAP_TEXTURE_SIZE // MAX_RENDERBUFFER_SIZE
-        return get_random_item([16384, 32768]) ;
-    } else if (name == 36349 || name == 36347) {
-        // MAX_FRAGMENT_UNIFORM_VECTORS // MAX_VERTEX_UNIFORM_VECTORS
-        return get_random_item([4096, 8192]);
-    } else if (name == 34930 || name == 36348 || name == 35660) {
-        // MAX_TEXTURE_IMAGE_UNITS // MAX_VARYING_VECTORS // MAX_VERTEX_TEXTURE_IMAGE_UNITS
-        return get_random_item([16, 32, 64]);
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">34076</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">34024</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">3379</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// MAX_CUBE_MAP_TEXTURE_SIZE // MAX_RENDERBUFFER_SIZE
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">([</span><span class="mi">16384</span><span class="p">,</span> <span class="mi">32768</span><span class="p">])</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">36349</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">36347</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// MAX_FRAGMENT_UNIFORM_VECTORS // MAX_VERTEX_UNIFORM_VECTORS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">([</span><span class="mi">4096</span><span class="p">,</span> <span class="mi">8192</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">34930</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">36348</span> <span class="o">||</span> <span class="nx">name</span> <span class="o">==</span> <span class="mi">35660</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// MAX_TEXTURE_IMAGE_UNITS // MAX_VARYING_VECTORS // MAX_VERTEX_TEXTURE_IMAGE_UNITS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>对MAX_VIEWPORT_DIMS进行Hook，会返回一个长度为2且两个值相等的Int32Array，同样此处随机取值：</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else if (name == 3386) {
-        // MAX_VIEWPORT_DIMS
-        var value = get_random_item([8192, 16384, 32768])
-        var options = new Int32Array([value, value]);
-        return options;
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="mi">3386</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// MAX_VIEWPORT_DIMS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">get_random_item</span><span class="p">([</span><span class="mi">8192</span><span class="p">,</span> <span class="mi">16384</span><span class="p">,</span> <span class="mi">32768</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Int32Array</span><span class="p">([</span><span class="nx">value</span><span class="p">,</span> <span class="nx">value</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">options</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>最后，剩下的参数统一随机从[0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]随机取值返回(此处还有个冗余分支STENCIL_BITS，上面已经判断过了，属于冗余代码)</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-    else {
-        console.log(&#34;Retuning random value for: &#34; + name);
-        return get_random_item([0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]);
-    }
-    ...
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Retuning random value for: &#34;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">get_random_item</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">2048</span><span class="p">,</span> <span class="mi">4096</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>最后的迷惑操作：理论上此处已经涵盖了所有的case返回，但是最后还多了个跑不到的分支：</li>
 </ul>
-<pre tabindex="0"><code>WebGLRenderingContext.prototype.getParameter = function () {
-    ...
-     var ext = getParameter.apply(this, arguments);
-     console.log(&#34;WebGLRenderingContext extension &#34; + name + &#34; &#34; + (ext ? &#34;found&#34; : &#34;not found&#34;));
-     console.log(JSON.stringify(ext, null, 4));
-
-     return ext;
-}
-</code></pre><p>说实话我猜测此处他是想模拟一些参数，他们在getParameter之前必须先调用getExtension方法后才可以获取，但是此处加在最后属实看不懂，个人理解应该放在这个大if&hellip;else&hellip;前面；有时间我可以好好修复一下这个项目😂😂</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">     <span class="kd">var</span> <span class="nx">ext</span> <span class="o">=</span> <span class="nx">getParameter</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;WebGLRenderingContext extension &#34;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">ext</span> <span class="o">?</span> <span class="s2">&#34;found&#34;</span> <span class="o">:</span> <span class="s2">&#34;not found&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">ext</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="k">return</span> <span class="nx">ext</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>说实话我猜测此处他是想模拟一些参数，他们在getParameter之前必须先调用getExtension方法后才可以获取，但是此处加在最后属实看不懂，个人理解应该放在这个大if&hellip;else&hellip;前面；有时间我可以好好修复一下这个项目😂😂</p>
 <h4 id="其他的一些被hook的方法">其他的一些被Hook的方法</h4>
 <ul>
 <li>getSupportedExtension：比较简单，随机从extensions中间选择随机个keys并返回，出现异常则将所有的keys都返回。</li>
 </ul>
-<pre tabindex="0"><code>// extensions的keys可以参见getExtension部分
-const getSupportedExtensions = WebGLRenderingContext.prototype.getSupportedExtensions;
-WebGLRenderingContext.prototype.getSupportedExtensions = function () {
-    try {
-        console.log(&#34;WebGLRenderingContext.getSupportedExtensions&#34;)
-        var availableExtensions = Object.keys(extensions);
-        console.log(availableExtensions);
-        var itemsToGet = Math.floor(Math.random() * (availableExtensions.length - 6) + 5);
-        console.log(itemsToGet);
-        var selectedExtensions = get_random_items(availableExtensions, itemsToGet);
-        console.log(selectedExtensions);
-        return selectedExtensions;
-    } catch (a) {
-        console.log(a)
-        return Object.keys(extensions);
-    }
-}
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// extensions的keys可以参见getExtension部分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">getSupportedExtensions</span> <span class="o">=</span> <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getSupportedExtensions</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getSupportedExtensions</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;WebGLRenderingContext.getSupportedExtensions&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">availableExtensions</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">extensions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">availableExtensions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">itemsToGet</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">availableExtensions</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">itemsToGet</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">selectedExtensions</span> <span class="o">=</span> <span class="nx">get_random_items</span><span class="p">(</span><span class="nx">availableExtensions</span><span class="p">,</span> <span class="nx">itemsToGet</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">selectedExtensions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">selectedExtensions</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">extensions</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>针对一些headless浏览器有可能会出现canvas的一些属性异常（broken会为0），如canvas的width和height，以及offset，进行Hook，还是使用defineProperty重写get方法对属性进行hook：</li>
 </ul>
-<pre tabindex="0"><code>// in case of broken image return random height/width
-var size = 0;
-[&#39;height&#39;, &#39;width&#39;].forEach(property =&gt; {
-    const imageDescriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, property);
-    Object.defineProperty(HTMLImageElement.prototype, property, {
-        imageDescriptor,
-        get: function () {
-            // 如果canvas破损，则返回随机size
-            if (this.complete &amp;&amp; this.naturalHeight == 0) {
-                if (!size) {
-                    // 返回随机的长/宽
-                    size = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
-                }
-                return size;
-            }
-            // 未破损则返回正常size
-            return imageDescriptor.get.apply(this);
-        },
-    });
-}); 
-
-// hairline feature (headless can&#39;t render it normally)
-const imageDescriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, &#39;offsetHeight&#39;);
-Object.defineProperty(HTMLElement.prototype, &#39;offsetHeight&#39;, {
-    ...imageDescriptor,
-    get: function () {
-        if (this.id == &#39;modernizr&#39;) {
-            return 1;
-        }
-        return imageDescriptor.get.apply(this);
-    },
-});
-</code></pre><h3 id="插件执行">插件执行</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// in case of broken image return random height/width
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">property</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">imageDescriptor</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">HTMLImageElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">property</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">HTMLImageElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">property</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">imageDescriptor</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 如果canvas破损，则返回随机size
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">complete</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">naturalHeight</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">size</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// 返回随机的长/宽
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="nx">size</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="nx">size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 未破损则返回正常size
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">return</span> <span class="nx">imageDescriptor</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// hairline feature (headless can&#39;t render it normally)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">imageDescriptor</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="s1">&#39;offsetHeight&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">HTMLElement</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="s1">&#39;offsetHeight&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span><span class="nx">imageDescriptor</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">==</span> <span class="s1">&#39;modernizr&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">imageDescriptor</span><span class="p">.</span><span class="nx">get</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="插件执行">插件执行</h3>
 <p>方法比较简单，将整个大函数作为字符串，最后在html document中新建一个script tag，<em>script</em>.textContent赋值为字符串即可：</p>
-<pre tabindex="0"><code>var scriptCode = &#39;(&#39; + function () {
-    ...
-    function WebGLRenderingContext(canvas) {
-        ...
-    };
-    ...
-    WebGLRenderingContext.prototype.getExtension = function (ext) {
-        ...
-    };
-    ...
-    WebGLRenderingContext.prototype.getParameter = function () {
-        ...
-    }
-    ...
-} + &#39;)();&#39;; // 转成字符串，可直接执行
-
-// 新建script节点插入document中，即自动执行
-var script = document.createElement(&#39;script&#39;);
-script.textContent = scriptCode;
-(document.head || document.documentElement).appendChild(script);
-// 最后move掉代码即可
-script.remove();
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">scriptCode</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">WebGLRenderingContext</span><span class="p">(</span><span class="nx">canvas</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getExtension</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ext</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">WebGLRenderingContext</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getParameter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="o">+</span> <span class="s1">&#39;)();&#39;</span><span class="p">;</span> <span class="c1">// 转成字符串，可直接执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 新建script节点插入document中，即自动执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">script</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">scriptCode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">head</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 最后move掉代码即可
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">script</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     
@@ -2530,6 +3022,13 @@ script.remove();
     <div class="grow"></div>
 <nav class="pagination-single">
   
+    
+      <a href="https://summersummer3.github.io/posts/shortcodes/" class="pagination-single__left">
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
+        </div>
+        <div class="pagination-single__left-title">Shortcodes</div>      
+      </a>
     
     <div class="grow"></div>
     
