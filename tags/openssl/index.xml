@@ -14,11 +14,71 @@
     <managingEditor>techsum8@live.com (Techsum)</managingEditor>
     <webMaster>techsum8@live.com (Techsum)</webMaster>
     <copyright>©2022, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 07 May 2020 14:03:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 14:03:23 +0000</lastBuildDate>
     
         <atom:link href="https://summersummer3.github.io/tags/openssl/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>X.509系列（一）：X.509 v3格式下的证书</title>
+        <link>https://summersummer3.github.io/posts/x509_1/</link>
+        <pubDate>Wed, 23 Sep 2020 14:03:23 +0000</pubDate>
+        <author>techsum8@live.com (Techsum)</author>
+        <atom:modified>Wed, 23 Sep 2020 14:03:23 +0000</atom:modified>
+        <guid>https://summersummer3.github.io/posts/x509_1/</guid>
+        <description>X.509系列（一）：X.509 v3格式下的证书 目前手头上接到了一个新的任务，刚好又是和X.509证书打交道的工作，想到刚入职的时候第一份正</description>
+        
+        <dc:creator>Techsum</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>OpenSSL</category>
+            
+          
+        
+        
+          
+            
+              <category>密码学</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>X.509系列（一）：X.509 v3格式下的证书</title>
+        <link>https://summersummer3.github.io/posts/x509_2/</link>
+        <pubDate>Wed, 23 Sep 2020 14:03:23 +0000</pubDate>
+        <author>techsum8@live.com (Techsum)</author>
+        <atom:modified>Wed, 23 Sep 2020 14:03:23 +0000</atom:modified>
+        <guid>https://summersummer3.github.io/posts/x509_2/</guid>
+        <description>ASN.1编解码标准X.690 书接上文，我们有提到X.509格式的证书通常是使用ASN.1的格式编码的。那么ASN.1是个啥，如何进行编码解</description>
+        
+        <dc:creator>Techsum</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>OpenSSL</category>
+            
+          
+        
+        
+          
+            
+              <category>密码学</category>
+            
+          
+        
+        
+      </item>
       
       <item>
         <title>OpenSSL Engine加载</title>
