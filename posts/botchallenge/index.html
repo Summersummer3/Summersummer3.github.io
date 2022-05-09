@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ECDSA与SM2 – Techsum&#39;s Blog</title>
+    <title> – Techsum&#39;s Blog</title>
     
 
 
@@ -653,7 +653,7 @@
     
     var baseurl = JSON.parse("\"https://summersummer3.github.io/\"");
     
-    var permalink = JSON.parse("\"https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/\"");
+    var permalink = JSON.parse("\"https://summersummer3.github.io/posts/botchallenge/\"");
     
     var langprefix = JSON.parse("\"\"");
     var searchResults = null;
@@ -1331,24 +1331,21 @@
 
 
     
-<meta name="description" content="椭圆曲线算法入门及ECDSA与SM2算法详解" />
+<meta name="description" content="Techsum&#39;s Blog" />
 
 
-<meta name="keywords" content="密码学">
-
-<meta name="created" content="2020-04-01T14:03:23&#43;0000">
-<meta name="modified" content="2020-04-01T14:03:23&#43;0000">
-<meta property="article:published_time" content="2020-04-01T14:03:23&#43;0000">
+<meta name="created" content="0001-01-01T00:00:00&#43;0000">
+<meta name="modified" content="0001-01-01T00:00:00&#43;0000">
+<meta property="article:published_time" content="0001-01-01T00:00:00&#43;0000">
 
 <meta name="author" content="Techsum">
-<meta property="article:author" content="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/@Techsum">
 
 
 <meta property="og:site_name" content="Techsum&#39;s Blog">
-<meta property="og:title" content="ECDSA与SM2">
-<meta property="og:url" content="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://summersummer3.github.io/posts/botchallenge/">
 <meta property="og:type" content="article">
-<meta property="og:description" content="椭圆曲线算法入门及ECDSA与SM2算法详解">
+<meta property="og:description" content="Techsum&#39;s Blog">
 
 <meta name="generator" content="Hugo 0.98.0" />
 <meta name="msapplication-TileColor" content="#fff">
@@ -1359,7 +1356,7 @@
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
 
-<link rel="canonical" href="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/">
+<link rel="canonical" href="https://summersummer3.github.io/posts/botchallenge/">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -1385,16 +1382,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "ECDSA与SM2",
-    "datePublished": "2020-04-01T14:03:23Z",
-    "dateModified": "2020-04-01T14:03:23Z",
-    "url" : "https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/",
-    "description": "椭圆曲线算法入门及ECDSA与SM2算法详解",
-    "keywords": ["密码学"],
-    "author": {
-      "@type": "Person",
-      "name": "Techsum"
-    },
+    "headline": "",
+    "datePublished": "0001-01-01T00:00:00Z",
+    "dateModified": "0001-01-01T00:00:00Z",
+    "url" : "https://summersummer3.github.io/posts/botchallenge/",
+    "description": "很久没有写博客了，主要是最近换了个地打工，开始对一些反自动化的工作开始进行研究；这是一篇学习笔记，欢迎交流~ 背景与网站介绍 Bot Challeng",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://summersummer3.github.io/"
@@ -1704,7 +1696,7 @@
   
   <li  class="is-active" >
     
-      <span>ECDSA与SM2</span>
+      <a href="https://summersummer3.github.io/posts/botchallenge/" class="capitalize">Techsum&#39;s Blog</a>
     
   </li>
   
@@ -1716,16 +1708,14 @@
   <div class="single ">
     <div class="single__nojs"></div>
     <script>document.querySelector('.single').classList.remove('hide'); document.querySelector('.single__nojs').classList.add('hide');</script>
-    <h2 class="single__title" data-ani="true">ECDSA与SM2</h2>
+    <h2 class="single__title" data-ani="true"></h2>
     <h3 class="single__subtitle"></h3>
     <div class="single__meta">
       
 <div class="single__infos">
   <time class="single__info" title="">📅&nbsp; </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;8&nbsp; </span>
-  
-  &nbsp;&middot;&nbsp; <span class="single__info" title="">✍️&nbsp;Techsum</span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;14&nbsp; </span>
   
   <span class="single__info">
     
@@ -1735,269 +1725,940 @@
       
 <ul class="single__tags caption">
   
-  🏷️
-  
-
-  <li><a href="https://summersummer3.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" class="single__tag" title="密码学">#密码学</a></li>
 
 </ul>
 
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <h2 id="椭圆曲线基本学习">椭圆曲线基本学习</h2>
-<p>文章：https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/#elliptic-curves</p>
-<p>书籍：密码学原理与实践 第6章</p>
-<h3 id="椭圆曲线方程">椭圆曲线方程</h3>
-<p>$$<br />
-\left\lbrace (x, y) \in \mathbb{R}^2\ |\ y^2 = x^3 + ax + b,\ 4 a^3 + 27 b^2 \ne 0 \right\rbrace\ \cup\ \left\lbrace 0 \right\rbrace<br />
-$$</p>
-<h3 id="群与阿贝尔群">群与阿贝尔群</h3>
-<p>​	$\mathbb{G}$ 是一个 <strong>群 (Group)</strong> 如果该集合上定义了一种运算 $ + $:</p>
-<ol>
-<li><strong>封闭性</strong>: $a \in \mathbb{G}, b \in \mathbb{G}$ ,则 $a + b \in \mathbb{G}$ ;</li>
-<li><strong>结合律:</strong> $a \in \mathbb{G}, b \in \mathbb{G}, c \in \mathbb{G}$, $ (a + b) + c = a + (b +c)$ ;</li>
-<li>存在<strong>单位元</strong> $0 \in \mathbb{G}$, 使得 $a \in \mathbb{G}$，$a + 0 = 0 + a = a$;</li>
-<li>每一个元素存在<strong>逆元</strong>：对于集合内任意元素$a, \exists b \in \mathbb{G}$ 满足 $a + b = 0$，记做$a = -b$</li>
-</ol>
-<p>如果该群还满足:</p>
-<ol start="5">
-<li><strong>交换律：</strong> $a \in \mathbb{G}, b \in \mathbb{G}$， $a + b = b + a$</li>
-</ol>
-<p>则该群被称为<strong>阿贝尔群</strong>.</p>
-<h3 id="有限域">有限域</h3>
-<p>$\mathbb{F}$ 是一个 <strong>域(Field)</strong> 如果该集合上定义了两种运算 $(\cdot\ ;+)$</p>
-<ol>
-<li><strong>封闭性:</strong> $a \in \mathbb{F}, b \in \mathbb{F}$，则 $a + b \in \mathbb{G}; a \cdot b \in \mathbb{G}$</li>
-<li><strong>结合律:</strong> $a \in \mathbb{F}, b \in \mathbb{F}, c \in \mathbb{F}$，$ (a + b) + c = a + (b +c);\ (a \cdot b) \cdot c = a \cdot (b \cdot c)$</li>
-<li>存在<strong>加法单位元</strong> $0 \in \mathbb{F}$，使得 $a \in \mathbb{F}$，$a + 0 = 0 + a = a$</li>
-<li>存在<strong>乘法单位元</strong> $e \in \mathbb{F}$，使得 $a \in \mathbb{F}$，$a \cdot e = e \cdot a = a$</li>
-<li><strong>交换律：</strong> $a \in \mathbb{F}, b \in \mathbb{F}$， $a + b = b + a$，$a \cdot b = b \cdot a$</li>
-<li><strong>逆元:</strong> 对于集合内任意元素$a, \exists b \in \mathbb{F}; \exists c \in \mathbb{F}$ 满足 $a + b = 0; a \cdot c = e$， 记做$a = -b;\ a = c^{-1}$，$0^{-1}$无意义</li>
-<li><strong>分配律:</strong>  $a \in \mathbb{F}, b \in \mathbb{F}, c \in \mathbb{F}$；$a \cdot (b + c) = a \cdot b + a \cdot c$</li>
-</ol>
-<p>注意：加法逆元定义减法，乘法逆元定义除法</p>
-<p><strong>有限域</strong>指的是元素有限的域，属于计算机和密码学的基本数学原理之一</p>
-<p>典型的有限域例子：$\mathbb{F}_p = {0, 1, &hellip;, p-1}$,  $p$为质数，</p>
-<p>定义 (+)：$a + b \mod p$</p>
-<p>定义 ($\cdot$)：$a \cdot b \mod p$</p>
-<p>计算 $a ^ {-1}$ : 拓展欧几里得算法</p>
-<h3 id="椭圆曲线上的群">椭圆曲线上的群</h3>
-<ol>
-<li>曲线上的点的集合组成群</li>
-<li>$x$无穷远点为单位元$0$</li>
-<li>点$P$与它的逆$Q$关于直线$x = 0$对称</li>
-<li><strong>加法</strong>定义：$P + Q + R = 0$，如果这三点是非0点，且在同一条直线上(即一条直线与该曲线相交于三点，无穷远点为0)  $=&gt; P + Q = -R$</li>
-</ol>
-<p>加法同样需要满足结合律.</p>
-<h3 id="几何意义上的加法">几何意义上的加法</h3>
-<p>最重要的情况:</p>
-<ol>
-<li>如果 $P=Q, P + Q$，物理意义是切线, 与曲线交于另一点$R$, 满足：$2P = -R$</li>
-<li>如果$P, Q$直线的第三点刚好为$P\ or\ Q$，则也将包含一条切线，计算相同: $P + Q + P = 0\ =&gt; P + Q = -P$</li>
-</ol>
-<h3 id="代数意义上的加法">代数意义上的加法</h3>
-<h4 id="不同两点相加">不同两点相加</h4>
-<p>$P(P_x, P_y), Q(Q_x, Q_y)，P\ \ne Q$, 求  $T(T_x, T_y) = P + Q$</p>
-<p>曲线方程：$y^2 = x^3 +ax + b$</p>
-<ol>
+      <p>很久没有写博客了，主要是最近换了个地打工，开始对一些反自动化的工作开始进行研究；这是一篇学习笔记，欢迎交流~</p>
+<h2 id="背景与网站介绍">背景与网站介绍</h2>
+<p>Bot Challenge是专门的web bot检测的网站：https://bot.incolumitas.com/#botChallenge</p>
+<p>该网站对用户行为的检测手段很完整，值得学习；</p>
+<p><img src="../../images/blog/2/1.png" alt="image" /></p>
+<h2 id="用户行为数据">用户行为数据</h2>
+<h3 id="总体收集的event">总体收集的event</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">recordedEvents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;mousemove&#34;</span><span class="p">,</span> <span class="s2">&#34;mousedown&#34;</span><span class="p">,</span> <span class="s2">&#34;mouseup&#34;</span><span class="p">,</span> <span class="s2">&#34;dblclick&#34;</span><span class="p">,</span> <span class="s2">&#34;contextmenu&#34;</span><span class="p">,</span> <span class="s2">&#34;scroll&#34;</span><span class="p">,</span> <span class="s2">&#34;resize&#34;</span><span class="p">,</span> <span class="s2">&#34;keydown&#34;</span><span class="p">,</span> <span class="s2">&#34;keyup&#34;</span><span class="p">,</span> <span class="s2">&#34;touchstart&#34;</span><span class="p">,</span> <span class="s2">&#34;touchmove&#34;</span><span class="p">,</span> <span class="s2">&#34;touchcancel&#34;</span><span class="p">,</span> <span class="s2">&#34;touchend&#34;</span><span class="p">,</span> <span class="s2">&#34;load&#34;</span><span class="p">,</span> <span class="s2">&#34;DOMContentLoaded&#34;</span><span class="p">,</span> <span class="s2">&#34;visibilitychange&#34;</span><span class="p">,</span> <span class="s2">&#34;pagehide&#34;</span><span class="p">,</span> <span class="s2">&#34;beforeunload&#34;</span><span class="p">,</span> <span class="s2">&#34;unload&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">newRecordedEvents</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;copy&#34;</span><span class="p">,</span> <span class="s2">&#34;paste&#34;</span><span class="p">,</span> <span class="s2">&#34;deviceorientation&#34;</span><span class="p">,</span> <span class="s2">&#34;devicemotion&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">onlyWindowEvent</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;scroll&#34;</span><span class="p">,</span> <span class="s2">&#34;keydown&#34;</span><span class="p">,</span> <span class="s2">&#34;keyup&#34;</span><span class="p">,</span> <span class="s2">&#34;resize&#34;</span><span class="p">,</span> <span class="s2">&#34;copy&#34;</span><span class="p">,</span> <span class="s2">&#34;paste&#34;</span><span class="p">,</span> <span class="s2">&#34;deviceorientation&#34;</span><span class="p">,</span> <span class="s2">&#34;devicemotion&#34;</span><span class="p">,</span> <span class="s2">&#34;visibilitychange&#34;</span><span class="p">,</span> <span class="s2">&#34;load&#34;</span><span class="p">,</span> <span class="s2">&#34;DOMContentLoaded&#34;</span><span class="p">,</span> <span class="s2">&#34;pagehide&#34;</span><span class="p">,</span> <span class="s2">&#34;beforeunload&#34;</span><span class="p">,</span> <span class="s2">&#34;unload&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">recordNewEvents</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">recordedEvents</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">recordedEvents</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">newRecordedEvents</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>具体行为收集可以分为以下几类，主要分析下收集的具体数据和触发收集的事件</p>
+<h3 id="鼠标动作mouseevent">鼠标动作(MouseEvent)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">getMetaKeysBitstring</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">t</span> <span class="o">+=</span> <span class="o">!</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">e</span><span class="p">.</span><span class="nx">ctrlKey</span> <span class="o">?</span> <span class="s2">&#34;1&#34;</span> <span class="o">:</span> <span class="s2">&#34;0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span> <span class="o">+=</span> <span class="o">!</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">e</span><span class="p">.</span><span class="nx">shiftKey</span> <span class="o">?</span> <span class="s2">&#34;1&#34;</span> <span class="o">:</span> <span class="s2">&#34;0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span> <span class="o">+=</span> <span class="o">!</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">e</span><span class="p">.</span><span class="nx">altKey</span> <span class="o">?</span> <span class="s2">&#34;1&#34;</span> <span class="o">:</span> <span class="s2">&#34;0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span> <span class="o">+=</span> <span class="o">!</span><span class="mi">0</span> <span class="o">===</span> <span class="nx">e</span><span class="p">.</span><span class="nx">metaKey</span> <span class="o">?</span> <span class="s2">&#34;1&#34;</span> <span class="o">:</span> <span class="s2">&#34;0&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">getMouseFrame</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nx">t</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">screenX</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">screenY</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">button</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMetaKeysBitstring</span><span class="p">(</span><span class="nx">e</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">mousemoveListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getMouseFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;m&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">mousedownListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getMouseFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;md&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">mouseupListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getMouseFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;mu&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dblclickListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getMouseFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;dc&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">contextmenuListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getMouseFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;cm&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>数据（列表形式，都是以事件名简写打头，后面是收集的具体数据，下同）：</p>
+<ul>
 <li>
-<p>计算斜率 $k = \frac{P_y - Q_y}{P_x - Q_x}$</p>
+<p>clientX：double（原为long）；鼠标在事件触发时的应用浏览器内的水平坐标</p>
 </li>
 <li>
-<p>曲线方程连立上直线方程 $y = kx + c$</p>
-<p>=&gt; $ 0 = x^3 - k^2x^2 + (a - 2kc)x + b - c^2$</p>
+<p>clientY：double（原为long）；鼠标在事件触发时的应用浏览器内的垂直坐标</p>
 </li>
 <li>
-<p>铭记三次求根公式之三根之和是二次项系数的相反数: $T_x = k^2 - P_x - Q_x$</p>
+<p>screenX：double（原为long）；鼠标在事件触发时全局（屏幕）中的水平坐标</p>
 </li>
 <li>
-<p>由于斜率 $k = \frac{T_y - P_y}{T_x - P_x}$，$T_y = k(T_x - P_x) + P_y$</p>
-</li>
-</ol>
-<h4 id="相同两点相加">相同两点相加</h4>
-<p>$P(P_x, P_y)$，求 $T(T_x,T_y) = P + P = 2P$</p>
-<p>和上面基本相同，但计算直线斜率需要根据切线计算</p>
-<p>对曲线方程两边求隐微分:</p>
-<p>$\mathrm{d}(y^2) = \mathrm{d}(x^3 +ax + b)$ =&gt; $2y\mathrm{d}y = (3x^2 + a)\mathrm{d}x$</p>
-<p>将$P_x, P_y$带入，获得斜率:</p>
-<p>$k = \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{3P_x^2 + a}{2P_y}$</p>
-<p>所以 $T_x = k^2 - 2P_x$，$T_y = k(T_x - P_x) + P_y$</p>
-<h4 id="标量积">标量积</h4>
-<p>$P(P_x, P_y)$，求 $nP = \underbrace{P + P + P + &hellip; + P}_{\text{n times}}$，$n &gt; 2$</p>
-<ol>
-<li>
-<p>将 $n$ 用二进制表示；以151为例子，$151_{10} = 10010111_2 = 2^0 + 2^1 + 2^2 + 2^4 + 2^7$</p>
+<p>screenY：double（原为long）；鼠标在事件触发时全局（屏幕）中的垂直坐标</p>
 </li>
 <li>
-<p>$nP = P + 2P + 2^2P + 2^4P + 2^7P$</p>
+<p>button: number；代表事件触发时按下的鼠标按键：</p>
+<ul>
+<li><code>0</code>：主按键，通常指鼠标左键或默认值（译者注：如document.getElementById(&lsquo;a&rsquo;).click()这样触发就会是默认值）</li>
+</ul>
 </li>
 <li>
-<p>根据上面两项计算规则，分别计算$P, 2P，P + 2P$</p>
+<p><code>1</code>：辅助按键，通常指鼠标滚轮中键</p>
 </li>
 <li>
-<p>计算$2^2P = 4P = 2 \cdot 2P$，对$2P$做相同点相加即可</p>
+<p><code>2</code>：次按键，通常指鼠标右键</p>
 </li>
 <li>
-<p>同理计算$2^3P = 8P = 2 \cdot 4P$，$2^4P = 16P = 2 \cdot 8P$, 依次类推，每计算到一个二进制中为$1$的阶数， 完成一次两点相加即可</p>
-</li>
-</ol>
-<h3 id="曲线上的有限域">曲线上的有限域</h3>
-<p>取几何曲线上的坐标$(x, y)$，$x, y \in \mathbb{F}_p$, $p$ 是一个质数，形成一条离散曲线：<br />
-$$<br />
-\begin{array}{rcl}<br />
-\left\lbrace(x, y) \in (\mathbb{F}_p)^2 \right. &amp; \left. | \right. &amp; \left. y^2 \equiv x^3 + ax + b \pmod{p}, \right.<br />
-\left. 4a^3 + 27b^2 \not\equiv 0 \pmod{p}\right\rbrace\ \cup\ \left\lbrace0\right\rbrace<br />
-\end{array}<br />
-$$</p>
-<p>从连续曲线上的加法可以推出<strong>有限域上的加法公式</strong>：</p>
-<p>$P(P_x, P_y), Q(Q_x, Q_y)，P\ \ne Q$, 求  $T(T_x, T_y) = P + Q$<br />
-$$<br />
-\begin{array}{rcl}<br />
-k &amp; = &amp;(P_y - Q_y)(P_x - Q_x)^{-1} \bmod{p} \<br />
-T_x &amp; = &amp; (k^2 - P_x - Q_x) \bmod{p} \<br />
-T_y &amp; = &amp; [P_y + k(T_x - P_x)] \bmod{p} \<br />
-\end{array}<br />
-$$<br />
-若$P\ = Q$<br />
-$$<br />
-k = (3 P_x^2 + a)(2 P_y)^{-1} \bmod{p}<br />
-$$</p>
-<h3 id="曲线上的循环子群">曲线上的循环子群</h3>
-<h4 id="循环子群的阶">循环子群的阶</h4>
-<p>对于离散曲线上的任意点$P$, 存在最小的 $n$ 使得 $nP = 0$, 此时 $n$ 称作以 $P$ 为基点的循环子群的阶</p>
-<h4 id="找基点的方法">找基点的方法</h4>
-<ol>
-<li>计算椭圆曲线的阶$N$ (Schoof&rsquo;s algorithm: <a href="https://en.wikipedia.org/wiki/Schoof's_algorithm">https://en.wikipedia.org/wiki/Schoof%27s_algorithm</a>)</li>
-<li>选择一个阶为$n$的子群。n必须是素数且必须是$N$的因子</li>
-<li>计算辅因子 $h = N/n$</li>
-<li>在曲线上选择一个随机的点 $T$</li>
-<li>计算$G = hT$，点乘</li>
-<li>如果$G = 0$, 返回4， 否则找到基点 $G$, 子群的阶为 $n$, $h$ 被称为辅因子</li>
-</ol>
-<p><strong>原理</strong>:  根据拉格朗日定理，$n$ 整除 $N$ 且 $n$ 为质因子，且任意点 $T$  满足$NT = 0$， 则：$n(hT) = 0$ 恒成立, 那么若$hT\ \ne 0$，则 $hT$ 作为基点的阶一定为$n$. ($n$ 一定是素数, 否则不成立)</p>
-<h3 id="曲线上的离散对数问题">曲线上的离散对数问题</h3>
-<p>对于曲线上的基点 $G$， 已知 $n$ 计算 $P = nG$ 是容易的</p>
-<p>但是已知$P, G$, 计算 $n$ 是很困难的</p>
-<h2 id="ecdh--ecdsa">ECDH &amp; ECDSA</h2>
-<h3 id="ecdh">ECDH</h3>
-<ol>
-<li>CA选用共同曲线，并下发相同基点$G$，其阶数为 $n$, 则私钥的取值范围为$d \in {1, &hellip;, n - 1}$</li>
-<li>Alice随机选择私钥$d_A$，计算 Pubkey: $P_A = d_AG$, 通过非安全信道传递给Bob</li>
-<li>Bob随机选择私钥$d_B$，计算 Pubkey: $P_B = d_BG$，通过非安全信道传递给Alice</li>
-<li>Alice和Bob分别计算$S = d_AP_b = d_BP_A = d_Ad_BG$， 共享秘密成功</li>
-</ol>
-<p>秘密共享成功后可以每次通信时明文传递salt, 每次通过 $key = KDF(salt + S)$，得到具体通信对称秘钥，加密通讯(TLS/SSL)</p>
-<p>通过服务器动态生成的ECDH一般称作<strong>ECDHE</strong></p>
-<h3 id="ecdsa">ECDSA</h3>
-<p>定义依然继承上文，$n$ 为 $G$ 作为基点的子群阶数</p>
-<p>定义 $bit(x)$ 为表示 $x$ 需要的比特数；注意计算DSA时，若摘要值的比特数 $bits(digest(plain_test)) &gt; bits(n)$，则需要截取摘要值的低 $bits(n)$ 进行签名.</p>
-<h4 id="符号标记">符号标记</h4>
-<p>截取前n-bits函数 ： $trun_{bit(n)}(digest)$</p>
-<p>截取后的摘要值：$z = trun_{bit(n)}(digest(plain_test))$，$digest$ 需要选择安全摘要算法：内部要求<strong>SHA-256</strong>以上</p>
-<p>私钥：$d$</p>
-<p>公钥：$P = dG$</p>
-<h4 id="签名算法">签名算法</h4>
-<ol>
-<li>
-<p>随机选择 $k \in {1, &hellip;, n -1 }$</p>
+<p><code>3</code>：第四个按钮，通常指浏览器后退按钮</p>
 </li>
 <li>
-<p>计算$T = kG = (T_x, T_y)$</p>
+<p><code>4</code>：第五个按钮，通常指浏览器的前进按钮</p>
 </li>
 <li>
-<p>计算数字 $r = T_x \mod n$， 若$r = 0$则返回1</p>
+<p>MetaKey：String；收集触发事件时对应按键是否被按下；&lsquo;0&rsquo;与'1&rsquo;组成的字符串</p>
+</li>
+</ul>
+<p>事件：</p>
+<ul>
+<li>mousemove：鼠标移动</li>
+<li>mousedown：鼠标按钮按下时触发</li>
+<li>mouseup：鼠标按钮松开时触发</li>
+<li>dblclick：鼠标双击时触发</li>
+<li>contextmenu：打开上下文菜单时触发，例如在页面右键打开菜单</li>
+</ul>
+<h3 id="键盘动作keyboardevent">键盘动作(KeyboardEvent)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">getKeyFrame</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nx">t</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">location</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">repeat</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMetaKeysBitstring</span><span class="p">(</span><span class="nx">e</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">keydownListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getKeyFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;kd&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">keyupListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getKeyFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;ku&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>数据：</p>
+<ul>
+<li>code：String；键盘上的物理键（与按键生成的字符相对）。换句话说，此属性返回一个值，该值不会被键盘布局或修饰键的状态改变。如QWERTY布局键盘上的“q”键返回的code是“<code>KeyQ</code>”</li>
+<li>key: String；返回用户按下的真实逻辑输入。它还与 <code>shiftKey</code> 等调节性按键的状态和键盘的区域 / 和布局有关。</li>
+<li>location: <code>unsigned long</code>，表示按键在键盘或其他设备上的位置, 主要针对ctrl/shift等键盘上有多个的按键，以及数字/enter等按键：
+<ul>
+<li>0: 表示不区分或者无法区分</li>
+<li>1: 来自左边的ctrl/shift/alt&hellip;</li>
+<li>2: 来自右边的按键</li>
+<li>3: 来自数字小键盘的按键</li>
+<li>其他值已废弃</li>
+</ul>
+</li>
+<li>repeat: Bool；如果按键被一直按住，返回值为<code>true</code></li>
+<li>Metakey: 与鼠标事件一样</li>
+</ul>
+<p>事件：</p>
+<ul>
+<li>keydown：键盘按下触发</li>
+<li>keyup：键盘松开触发</li>
+</ul>
+<h3 id="触摸动作touchevent">触摸动作(TouchEvent)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">getTouchFrame</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">          <span class="p">,</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">clientX</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">clientY</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">screenX</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">screenY</span><span class="p">),</span> <span class="nx">a</span><span class="p">.</span><span class="nx">identifier</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">mobileExperimental</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">o</span> <span class="o">=</span> <span class="nx">o</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">radiusX</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">radiusY</span><span class="p">),</span> <span class="nx">a</span><span class="p">.</span><span class="nx">rotationAngle</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">force</span><span class="p">])),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nx">t</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getMetaKeysBitstring</span><span class="p">(</span><span class="nx">e</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">touchstartListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getTouchFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;ts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">touchmoveListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getTouchFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;tm&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">touchcancelListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getTouchFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;tc&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">touchendListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getTouchFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s2">&#34;te&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>数据：</p>
+<ul>
+<li>touches: List；是一个touchList，一个触摸平面上所有触点的列表。例如，如果一个用户用三根手指接触屏幕（或者触控板），与之对应的 <code>TouchList</code> 会包含每根手指的 <code>[Touch](https://developer.mozilla.org/zh-CN/docs/Web/API/Touch)</code> 对象，总共三个
+<ul>
+<li>touch.clientX/Touch.clientY/Touch.screenX/Touch.screenY：double (之前为long)；同鼠标事件同名属性</li>
+<li>touch.identifier：long；返回一个可以唯一地识别和触摸平面接触的点的值. 这个值在这根手指（或触摸笔等）所引发的所有事件中保持一致, 直到它离开触摸平面；主要是touchmove中</li>
+</ul>
+</li>
+</ul>
+<p>底下的事件将是Experimental功能：</p>
+<ul>
+<li>touch.radiusX：float；手指与屏幕接触面的椭圆水平轴半径</li>
+<li>touch.radiusY：float；手指与屏幕接触面的椭圆垂直轴半径</li>
+<li>touch.rotationAngle: float；返回以度为单位的旋转角. 由<code>radiusX</code> 和 <code>radiusY</code> 描述的正方向的椭圆，通过顺时针旋转这个角度后，能最精确地覆盖住用户和触摸平面的接触面的角度. 这个值可能从0到90</li>
+<li>touch.force：float；手指挤压触摸平面的压力大小, 从0.0(没有压力)到1.0(最大压力)</li>
+</ul>
+<p>事件：</p>
+<ul>
+<li>
+<p>touchstart: 当用户在触摸平面上放置了一个触点时触发</p>
 </li>
 <li>
-<p>计算$s = k^{-1}(z + rd) \mod n$, 如果$s = 0$，返回1</p>
+<p>touchmove: 当用户在触摸平面上移动触点时触发; 当触点的半径、旋转角度以及压力大小发生变化时，也将触发此事件</p>
 </li>
 <li>
-<p>最后签名：$(r, s)$</p>
-</li>
-</ol>
-<h4 id="验证算法">验证算法</h4>
-<ol>
-<li>计算 $u_1 = s^{-1}z \mod n$</li>
-<li>计算 $u_2 = s^{-1}r \mod n$</li>
-<li>计算 $T&rsquo; = u_1G\ +\ u_2P$</li>
-</ol>
-<p>若$T&rsquo;_x = r \mod n$，验签成功，否则失败</p>
-<h4 id="正确性">正确性</h4>
-<p>我们尝试计算的其实还是$T = kG$，若此时 $z$ 是正确摘要值，则有:</p>
-<p>$k = s^{-1}(z + rd)\ mod\ n\ =&gt;\ k = s^{-1}z + s^{-1}rd \mod n$</p>
-<p>带入上式  $T = s^{-1}zG + s^{-1}rdG = u_1G + u_2(dG) = u1G + u_2P$</p>
-<p>所以若 $z$ 发生改变，则此时计算出来的 $T&rsquo;_x\ \ne\ r \mod n$</p>
-<h4 id="随机数相等下的私钥复原">随机数相等下的私钥复原</h4>
-<p>若每次取出的随机数 $k$ 都相等：</p>
-<p>获取两份签名与摘要：$z_1, (r_1, s_1)$ 和 $z_2, (r_2, s_2)$</p>
-<p>容易得到: $r_1 = r_2 = (kG)_x \mod n$</p>
-<p>之后通过 $s_1 - s_2$ 计算 $k$：</p>
-<p>$s_1 - s_2 = k^{-1}(z_1 + rd - z_2 - rd) \mod n$</p>
-<p>$=&gt; k = (z_1 - z_2)(s_1 - s_2)^{-1} \mod n$</p>
-<p>之后计算 $d$ 就很简单了:</p>
-<p>$ d = r^{-1}(s_1k - z_1) \mod n$</p>
-<h4 id="通过签名恢复公钥">通过签名恢复公钥</h4>
-<p>若已知曲线上 $x = r$ 对应的两点 $R, R&rsquo;$，则可以从签名$(s, r)$中恢复公钥$P$:</p>
-<p>$s = k^{-1}(z + rd) \mod n$</p>
-<p>$=&gt; skG = (z + rd)G$</p>
-<p>注意 $kG = R$ 或者 $kG = R&rsquo;$, 分别作为备选带入上式，同时$P = dG$:</p>
-<p>$=&gt;\ sR - zG = r(dG)\ =&gt; P = r^{-1}(sR - zG)$</p>
-<p>or $=&gt;\ P = r^{-1}(sR&rsquo; - zG)$</p>
-<h5 id="实现方法">实现方法</h5>
-<p><strong>点压缩</strong>：增加2bit来标识，一个用来标识 $R_x = r\mod n$ 或者 $R_x = r$，另一个标识$R_y$是基数还是偶数：</p>
-<p>因为$R, R&rsquo;$关于 $x$ 轴对称，$R_y + R&rsquo;_y = 0 \mod p$， 所以$R_y ,P&rsquo;_y$为一基一偶，可用一个bit标识</p>
-<p>这样可以达到多用增加一个byte(04标记等)，来达成无需传递公钥即可验签</p>
-<p>相关算法与代码：https://busy.org/@oflyhigh/397bw1</p>
-<h4 id="伪造签名">伪造签名</h4>
-<h5 id="构造e方法">构造e方法</h5>
-<ol>
-<li>随机选择 $a, b \in {1, &hellip; n}$, 计算$T = aG + bP, r = T_x$</li>
-<li>计算 $s = rb^{-1}, e = arb^{-1}$</li>
-<li>若$e$ 为伪造摘要值, 可伪造合法签名 $(r, s)$</li>
-</ol>
-<p><strong>正确性</strong>:</p>
-<p>$u_1 = s^{-1}e \mod \ n$</p>
-<p>$u_2 = s^{-1}r \mod\ n$</p>
-<p>将$s, e$带入</p>
-<p>$u_1G + u_2P = (rb^{-1})^{-1}(arb^{-1})G + (rb^{-1})^{-1}rP = (rr^{-1})(bb^{-1})aG + (rr^{-1})bP = aG + bP = T$</p>
-<p>由于$r = T_x \mod n$，校验通过</p>
-<p>相关算法与代码：https://github.com/GoldSaintEagle/ECDSA-SM2-Signing-Attack</p>
-<h2 id="sm2签名">SM2签名</h2>
-<p>标记不变，$z = SM3(message)$ 是消息的摘要值（国密要求摘要使用SM3），$d$ 是私钥， $P = dG$是公钥</p>
-<h3 id="签名算法-1">签名算法</h3>
-<ol>
-<li>
-<p>随机选择 $k \in {1, &hellip;, n -1 }$</p>
+<p>touchcancel: 当触点由于某些原因被中断时触发。有几种可能的原因如下（具体的原因根据不同的设备和浏览器有所不同）：</p>
+<ul>
+<li>由于某个事件出现而取消了触摸：例如触摸过程被弹窗打断。</li>
+</ul>
 </li>
 <li>
-<p>计算$T = kG = (T_x, T_y)$</p>
+<p>触点离开了文档窗口，而进入了浏览器的界面元素、插件或者其他外部内容区域。</p>
 </li>
 <li>
-<p>计算数字 $r = T_x + z \mod n$， 若$r = 0$则返回1</p>
+<p>当用户产生的触点个数超过了设备支持的个数，从而导致 <code>[TouchList](https://developer.mozilla.org/zh-CN/docs/Web/API/TouchList)</code> 中最早的 <code>[Touch]</code> 对象被取消。</p>
 </li>
 <li>
-<p>计算$s = (1 + d)^{-1}(k - rd) \mod n$, 如果$s = 0$，返回1</p>
+<p>touchend: 当一个触点被用户从触摸平面上移除（即用户的一个手指或手写笔离开触摸平面）时触发。当触点移出触摸平面的边界时也将触发。例如用户将手指划出屏幕边缘</p>
+</li>
+</ul>
+<h3 id="元素移动相关">元素移动相关</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">scrollListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;s&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">scrollingElement</span><span class="p">.</span><span class="nx">scrollLeft</span><span class="p">),</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">scrollingElement</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">resizeListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>ScrollEvent：文档视图或者一个元素在滚动时，会触发; 主要是收集滚动条数据
+<ul>
+<li>scrollingElement.scrollLeft：integer(有比例缩放的系统可能为float)；滚动条到最左边的距离</li>
+<li>scrollingElement.scrollTop：integer(有比例缩放的系统可能为float)；滚动条到最顶端的距离</li>
+</ul>
+</li>
+<li>resizeEvent：调整视窗大小时触发该事件
+<ul>
+<li>window.innerWidth：integer；返回以像素为单位的窗口的内部宽度。如果垂直滚动条存在，则这个属性将包括它的宽度。</li>
+<li>window.innerHeight：integer；返回以像素为单位的窗口的内部高度度。如果有水平滚动条，也包括滚动条高度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="页面相关事件">页面相关事件</h3>
+<p>主要是页面加载，tab切换等：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">loadListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;lo&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">DOMContentLoadedListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;dcl&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">visibilitychangeListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;vc&#34;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">visibilityState</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pagehideListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;ph&#34;</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">persisted</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">beforeunloadListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;bu&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">unloadListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;ul&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>load：当整个页面及所有依赖资源如样式表和图片都已完成加载时，将触发</p>
 </li>
 <li>
-<p>最后签名：$(r, s)$</p>
+<p>DOMContentLoaded：当纯HTML被完全加载以及解析时，事件会被触发，而不必等待样式表，图片或者子框架完成加载</p>
 </li>
-</ol>
-<h3 id="验证算法-1">验证算法</h3>
-<ol>
-<li>计算消息值摘要$z&rsquo; = SM3(message)$</li>
-<li>计算$T&rsquo; = sG + (r + s)P$</li>
-<li>判断$r\ ?= T&rsquo;_x + z \mod n$</li>
-</ol>
-<h3 id="正确性-1">正确性</h3>
-<p>首先计算 $k$ :</p>
-<p>$s = (1 + d)^{-1}(k - rd) \mod n$</p>
-<p>=&gt; $s(1 + d) + rd = k \mod n$ =&gt; $s + (s + r)d = k \mod n$</p>
-<p>所以 ：</p>
-<p>$T = kG = sG + (s + r)(dG) = sG + (s + r)P = T'$</p>
-<p>因此可以推导：</p>
-<p>$r = (T_x + z) = (T&rsquo;_x + z) \mod n$</p>
-<p>所以如果$r = T&rsquo;_x + z&rsquo; \mod n$， 则 $z&rsquo;$ 验签通过，否则 $z&rsquo;$ 摘要有误</p>
-
+<li>
+<p>visibilitychange：当其选项卡的内容变得可见或被隐藏时，会在文档上触发</p>
+<ul>
+<li>document.visibilityState：String；返回document的可见性, 即当前可见元素的上下文环境. 由此可以知道当前文档(即为页面)是在背后, 或是不可见的隐藏的标签页，或者(正在)预渲染.可用的值如下：
+<ul>
+<li><code>'visible'</code> : 此时页面内容至少是部分可见. 即此页面在前景标签页中，并且窗口没有最小化.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>'hidden</code>&rsquo; : 此时页面对用户不可见. 即文档处于背景标签页或者窗口处于最小化状态，或者操作系统正处于 &lsquo;锁屏状态&rsquo; .</p>
+</li>
+<li>
+<p><code>'prerender'</code> : 页面此时正在渲染中, 因此是不可见的 (considered hidden for purposes of <code>document.hidden</code>). 文档只能从此状态开始，永远不能从其他值变为此状态.注意: 浏览器支持是可选的.</p>
+</li>
+<li>
+<p>pagehide：当浏览器在隐藏当前页面时, 页面隐藏事件会被发送到一个window 。例如，当用户单击浏览器的“后退”按钮时，当前页面在显示上一页之前会收到一个页面隐藏事件。</p>
+<ul>
+<li>persisted：代表一个页面是否从缓存中加载的，可以判断隐藏页面是否已缓存以进行可能的重用时执行特殊处理</li>
+</ul>
+</li>
+<li>
+<p>beforeunload：window、document 和它们的资源即将卸载时触发，例如可以弹窗确定是否关闭选项卡</p>
+</li>
+<li>
+<p>unload：window、document 和它们的资源正在卸载时触发</p>
+</li>
+</ul>
+<h3 id="用户操作相关">用户操作相关</h3>
+<ul>
+<li>Copy &amp; paste</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">copyListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getSelection</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">i</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;co&#34;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">n</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">anchorOffset</span><span class="p">,</span> <span class="nx">n</span><span class="p">.</span><span class="nx">focusOffset</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">pasteListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;pa&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">clipboardData</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">clipboardData</span><span class="p">).</span><span class="nx">getData</span><span class="p">(</span><span class="s2">&#34;text&#34;</span><span class="p">).</span><span class="nx">length</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>getSelection：返回一个选中对象
+<ul>
+<li>selection.anchorOffset: integer；返回选中元素在DOM节点中起始位置（按下鼠标）偏移</li>
+<li>selection.focusOffset：integer；返回选中元素在DOM节点中终止位置（松开鼠标）偏移</li>
+</ul>
+</li>
+</ul>
+<p>例子:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">text</span><span class="p">&gt;</span>abcdefg<span class="p">&lt;</span><span class="nt">text</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>若选中该text元素内的&quot;bcd&quot;，则anchorOffset = 1，focusOffset = 3</p>
+<ul>
+<li>
+<p>clipboardData. getData(&ldquo;text&rdquo;).length: integer；粘贴板上字符串长度</p>
+</li>
+<li>
+<p>Deviceorientation: 设备（指手机，平板等移动设备）在浏览页面时物理旋转的信息；<strong>注意safari未实现</strong></p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">deviceorientationListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">rotateDegrees</span> <span class="o">-</span> <span class="nx">t</span><span class="p">.</span><span class="nx">alpha</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">||</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">leftToRight</span> <span class="o">-</span> <span class="nx">t</span><span class="p">.</span><span class="nx">gamma</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">frontToBack</span> <span class="o">-</span> <span class="nx">t</span><span class="p">.</span><span class="nx">beta</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">e</span><span class="p">.</span><span class="nx">rotateDegrees</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">alpha</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">e</span><span class="p">.</span><span class="nx">frontToBack</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">beta</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">e</span><span class="p">.</span><span class="nx">leftToRight</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">gamma</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">t</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">absolute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span> <span class="o">!==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">rotateDegrees</span> <span class="o">&amp;&amp;</span> <span class="kc">null</span> <span class="o">!==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">frontToBack</span> <span class="o">&amp;&amp;</span> <span class="kc">null</span> <span class="o">!==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">leftToRight</span> <span class="o">?</span> <span class="p">[</span><span class="s2">&#34;do&#34;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">rotateDegrees</span><span class="p">),</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">frontToBack</span><span class="p">),</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">leftToRight</span><span class="p">),</span> <span class="nx">t</span><span class="p">]</span> <span class="o">:</span> <span class="k">void</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>收集逻辑以1度为精度，若误差小于一度则不记录</p>
+<ul>
+<li>
+<p>alpha：double；一个表示设备绕z轴旋转的角度（范围在0-360之间）的数字</p>
+</li>
+<li>
+<p>beta：double：一个表示设备绕x轴旋转（范围在－180到180之间）的数字，从前到后的方向为正方向</p>
+</li>
+<li>
+<p>gamma：double；一个表示设备绕y轴旋转（范围在－90到90之间）的数字，从左向右为正方向。</p>
+</li>
+<li>
+<p>absolute：boolean；表示该设备是否提供绝对定位数据 (这个数据是关于地球的坐标系) 或者使用了由设备决定的专门的坐标系.</p>
+</li>
+<li>
+<p>devicemotion：关于设备在浏览页面时的位置和方向的改变速度的信息；<strong>同样Safari不支持</strong></p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">devicemotionListener</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">acceleration</span><span class="p">.</span><span class="nx">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">rotationRate</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">t</span><span class="p">.</span><span class="nx">interval</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">!==</span> <span class="nx">n</span> <span class="o">&amp;&amp;</span> <span class="kc">null</span> <span class="o">!==</span> <span class="nx">i</span> <span class="o">&amp;&amp;</span> <span class="kc">null</span> <span class="o">!==</span> <span class="nx">e</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">e</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="s2">&#34;dm&#34;</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">t</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>acceleration.x/acceleration.y/acceleration.z: double；x, y, z方向上的加速度信息</li>
+<li>rotationRate.alpha/rotationRate.beta/rotationRate.gamma: double；三个方向上旋转的加速度信息</li>
+<li>Interval: integer；返回从底层硬件获取数据的时间间隔（单位：毫秒）。可以使用它来确定运动事件的粒度</li>
+</ul>
+<h3 id="其他公共信息">其他公共信息</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">getTimestamp</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;performance&#34;</span><span class="k">in</span> <span class="nb">window</span> <span class="o">&amp;&amp;</span> <span class="s2">&#34;now&#34;</span><span class="k">in</span> <span class="nb">window</span><span class="p">.</span><span class="nx">performance</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span> <span class="mi">3</span><span class="p">)</span> <span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="mf">1e3</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">startedAt</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">getPassiveSupported</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">get</span> <span class="nx">passive</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">e</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Timestamp：触发时间戳，可以看到此处优先使用window.performance.now()函数</li>
+<li>PassiveSupported：用于检查addEventlistener时是否支持使用passive模式：设置为true时，可以优化收集滚屏事件的性能，可查看https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#%E4%BD%BF%E7%94%A8_passive_%E6%94%B9%E5%96%84%E7%9A%84%E6%BB%9A%E5%B1%8F%E6%80%A7%E8%83%BD</li>
+<li>event.isTrusted：boolean；当事件是由用户行为生成的时候，这个属性的值为 <code>true</code> ，而当事件是由脚本创建、修改、通过 <code>[EventTarget.dispatchEvent()](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/dispatchEvent)</code> 派发的时候，这个属性的值为 <code>false</code> 。</li>
+</ul>
+<h2 id="收集">收集</h2>
+<h3 id="开始recording">开始recording：</h3>
+<p>Record接口提供开始行为记录收集</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">getFrameHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">i</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">,</span> <span class="nx">e</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">==</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isTrusted</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">          <span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="nx">e</span><span class="p">,</span> <span class="nx">n</span><span class="p">.</span><span class="nx">getTimestamp</span><span class="p">()]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span><span class="p">.</span><span class="nx">frames</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">t</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span><span class="p">.</span><span class="nx">pdFlag</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">frames</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="nx">n</span><span class="p">.</span><span class="nx">push_after</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="s2">&#34;musPushData&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">window</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">e</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span><span class="p">.</span><span class="nx">pdFlag</span> <span class="o">=</span> <span class="o">!</span><span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">n</span><span class="p">.</span><span class="nx">onFrame</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">onFrame</span> <span class="k">instanceof</span> <span class="nb">Function</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">onFrame</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">record</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">recording</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="mi">0</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">startedAt</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">startedAt</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mf">1e3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">document</span><span class="p">.</span><span class="nx">scrollingElement</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">frames</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s2">&#34;s&#34;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">scrollingElement</span><span class="p">.</span><span class="nx">scrollLeft</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">round2</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">scrollingElement</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">getTimestamp</span><span class="p">()]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">e</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">recordedEvents</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">e</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">recordedEvents</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">              <span class="p">,</span> <span class="nx">n</span> <span class="o">=</span> <span class="s2">&#34;scroll&#34;</span> <span class="o">===</span> <span class="nx">t</span>
+</span></span><span class="line"><span class="cl">              <span class="p">,</span> <span class="nx">i</span> <span class="o">=</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl">              <span class="p">,</span> <span class="nx">i</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">onlyWindowEvent</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">listenNode</span> <span class="o">!==</span> <span class="nb">window</span> <span class="o">?</span> <span class="nb">window</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">listenNode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;visibilitychange&#34;</span> <span class="o">===</span> <span class="nx">t</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="nb">document</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">passiveSupported</span> <span class="o">?</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">passive</span><span class="o">:</span> <span class="o">!</span><span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">capture</span><span class="o">:</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="o">:</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl">              <span class="p">,</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getFrameHandler</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">[</span><span class="nx">t</span> <span class="o">+</span> <span class="s2">&#34;Listener&#34;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">eventListenerParams</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">i</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">a</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">i</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">recording</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>本段代码主要用来逐一注册事件的listener(Line27-29):</p>
+<ul>
+<li>记录开始时间 (Line 15)</li>
+<li>当开始记录时会首先记录一次当前滚动条的位置(Line 16)</li>
+<li><code>addEventListener</code>的<code>capture</code>设置为true是用来阻止事件向上冒泡的，只有对scroll阻止冒泡：例如针对一个iframe开启了scroll listener，该事件不会触发window侧scroll listener(Line19)</li>
+<li><code>onlyWindowEvent</code>主要记录只有window拥有的事件，由于该脚本支持设置监听DOM中某个node的event，所以此时若监听node非window则应该去对应监听window下的事件，即运行到29行时，<code>i == window</code>(Line 21)</li>
+<li>优先使用passive模式进行监听(Line 23)</li>
+<li><strong>使用了</strong><code>**eventListenerParams**</code><strong>列表来保存了所有监听的事件，用于后续stop，该条值得学习</strong></li>
+<li>Line 4 - 5，每次收集都包含的公共信息</li>
+<li>可以设置<code>push_after</code>来控制收集多少条信息后触发上报，所有收集的信息没有分类，全部放在frame列表中；触发上报的本质是通过<code>dispatchEvent</code>触发一个事件，该事件的处理函数将发起上报，后面将讲述具体触发上报的时机 (Line 7)</li>
+<li><code>recording</code>设置为1，表示开始数据收集</li>
+</ul>
+<h3 id="stop">Stop</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">stop</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">e</span> <span class="k">in</span> <span class="k">this</span><span class="p">.</span><span class="nx">finishedAt</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mf">1e3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">eventListenerParams</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">eventListenerParams</span><span class="p">[</span><span class="nx">e</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">t</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">t</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">t</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">recording</span> <span class="o">=</span> <span class="o">!</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>记录下停止的时间后，将record时记录的事件全部remove掉，recording置为0表示当前未收集数据</p>
+<h3 id="上报触发时机">上报触发时机</h3>
+<p>以下事件触发时，将发起数据上报；其中&quot;musPushData&quot;事件即为上文描述的主动控制收集多少条数据后进行上报</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;visibilitychange&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;hidden&#34;</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">visibilityState</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="p">(</span><span class="s2">&#34;vc&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}),</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;pagehide&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">!</span><span class="mi">1</span> <span class="o">===</span> <span class="nx">t</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="p">(</span><span class="s2">&#34;ph&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}),</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;beforeunload&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">!</span><span class="mi">1</span> <span class="o">===</span> <span class="nx">t</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="p">(</span><span class="s2">&#34;bu&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}),</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;unload&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">!</span><span class="mi">1</span> <span class="o">===</span> <span class="nx">t</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">t</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="p">(</span><span class="s2">&#34;un&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}),</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;musPushData&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="p">(</span><span class="s2">&#34;pd&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mus</span><span class="p">.</span><span class="nx">pdFlag</span> <span class="o">=</span> <span class="o">!</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="devicedata收集">DeviceData收集</h2>
+<p>该脚本同样会收集当前浏览器的信息，此处只列出部分值得学习的部分</p>
+<h3 id="sayswho">Sayswho</h3>
+<p>用于识别当前浏览器及其版本；通常会注册在navigator中，非标准接口；参考代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">navigator</span><span class="p">.</span><span class="nx">sayswho</span><span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">ua</span><span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">,</span> <span class="nx">tem</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="nx">M</span><span class="o">=</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i</span><span class="p">)</span> <span class="o">||</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="sr">/trident/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">M</span><span class="p">[</span><span class="mi">1</span><span class="p">])){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">tem</span><span class="o">=</span>  <span class="sr">/\brv[ :]+(\d+)/g</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">ua</span><span class="p">)</span> <span class="o">||</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;IE &#39;</span><span class="o">+</span><span class="p">(</span><span class="nx">tem</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">===</span> <span class="s1">&#39;Chrome&#39;</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">tem</span><span class="o">=</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\b(OPR|Edge)\/(\d+)/</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="nx">tem</span><span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span> <span class="nx">tem</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;OPR&#39;</span><span class="p">,</span> <span class="s1">&#39;Opera&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">M</span><span class="o">=</span> <span class="nx">M</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">?</span> <span class="p">[</span><span class="nx">M</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">M</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span><span class="o">:</span> <span class="p">[</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">appName</span><span class="p">,</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">,</span> <span class="s1">&#39;-?&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">((</span><span class="nx">tem</span><span class="o">=</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/version\/(\d+)/i</span><span class="p">))</span><span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="nx">M</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">tem</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">M</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">})();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">sayswho</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们可以用此条快速解决UA解析版本的问题</p>
+<h3 id="stringprototypetosource异常检测">String.prototype.toSource异常检测</h3>
+<p>主流浏览器都会发生异常，除非是特别低版本的浏览器，可以快速定位低版本浏览器，参考代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">getErrorFF</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="s2">&#34;a&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">toSource</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="o">!</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">!</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="audiovideo解码能力测试">Audio/Video解码能力测试</h3>
+<p>利用canPlayType接口，若大概率可以播放，则返回&quot;probably&quot;，若确定无能力则返回空字符串; 不同的主流浏览器及版本会有比较显著的特性，低版本浏览器将全部为空</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">audioCodecs</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;audio&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">n</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">ogg</span><span class="o">:</span> <span class="s1">&#39;audio/ogg; codecs=&#34;vorbis&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">mp3</span><span class="o">:</span> <span class="s2">&#34;audio/mpeg;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">wav</span><span class="o">:</span> <span class="s1">&#39;audio/wav; codecs=&#34;1&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">m4a</span><span class="o">:</span> <span class="s2">&#34;audio/x-m4a;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">aac</span><span class="o">:</span> <span class="s2">&#34;audio/aac;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">canPlayType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">t</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">canPlayType</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="nx">videoCodecs</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;video&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">,</span> <span class="nx">n</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">ogg</span><span class="o">:</span> <span class="s1">&#39;video/ogg; codecs=&#34;theora&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">h264</span><span class="o">:</span> <span class="s1">&#39;video/mp4; codecs=&#34;avc1.42E01E&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">webm</span><span class="o">:</span> <span class="s1">&#39;video/webm; codecs=&#34;vp8, vorbis&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">mpeg4v</span><span class="o">:</span> <span class="s1">&#39;video/mp4; codecs=&#34;mp4v.20.8, mp4a.40.2&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">mpeg4a</span><span class="o">:</span> <span class="s1">&#39;video/mp4; codecs=&#34;mp4v.20.240, mp4a.40.2&#34;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">theora</span><span class="o">:</span> <span class="s1">&#39;video/x-matroska; codecs=&#34;theora, vorbis&#34;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">canPlayType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">t</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">canPlayType</span><span class="p">(</span><span class="nx">n</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="windoweval-hook检测">window.eval hook检测</h3>
+<p>不同浏览器长度会有所不同，firefox为37，chrome类的为33，同时eval中会包含&rsquo;native code&rsquo;关键字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">u</span><span class="p">.</span><span class="nx">deviceData</span><span class="p">.</span><span class="nx">emptyEvalLength</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="网络相关检测">网络相关检测</h3>
+<p>仅chrome支持，获取网络环境信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">navigator</span> <span class="o">&amp;&amp;</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">connection</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">r</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">connection</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">u</span><span class="p">.</span><span class="nx">deviceData</span><span class="p">.</span><span class="nx">connection</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">effectiveType</span><span class="o">:</span> <span class="nx">r</span><span class="p">.</span><span class="nx">effectiveType</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rtt</span><span class="o">:</span> <span class="nx">r</span><span class="p">.</span><span class="nx">rtt</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">downlink</span><span class="o">:</span> <span class="nx">r</span><span class="p">.</span><span class="nx">downlink</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="webassembly能力检测">webAssembly能力检测</h3>
+<p>本条是在查阅资料过程中发现了还有类似功能的一个开源项目friendly challenge：<a href="https://github.com/FriendlyCaptcha/friendly-challenge">GitHub - FriendlyCaptcha/friendly-challenge: The widget and docs for the proof of work challenge use</a>，其中发现的一个检测点；关于该项目一些相关点后续可以再总结</p>
+<p>检测方法其实比较简单，使用一串可以被编译的字串，使用webAssembly.compile进行编译，尝试捕获异常，若捕获则检测失败：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="nx">WebAssembly</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">A</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">C</span> <span class="o">=</span> <span class="nx">A</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">t</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="nx">C</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">A</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">C</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="nx">I</span> <span class="o">&amp;&amp;</span> <span class="nx">t</span><span class="o">--</span><span class="p">,</span> <span class="nx">A</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">C</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">===</span> <span class="nx">I</span> <span class="o">&amp;&amp;</span> <span class="nx">t</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">I</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">I</span> <span class="o">&lt;</span> <span class="nx">C</span><span class="p">;</span> <span class="nx">I</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">C</span> <span class="o">=</span> <span class="nx">g</span><span class="p">[</span><span class="nx">A</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">I</span> <span class="o">+</span> <span class="mi">0</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">Q</span> <span class="o">=</span> <span class="nx">g</span><span class="p">[</span><span class="nx">A</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">I</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">e</span> <span class="o">=</span> <span class="nx">g</span><span class="p">[</span><span class="nx">A</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">I</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">r</span> <span class="o">=</span> <span class="nx">g</span><span class="p">[</span><span class="nx">A</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">I</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">B</span><span class="p">[</span><span class="nx">t</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="nx">C</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="o">|</span> <span class="nx">Q</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">B</span><span class="p">[</span><span class="nx">t</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span> <span class="o">&amp;</span> <span class="nx">Q</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span> <span class="o">|</span> <span class="nx">e</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">B</span><span class="p">[</span><span class="nx">t</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&amp;</span> <span class="nx">e</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">63</span> <span class="o">&amp;</span> <span class="nx">r</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">B</span>
+</span></span><span class="line"><span class="cl"><span class="p">}(</span><span class="s2">&#34;一个base64编码的可编译webAssembly源码&#34;</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     
@@ -2196,13 +2857,13 @@ $$</p>
     
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsummersummer3.github.io%2fposts%2fecdsa%25E4%25B8%258Esm2%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsummersummer3.github.io%2fposts%2fbotchallenge%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg>
         </a>
       
     
       
-        <a href="https://twitter.com/intent/tweet?text=ECDSA%e4%b8%8eSM2&url=https%3a%2f%2fsummersummer3.github.io%2fposts%2fecdsa%25E4%25B8%258Esm2%2f&hashtags=%e5%af%86%e7%a0%81%e5%ad%a6&via=Techsum" title="Twitter" aria-label="Twitter Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://twitter.com/intent/tweet?text=&url=https%3a%2f%2fsummersummer3.github.io%2fposts%2fbotchallenge%2f&via=" title="Twitter" aria-label="Twitter Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="twitter" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917 2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487 0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244 13.986-14.637z"/></svg>
         </a>
       
@@ -2331,17 +2992,10 @@ $$</p>
 <nav class="pagination-single">
   
     
-      <a href="https://summersummer3.github.io/posts/botchallenge/" class="pagination-single__left">
-        <div class="pagination-single__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
-        </div>
-        <div class="pagination-single__left-title"></div>      
-      </a>
-    
     <div class="grow"></div>
     
-      <a href="https://summersummer3.github.io/posts/openssl_engine/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">OpenSSL Engine加载</div>
+      <a href="https://summersummer3.github.io/posts/ecdsa%E4%B8%8Esm2/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">ECDSA与SM2</div>
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
         </div>
@@ -2703,51 +3357,34 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#椭圆曲线基本学习">椭圆曲线基本学习</a>
+    <li><a href="#背景与网站介绍">背景与网站介绍</a></li>
+    <li><a href="#用户行为数据">用户行为数据</a>
       <ul>
-        <li><a href="#椭圆曲线方程">椭圆曲线方程</a></li>
-        <li><a href="#群与阿贝尔群">群与阿贝尔群</a></li>
-        <li><a href="#有限域">有限域</a></li>
-        <li><a href="#椭圆曲线上的群">椭圆曲线上的群</a></li>
-        <li><a href="#几何意义上的加法">几何意义上的加法</a></li>
-        <li><a href="#代数意义上的加法">代数意义上的加法</a>
-          <ul>
-            <li><a href="#不同两点相加">不同两点相加</a></li>
-            <li><a href="#相同两点相加">相同两点相加</a></li>
-            <li><a href="#标量积">标量积</a></li>
-          </ul>
-        </li>
-        <li><a href="#曲线上的有限域">曲线上的有限域</a></li>
-        <li><a href="#曲线上的循环子群">曲线上的循环子群</a>
-          <ul>
-            <li><a href="#循环子群的阶">循环子群的阶</a></li>
-            <li><a href="#找基点的方法">找基点的方法</a></li>
-          </ul>
-        </li>
-        <li><a href="#曲线上的离散对数问题">曲线上的离散对数问题</a></li>
+        <li><a href="#总体收集的event">总体收集的event</a></li>
+        <li><a href="#鼠标动作mouseevent">鼠标动作(MouseEvent)</a></li>
+        <li><a href="#键盘动作keyboardevent">键盘动作(KeyboardEvent)</a></li>
+        <li><a href="#触摸动作touchevent">触摸动作(TouchEvent)</a></li>
+        <li><a href="#元素移动相关">元素移动相关</a></li>
+        <li><a href="#页面相关事件">页面相关事件</a></li>
+        <li><a href="#用户操作相关">用户操作相关</a></li>
+        <li><a href="#其他公共信息">其他公共信息</a></li>
       </ul>
     </li>
-    <li><a href="#ecdh--ecdsa">ECDH &amp; ECDSA</a>
+    <li><a href="#收集">收集</a>
       <ul>
-        <li><a href="#ecdh">ECDH</a></li>
-        <li><a href="#ecdsa">ECDSA</a>
-          <ul>
-            <li><a href="#符号标记">符号标记</a></li>
-            <li><a href="#签名算法">签名算法</a></li>
-            <li><a href="#验证算法">验证算法</a></li>
-            <li><a href="#正确性">正确性</a></li>
-            <li><a href="#随机数相等下的私钥复原">随机数相等下的私钥复原</a></li>
-            <li><a href="#通过签名恢复公钥">通过签名恢复公钥</a></li>
-            <li><a href="#伪造签名">伪造签名</a></li>
-          </ul>
-        </li>
+        <li><a href="#开始recording">开始recording：</a></li>
+        <li><a href="#stop">Stop</a></li>
+        <li><a href="#上报触发时机">上报触发时机</a></li>
       </ul>
     </li>
-    <li><a href="#sm2签名">SM2签名</a>
+    <li><a href="#devicedata收集">DeviceData收集</a>
       <ul>
-        <li><a href="#签名算法-1">签名算法</a></li>
-        <li><a href="#验证算法-1">验证算法</a></li>
-        <li><a href="#正确性-1">正确性</a></li>
+        <li><a href="#sayswho">Sayswho</a></li>
+        <li><a href="#stringprototypetosource异常检测">String.prototype.toSource异常检测</a></li>
+        <li><a href="#audiovideo解码能力测试">Audio/Video解码能力测试</a></li>
+        <li><a href="#windoweval-hook检测">window.eval hook检测</a></li>
+        <li><a href="#网络相关检测">网络相关检测</a></li>
+        <li><a href="#webassembly能力检测">webAssembly能力检测</a></li>
       </ul>
     </li>
   </ul>
@@ -2878,24 +3515,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      ignoreHtmlClass: 'tex2jax_ignore',
-      processHtmlClass: 'tex2jax_process'
-    }
-  };
-  </script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
 
 
 
@@ -3156,7 +3775,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     
-    var lib = JSON.parse("[\"mathjax\"]");
+    var lib = JSON.parse("null");
 
     if (lib && lib.includes('mermaid')) {
       
