@@ -1723,7 +1723,7 @@
 <div class="single__infos">
   <time class="single__info" title="">📅&nbsp; </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;25&nbsp; </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title=""> ☕&nbsp;26&nbsp; </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="">✍️&nbsp;Techsum</span>
   
@@ -1922,12 +1922,12 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">OPENSSL_load_builtin_modules</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 我们其他的都不重要，直接看这个和Engine相关的 */</span>
 </span></span><span class="line"><span class="cl"><span class="cp">#ifndef OPENSSL_NO_ENGINE
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">ENGINE_add_conf_module</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="cp">#endif
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="p">...</span>
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">ENGINE_add_conf_module</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -2056,7 +2056,7 @@
 </span></span><span class="line"><span class="cl">        <span class="n">CONFerr</span><span class="p">(</span><span class="n">CONF_F_MODULE_ADD</span><span class="p">,</span> <span class="n">ERR_R_MALLOC_FAILURE</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 此处第一次调用，dso为NULL； 
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * dso = dynamic shared object, 可以理解为是一个OpenSSL去加载动态库的结构体；
@@ -2588,7 +2588,7 @@ init = 1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="c1">// loading configuration
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">CONF_modules_load_file</span><span class="p">(</span><span class="n">openssl_cnf_path</span><span class="p">,</span> <span class="s">&#34;openssl_conf&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">...</span>
 </span></span></code></pre></td></tr></table>
@@ -2983,15 +2983,15 @@ init = 1
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">BIO</span> <span class="o">*</span><span class="n">in</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 这里通过BIO读入文件(Binary IO, openssl自己定义的io，简单理解就是一块内存Orz) */</span>
 </span></span><span class="line"><span class="cl"><span class="cp">#ifdef OPENSSL_SYS_VMS
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">in</span> <span class="o">=</span> <span class="n">BIO_new_file</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="cp">#else
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">in</span> <span class="o">=</span> <span class="n">BIO_new_file</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;rb&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="cp">#endif
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="p">...</span>
-</span></span><span class="line"><span class="cl">	
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 正式解析，按段解析；
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 这里不分析咋解析的，很复杂很长，甚至能处理一些环境变量$(xxx)... 服
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 最后结果都存在哈希表data中
@@ -3162,7 +3162,7 @@ init = 1
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 找到第一个段 openssl_conf
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * [openssl_def]
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * engines = engine_section
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * engines = engine_section
 </span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">values</span> <span class="o">=</span> <span class="n">NCONF_get_section</span><span class="p">(</span><span class="n">cnf</span><span class="p">,</span> <span class="n">vsection</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    
@@ -3195,11 +3195,11 @@ init = 1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 这里会在supported_modules这个栈上找到&#39;engines&#39;这个CONF_MODULE，开始魔幻表演 */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">md</span> <span class="o">=</span> <span class="n">module_find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* init这个module，这里将去调用到&#39;dynamic&#39;这个engine，下面将分析 */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="n">module_init</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">cnf</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -3244,7 +3244,7 @@ init = 1
 </span></span><span class="line"><span class="cl">            <span class="k">goto</span> <span class="n">err</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 将&#39;engines&#39; push进的全局变量栈 initialized_modules */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">sk_CONF_IMODULE_push</span><span class="p">(</span><span class="n">initialized_modules</span><span class="p">,</span> <span class="n">imod</span><span class="p">))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">CONFerr</span><span class="p">(</span><span class="n">CONF_F_MODULE_INIT</span><span class="p">,</span> <span class="n">ERR_R_MALLOC_FAILURE</span><span class="p">);</span>
@@ -3256,7 +3256,7 @@ init = 1
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="nl">err</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
@@ -3311,7 +3311,7 @@ init = 1
 </span></span><span class="line"><span class="cl">                <span class="n">CONF_imodule_get_name</span><span class="p">(</span><span class="n">md</span><span class="p">),</span> <span class="n">CONF_imodule_get_value</span><span class="p">(</span><span class="n">md</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* Value is a section containing ENGINEs to configure */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">elist</span> <span class="o">=</span> <span class="n">NCONF_get_section</span><span class="p">(</span><span class="n">cnf</span><span class="p">,</span> <span class="n">CONF_imodule_get_value</span><span class="p">(</span><span class="n">md</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取engine_section下的列表，这里就一个section叫做engine_x_section 
 </span></span></span><span class="line"><span class="cl"><span class="cm">     *  [engine_section]
@@ -3398,16 +3398,16 @@ init = 1
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 此时ecmds是一个栈，按顺序有以下CONF_VALUE (共有section = &#34;engine_x_section&#34;)
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * {.name = &#34;engine_id&#34;, .value = &#34;engineX&#34;}
-</span></span></span><span class="line"><span class="cl"><span class="cm">     * {.name = &#34;dynamic_path&#34;, .value = &#34;${ENV::PWD}/build/engine_ex.so&#34;(这里已经通配符解析		 *	了)}
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * {.name = &#34;default_algorithms&#34;, .value = &#34;ALL&#34;}
-</span></span></span><span class="line"><span class="cl"><span class="cm">	 * {.name = &#34;init&#34;, .value = &#34;1&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * {.name = &#34;dynamic_path&#34;, .value = &#34;${ENV::PWD}/build/engine_ex.so&#34;(这里已经通配符解析      *  了)}
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * {.name = &#34;default_algorithms&#34;, .value = &#34;ALL&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * {.name = &#34;init&#34;, .value = &#34;1&#34;}
 </span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ecmds</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_INT_ENGINE_CONFIGURE</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                  <span class="n">ENGINE_R_ENGINE_SECTION_ERROR</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3443,7 +3443,7 @@ init = 1
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">int_engine_configure</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">value</span><span class="p">,</span> <span class="k">const</span> <span class="n">CONF</span> <span class="o">*</span><span class="n">cnf</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 开始对ecmds中栈上的CONF_VALUE遍历，这部分代码都在这个for循环中 */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sk_CONF_VALUE_num</span><span class="p">(</span><span class="n">ecmds</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">ecmd</span> <span class="o">=</span> <span class="n">sk_CONF_VALUE_value</span><span class="p">(</span><span class="n">ecmds</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
@@ -3459,81 +3459,149 @@ init = 1
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">ctrlname</span><span class="p">,</span> <span class="s">&#34;engine_id&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="cm">/* 把name制成conf文件中engine_id */</span>
 </span></span><span class="line"><span class="cl">            <span class="n">name</span> <span class="o">=</span> <span class="n">ctrlvalue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="p">...</span>
+</span></span><span class="line"><span class="cl">     <span class="p">...</span>
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">      <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>第二个是<code>dynamic_path</code>， 这个定义最关键，找到这个name，开始按照指定路径加载动态库engine:</p>
-<p>for(&hellip;) {<br />
-&hellip;<br />
-else if (strcmp(ctrlname, &ldquo;dynamic_path&rdquo;) == 0) {<br />
-/*<br />
-* 看到这里是不是豁然开朗，首先找到第二部分初始化的叫做dynamic的engine<br />
-* 但这个地方有个值得注意的点，底下分析ENGINE_by_id<br />
-<em>/<br />
-e = ENGINE_by_id(&ldquo;dynamic&rdquo;);<br />
-/</em> 拿到&rsquo;dynamic&rsquo;这个ENGINE结构体后，进行三步操作，完成了engineX这个so的加载 <em>/<br />
-/</em> 之后我们将单独把ENGINE_ctrl_cmd_string拿出来分析，观察它是如何去加载的*/<br />
-if (!e)<br />
-goto err;<br />
-if (!ENGINE_ctrl_cmd_string(e, &ldquo;SO_PATH&rdquo;, ctrlvalue, 0))<br />
-goto err;<br />
-if (!ENGINE_ctrl_cmd_string(e, &ldquo;LIST_ADD&rdquo;, &ldquo;2&rdquo;, 0))<br />
-goto err;<br />
-if (!ENGINE_ctrl_cmd_string(e, &ldquo;LOAD&rdquo;, NULL, 0))<br />
-goto err;<br />
-&hellip;<br />
-}<br />
-/*</p>
-</li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(...)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">ctrlname</span><span class="p">,</span> <span class="s">&#34;dynamic_path&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">             <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">              * 看到这里是不是豁然开朗，首先找到第二部分初始化的叫做dynamic的engine 
+</span></span></span><span class="line"><span class="cl"><span class="cm">              * 但这个地方有个值得注意的点，底下分析ENGINE_by_id
+</span></span></span><span class="line"><span class="cl"><span class="cm">              */</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span> <span class="o">=</span> <span class="n">ENGINE_by_id</span><span class="p">(</span><span class="s">&#34;dynamic&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">             <span class="cm">/* 拿到&#39;dynamic&#39;这个ENGINE结构体后，进行三步操作，完成了engineX这个so的加载 */</span>
+</span></span><span class="line"><span class="cl">             <span class="cm">/* 之后我们将单独把ENGINE_ctrl_cmd_string拿出来分析，观察它是如何去加载的*/</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">goto</span> <span class="n">err</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ENGINE_ctrl_cmd_string</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s">&#34;SO_PATH&#34;</span><span class="p">,</span> <span class="n">ctrlvalue</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">goto</span> <span class="n">err</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ENGINE_ctrl_cmd_string</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s">&#34;LIST_ADD&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">goto</span> <span class="n">err</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ENGINE_ctrl_cmd_string</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s">&#34;LOAD&#34;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">goto</span> <span class="n">err</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 完成这三步操作后，&#39;dynamic&#39;副本这个engine已经被重写成了 &#39;engineX&#39;！
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * 同时这个engineX也加入了engines的队列中。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="n">ENGINE</span> <span class="o">*</span><span class="n">ENGINE_by_id</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="cm">/* 入参检查和环境初始化检查 omit */</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 加锁后开始遍历链表，匹配id = &#34;dynamic&#34; */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CRYPTO_THREAD_write_lock</span><span class="p">(</span><span class="n">global_engine_lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">iterator</span> <span class="o">=</span> <span class="n">engine_list_head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">iterator</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">iterator</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">iterator</span> <span class="o">=</span> <span class="n">iterator</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">iterator</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * We need to return a structural reference. If this is an ENGINE
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * type that returns copies, make a duplicate - otherwise increment
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * the existing ENGINE&#39;s reference count.
+</span></span></span><span class="line"><span class="cl"><span class="cm">             */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 匹配成功后的小操作：看ENGINE_load_dynamic源码可以看到 dynamic-&gt;flag 被设置成了                 ENGINE_FLAGS_BY_ID_COPY */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">iterator</span><span class="o">-&gt;</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">ENGINE_FLAGS_BY_ID_COPY</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ENGINE</span> <span class="o">*</span><span class="n">cp</span> <span class="o">=</span> <span class="n">ENGINE_new</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">cp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">iterator</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="cm">/* 此处很重要！ */</span>
+</span></span><span class="line"><span class="cl">                    <span class="cm">/* 此处取出的dynamic，不是直接取出链表中的engine节点，而是复制了一个节点 */</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">engine_cpy</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span> <span class="n">iterator</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">iterator</span> <span class="o">=</span> <span class="n">cp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">iterator</span><span class="o">-&gt;</span><span class="n">struct_ref</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">engine_ref_debug</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">       <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CRYPTO_THREAD_unlock</span><span class="p">(</span><span class="n">global_engine_lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="k">if</span> <span class="p">(</span><span class="n">iterator</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 作为取出返回值，得到了一个dynamic的副本 */</span>
+</span></span><span class="line"><span class="cl">         <span class="k">return</span> <span class="n">iterator</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
-<ul>
-<li>完成这三步操作后，&lsquo;dynamic&rsquo;副本这个engine已经被重写成了 &rsquo;engineX&rsquo;！</li>
-<li>同时这个engineX也加入了engines的队列中。<br />
-*/</li>
-</ul>
-<p>ENGINE *ENGINE_by_id(const char <em>id)<br />
-{<br />
-/</em> 入参检查和环境初始化检查 omit <em>/<br />
-&hellip;<br />
-/</em> 加锁后开始遍历链表，匹配id = &ldquo;dynamic&rdquo; */<br />
-CRYPTO_THREAD_write_lock(global_engine_lock);<br />
-iterator = engine_list_head;</p>
-<pre><code>   while (iterator &amp;&amp; (strcmp(id, iterator-&gt;id) != 0))
-       iterator = iterator-&gt;next;
-   if (iterator != NULL) {
-       /*
-        * We need to return a structural reference. If this is an ENGINE
-        * type that returns copies, make a duplicate - otherwise increment
-        * the existing ENGINE's reference count.
-        */
-       
-       /* 匹配成功后的小操作：看ENGINE_load_dynamic源码可以看到 dynamic-&gt;flag 被设置成了			       ENGINE_FLAGS_BY_ID_COPY */
-       if (iterator-&gt;flags &amp; ENGINE_FLAGS_BY_ID_COPY) {
-           ENGINE *cp = ENGINE_new();
-           if (cp == NULL)
-               iterator = NULL;
-           else {
-               /* 此处很重要！ */
-               /* 此处取出的dynamic，不是直接取出链表中的engine节点，而是复制了一个节点 */
-               engine_cpy(cp, iterator);
-               iterator = cp;
-           }
-       } else {
-           iterator-&gt;struct_ref++;
-           engine_ref_debug(iterator, 0, 1);
-       }
-  }
-   CRYPTO_THREAD_unlock(global_engine_lock);
-if (iterator != NULL)
-       /* 作为取出返回值，得到了一个dynamic的副本 */
-    return iterator; 
-</code></pre>
-<p>}</p>
 <p>注意，此时<code>e</code>这个局部变量已经是一个<code>id</code>为<code>'engineX'</code>的ENGINE结构体了，也就是完成了动态加载的engine！</p>
-<p>第三步是<code>default_algorithms</code>，有缘的话，这篇文章第二部分会分析设置过程 :</p>
+<p>第三步是<code>default_algorithms</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3591,141 +3659,286 @@ if (iterator != NULL)
 <p>但是 <code>bind_engine</code> 在哪调用的呢，还是没看到，那必然是在<code>ENGINE_ctrl_cmd_string</code>流程中。所以下面重点讲讲这个函数。</p>
 <h2 id="engine_ctrl_cmd_string">ENGINE_ctrl_cmd_string</h2>
 <h3 id="从cmd_name去获取cmd_num">从cmd_name去获取cmd_num</h3>
-<pre tabindex="0"><code>int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
-                           int cmd_optional)
-{
-    int num, flags;
-    long l;
-    char *ptr;
-
-	...
- 	/* 宏的命名已经暴露了一切，通过cmd_name得到cmd_num */
-    if (e-&gt;ctrl == NULL
-        || (num = ENGINE_ctrl(e, ENGINE_CTRL_GET_CMD_FROM_NAME,
-                              0, (void *)cmd_name, NULL)) &lt;= 0) {
-  		...
-    }
-    ...
-}
-
-int ENGINE_ctrl(ENGINE *e, int cmd, long i, void *p, void (*f) (void))
-{
-	...
-    /*
-     * Intercept any &#34;root-level&#34; commands before trying to hand them on to
-     * ctrl() handlers.
-     */
-    switch (cmd) {
-    /* 这部分是通用的ctrl，范围为10 ~ 18, 全部进入int_ctrl_helper */
-    case ENGINE_CTRL_HAS_CTRL_FUNCTION:
-        return ctrl_exists;
-    case ENGINE_CTRL_GET_FIRST_CMD_TYPE:
-    case ENGINE_CTRL_GET_NEXT_CMD_TYPE:
-    case ENGINE_CTRL_GET_CMD_FROM_NAME:
-    case ENGINE_CTRL_GET_NAME_LEN_FROM_CMD:
-    case ENGINE_CTRL_GET_NAME_FROM_CMD:
-    case ENGINE_CTRL_GET_DESC_LEN_FROM_CMD:
-    case ENGINE_CTRL_GET_DESC_FROM_CMD:
-    case ENGINE_CTRL_GET_CMD_FLAGS:
-        /* 
-         * 这里dynamic的flag为ENGINE_FLAGS_BY_ID_COPY，0x0004 
-         * ENGINE_FLAGS_MANUAL_CMD_CTRL = 0x0002，与的结果为0
-         */
-        if (ctrl_exists &amp;&amp; !(e-&gt;flags &amp; ENGINE_FLAGS_MANUAL_CMD_CTRL))
-            return int_ctrl_helper(e, cmd, i, p, f);
-        if (!ctrl_exists) {
-            ENGINEerr(ENGINE_F_ENGINE_CTRL, ENGINE_R_NO_CONTROL_FUNCTION);
-            /*
-             * For these cmd-related functions, failure is indicated by a -1
-             * return value (because 0 is used as a valid return in some
-             * places).
-             */
-            return -1;
-        }
-    default:
-        break;
-    }
-    /* Anything else requires a ctrl() handler to exist. */
-    /* 这里是确定当前engine-&gt;ctrl != NULL */
-    if (!ctrl_exists) {
-        ENGINEerr(ENGINE_F_ENGINE_CTRL, ENGINE_R_NO_CONTROL_FUNCTION);
-        return 0;
-    }
-    
-    /* 调用上面看到的 dynamic-&gt;ctrl = dynamic_ctrl, 后面会调用到这来 */
-    return e-&gt;ctrl(e, cmd, i, p, f);
-}
-
-/* 这个函数也将反复调用（吐槽下openssl这鬼之设计），我们这里先看当前的cmd */
-static int int_ctrl_helper(ENGINE *e, int cmd, long i, void *p,
-                           void (*f) (void))
-{
-    int idx;
-    char *s = (char *)p;
-    const ENGINE_CMD_DEFN *cdp;
-	...
-        
-    /* Now handle cmd_name -&gt; cmd_num conversion */
-    if (cmd == ENGINE_CTRL_GET_CMD_FROM_NAME) {
-        /* 从dynamic的cmd_defns中去匹配cmd_name,假设是&#34;SO_PATH&#34;, 
-           直接去查第二部分的dynamic_cmd_defns，刚好匹配上idx = 0 */
-        if ((e-&gt;cmd_defns == NULL)
-            || ((idx = int_ctrl_cmd_by_name(e-&gt;cmd_defns, s)) &lt; 0)) {
-            ENGINEerr(ENGINE_F_INT_CTRL_HELPER, ENGINE_R_INVALID_CMD_NAME);
-            return -1;
-        }
-        /* 查idx = 0时的 cmd_num = 200 = DYNAMIC_CMD_SO_PATH */
-        return e-&gt;cmd_defns[idx].cmd_num;
-    }
-	...
-}
-</code></pre><p>可以看到这里的<code>num</code>返回回来的<code>DYNAMIC_CMD_SO_PATH</code>，是靠<code>dynamic.cmd_defns</code>中的<code>ENGINE_CMD_DEFN</code>数组表查询得到的。往下接着看<code>ENGINE_ctrl_cmd_string</code></p>
-<pre tabindex="0"><code>int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
-                           int cmd_optional)
-
-{
-    /* 继续调用公用ctrl，进入到int_ctrl_helper
-       (看底下开源的注释，两个函数做的ctrl操作一样的，为啥这么搞也许就是未解之谜吧) */
-    ...
-    if (!ENGINE_cmd_is_executable(e, num)) {
-        ENGINEerr(ENGINE_F_ENGINE_CTRL_CMD_STRING,
-                  ENGINE_R_CMD_NOT_EXECUTABLE);
-        return 0;
-    }
-	
-    /* 顾名思义，拿到dynamic的flag，这里将得到idx = 0时，cmd_defns表中0处的第四个元素 */
-    flags = ENGINE_ctrl(e, ENGINE_CTRL_GET_CMD_FLAGS, num, NULL, NULL);
-    if (flags &lt; 0) {
-        /*
-         * Shouldn&#39;t happen, given that ENGINE_cmd_is_executable() returned
-         * success.
-         */
-        ENGINEerr(ENGINE_F_ENGINE_CTRL_CMD_STRING,
-                  ENGINE_R_INTERNAL_LIST_ERROR);
-        return 0;
-    }
-}
-
-static int int_ctrl_helper(ENGINE *e, int cmd, long i, void *p,
-                           void (*f) (void))
-{
-	...
-    if ((e-&gt;cmd_defns == NULL)
-        || ((idx = int_ctrl_cmd_by_num(e-&gt;cmd_defns, (unsigned int)i)) &lt; 0)) {
-        ENGINEerr(ENGINE_F_INT_CTRL_HELPER, ENGINE_R_INVALID_CMD_NUMBER);
-        return -1;
-    }
-    /* Now the logic splits depending on command type */
-    cdp = &amp;e-&gt;cmd_defns[idx];
-    switch (cmd) {
-	...
-    case ENGINE_CTRL_GET_CMD_FLAGS:
-        /* 可以查出来上面的是 ENGINE_CMD_FLAG_STRING = 0x0002 */
-        return cdp-&gt;cmd_flags;
-    }
-	...
-}
-</code></pre><p>别问为啥不一次查出来，要多次遍历，问就是架构。继续看<code>ENGINE_ctrl_cmd_string</code>，终于要做真正的操作了， 可以看到，最后进入了<code>dynamic_ctrl</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">ENGINE_ctrl_cmd_string</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">cmd_name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                           <span class="kt">int</span> <span class="n">cmd_optional</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="n">flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="n">l</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">     <span class="cm">/* 宏的命名已经暴露了一切，通过cmd_name得到cmd_num */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">ctrl</span> <span class="o">==</span> <span class="nb">NULL</span>
+</span></span><span class="line"><span class="cl">        <span class="o">||</span> <span class="p">(</span><span class="n">num</span> <span class="o">=</span> <span class="n">ENGINE_ctrl</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">ENGINE_CTRL_GET_CMD_FROM_NAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">cmd_name</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">ENGINE_ctrl</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Intercept any &#34;root-level&#34; commands before trying to hand them on to
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * ctrl() handlers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 这部分是通用的ctrl，范围为10 ~ 18, 全部进入int_ctrl_helper */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_HAS_CTRL_FUNCTION</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ctrl_exists</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_FIRST_CMD_TYPE</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_NEXT_CMD_TYPE</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_CMD_FROM_NAME</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_NAME_LEN_FROM_CMD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_NAME_FROM_CMD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_DESC_LEN_FROM_CMD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_DESC_FROM_CMD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_CMD_FLAGS</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * 这里dynamic的flag为ENGINE_FLAGS_BY_ID_COPY，0x0004 
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * ENGINE_FLAGS_MANUAL_CMD_CTRL = 0x0002，与的结果为0
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ctrl_exists</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">ENGINE_FLAGS_MANUAL_CMD_CTRL</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">int_ctrl_helper</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctrl_exists</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_ENGINE_CTRL</span><span class="p">,</span> <span class="n">ENGINE_R_NO_CONTROL_FUNCTION</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * For these cmd-related functions, failure is indicated by a -1
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * return value (because 0 is used as a valid return in some
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * places).
+</span></span></span><span class="line"><span class="cl"><span class="cm">             */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Anything else requires a ctrl() handler to exist. */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 这里是确定当前engine-&gt;ctrl != NULL */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctrl_exists</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_ENGINE_CTRL</span><span class="p">,</span> <span class="n">ENGINE_R_NO_CONTROL_FUNCTION</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 调用上面看到的 dynamic-&gt;ctrl = dynamic_ctrl, 后面会调用到这来 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">ctrl</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 这个函数也将反复调用（吐槽下openssl这鬼之设计），我们这里先看当前的cmd */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">int_ctrl_helper</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                           <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">idx</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">ENGINE_CMD_DEFN</span> <span class="o">*</span><span class="n">cdp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Now handle cmd_name -&gt; cmd_num conversion */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">cmd</span> <span class="o">==</span> <span class="n">ENGINE_CTRL_GET_CMD_FROM_NAME</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 从dynamic的cmd_defns中去匹配cmd_name,假设是&#34;SO_PATH&#34;, 
+</span></span></span><span class="line"><span class="cl"><span class="cm">           直接去查第二部分的dynamic_cmd_defns，刚好匹配上idx = 0 */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">cmd_defns</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">||</span> <span class="p">((</span><span class="n">idx</span> <span class="o">=</span> <span class="n">int_ctrl_cmd_by_name</span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">cmd_defns</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_INT_CTRL_HELPER</span><span class="p">,</span> <span class="n">ENGINE_R_INVALID_CMD_NAME</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 查idx = 0时的 cmd_num = 200 = DYNAMIC_CMD_SO_PATH */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">cmd_defns</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">cmd_num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到这里的<code>num</code>返回回来的<code>DYNAMIC_CMD_SO_PATH</code>，是靠<code>dynamic.cmd_defns</code>中的<code>ENGINE_CMD_DEFN</code>数组表查询得到的。往下接着看<code>ENGINE_ctrl_cmd_string</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">ENGINE_ctrl_cmd_string</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">cmd_name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                           <span class="kt">int</span> <span class="n">cmd_optional</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 继续调用公用ctrl，进入到int_ctrl_helper
+</span></span></span><span class="line"><span class="cl"><span class="cm">       (看底下开源的注释，两个函数做的ctrl操作一样的，为啥这么搞也许就是未解之谜吧) */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ENGINE_cmd_is_executable</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_ENGINE_CTRL_CMD_STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">ENGINE_R_CMD_NOT_EXECUTABLE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 顾名思义，拿到dynamic的flag，这里将得到idx = 0时，cmd_defns表中0处的第四个元素 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">flags</span> <span class="o">=</span> <span class="n">ENGINE_ctrl</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">ENGINE_CTRL_GET_CMD_FLAGS</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * Shouldn&#39;t happen, given that ENGINE_cmd_is_executable() returned
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * success.
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_ENGINE_CTRL_CMD_STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">ENGINE_R_INTERNAL_LIST_ERROR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">int_ctrl_helper</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                           <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">cmd_defns</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">||</span> <span class="p">((</span><span class="n">idx</span> <span class="o">=</span> <span class="n">int_ctrl_cmd_by_num</span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">cmd_defns</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">i</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_INT_CTRL_HELPER</span><span class="p">,</span> <span class="n">ENGINE_R_INVALID_CMD_NUMBER</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Now the logic splits depending on command type */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cdp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">cmd_defns</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">ENGINE_CTRL_GET_CMD_FLAGS</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 可以查出来上面的是 ENGINE_CMD_FLAG_STRING = 0x0002 */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">cdp</span><span class="o">-&gt;</span><span class="n">cmd_flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>别问为啥不一次查出来，要多次遍历，问就是架构。继续看<code>ENGINE_ctrl_cmd_string</code>，终于要做真正的操作了， 可以看到，最后进入了<code>dynamic_ctrl</code>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -3798,7 +4011,7 @@ static int int_ctrl_helper(ENGINE *e, int cmd, long i, void *p,
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="p">...</span> 
 </span></span><span class="line"><span class="cl">    <span class="cm">/* ENGINE_CMD_FLAG_NO_INPUT = 0x0004 */</span>
-</span></span><span class="line"><span class="cl">	 <span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">ENGINE_CMD_FLAG_NO_INPUT</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">ENGINE_CMD_FLAG_NO_INPUT</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="cm">/* 如果命令查出来的flag应该没有arg_input, 但arg非空，直接退出???? */</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arg</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_ENGINE_CTRL_CMD_STRING</span><span class="p">,</span>
@@ -3852,7 +4065,7 @@ static int int_ctrl_helper(ENGINE *e, int cmd, long i, void *p,
 </span></span></span><span class="line"><span class="cl"><span class="cm">      */</span>
 </span></span><span class="line"><span class="cl">     <span class="k">if</span> <span class="p">(</span><span class="n">ENGINE_ctrl</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">         <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl"> <span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -3886,367 +4099,740 @@ static int int_ctrl_helper(ENGINE *e, int cmd, long i, void *p,
 <p>根据这个表，我们去看对于<code>dynamic-&gt;ctrl</code>即<code>dynamic_ctrl</code>函数对这几个<code>cmd</code>的操作</p>
 <h3 id="dynamic_ctrl">dynamic_ctrl</h3>
 <p>先看这个函数的公共部分，对相同的engine会初始化上一个<code>ctx</code>上下文：</p>
-<pre tabindex="0"><code>/* 动态库加载的上下文 */
-struct st_dynamic_data_ctx {
-    /* The DSO object we load that supplies the ENGINE code */
-    DSO *dynamic_dso;
-    /*
-     * The function pointer to the version checking shared library function
-     */
-    dynamic_v_check_fn v_check;
-    /*
-     * The function pointer to the engine-binding shared library function
-     */
-    dynamic_bind_engine bind_engine;
-    /* The default name/path for loading the shared library */
-    char *DYNAMIC_LIBNAME;
-    /* Whether to continue loading on a version check failure */
-    int no_vcheck;
-    /* If non-NULL, stipulates the &#39;id&#39; of the ENGINE to be loaded */
-    char *engine_id;
-    /*
-     * If non-zero, a successfully loaded ENGINE should be added to the
-     * internal ENGINE list. If 2, the add must succeed or the entire load
-     * should fail.
-     */
-    int list_add_value;
-    /* The symbol name for the version checking function */
-    const char *DYNAMIC_F1;
-    /* The symbol name for the &#34;initialise ENGINE structure&#34; function */
-    const char *DYNAMIC_F2;
-    /*
-     * Whether to never use &#39;dirs&#39;, use &#39;dirs&#39; as a fallback, or only use
-     * &#39;dirs&#39; for loading. Default is to use &#39;dirs&#39; as a fallback.
-     */
-    int dir_load;
-    /* A stack of directories from which ENGINEs could be loaded */
-    STACK_OF(OPENSSL_STRING) *dirs;
-};
-
-static int dynamic_ctrl(ENGINE *e, int cmd, long i, void *p, void (*f) (void))
-{
-    /* 这个函数将会初始化并保存动态库数据的ctx，这也是为什么可以反复调用这个接口的原因 */
-    dynamic_data_ctx *ctx = dynamic_get_data_ctx(e);
-    int initialised;
-
-    if (!ctx) {
-        ENGINEerr(ENGINE_F_DYNAMIC_CTRL, ENGINE_R_NOT_LOADED);
-        return 0;
-    }
-    
-    /* 可以看到，加载完成的标志是dynamic_dso钩子已经挂上了 */
-    initialised = ((ctx-&gt;dynamic_dso == NULL) ? 0 : 1);
-    /* All our control commands require the ENGINE to be uninitialised */
-    if (initialised) {
-        ENGINEerr(ENGINE_F_DYNAMIC_CTRL, ENGINE_R_ALREADY_LOADED);
-        return 0;
-    }
-   
-    /* cmd解析，底下逐个分析 */
-    ...
-}
-
-/*
- * This function retrieves the context structure from an ENGINE&#39;s &#34;ex_data&#34;,
- * or if it doesn&#39;t exist yet, sets it up.
- */
-static dynamic_data_ctx *dynamic_get_data_ctx(ENGINE *e)
-{
-    dynamic_data_ctx *ctx;
-    if (dynamic_ex_data_idx &lt; 0) {
-        /*
-         * Create and register the ENGINE ex_data, and associate our &#34;free&#34;
-         * function with it to ensure any allocated contexts get freed when
-         * an ENGINE goes underground.
-         */
-        int new_idx = ENGINE_get_ex_new_index(0, NULL, NULL, NULL,
-                                              dynamic_data_ctx_free_func);
-        if (new_idx == -1) {
-            ENGINEerr(ENGINE_F_DYNAMIC_GET_DATA_CTX, ENGINE_R_NO_INDEX);
-            return NULL;
-        }
-        CRYPTO_THREAD_write_lock(global_engine_lock);
-        /* Avoid a race by checking again inside this lock */
-        if (dynamic_ex_data_idx &lt; 0) {
-            /* Good, someone didn&#39;t beat us to it */
-            dynamic_ex_data_idx = new_idx;
-            new_idx = -1;
-        }
-        CRYPTO_THREAD_unlock(global_engine_lock);
-        /*
-         * In theory we could &#34;give back&#34; the index here if (new_idx&gt;-1), but
-         * it&#39;s not possible and wouldn&#39;t gain us much if it were.
-         */
-    }
-    ctx = (dynamic_data_ctx *)ENGINE_get_ex_data(e, dynamic_ex_data_idx);
-    /* Check if the context needs to be created */
-    if ((ctx == NULL) &amp;&amp; !dynamic_set_data_ctx(e, &amp;ctx))
-        /* &#34;set_data&#34; will set errors if necessary */
-        return NULL;
-    return ctx;
-}
-
-/* 
- * 简单的说就是去查挂在engine-&gt;ex_data，
- * 这个就是动态库加载的上下文，ex_data是个栈可能有多个上下文，
- * 根据一个全局变量dynamic_ex_data_idx确定当前使用上下文
- * 当然第一次调用ctx是空的，所以需要调用一下dynamic_set_data_ctx初始化
- */
-static int dynamic_set_data_ctx(ENGINE *e, dynamic_data_ctx **ctx)
-{
-    /* 申请ctx的mem */
-    dynamic_data_ctx *c = OPENSSL_zalloc(sizeof(*c));
-    int ret = 1;
-
-    if (c == NULL) {
-        ENGINEerr(ENGINE_F_DYNAMIC_SET_DATA_CTX, ERR_R_MALLOC_FAILURE);
-        return 0;
-    }
-    c-&gt;dirs = sk_OPENSSL_STRING_new_null();
-    if (c-&gt;dirs == NULL) {
-        ENGINEerr(ENGINE_F_DYNAMIC_SET_DATA_CTX, ERR_R_MALLOC_FAILURE);
-        OPENSSL_free(c);
-        return 0;
-    }
-    /* 初始化一些字段，下面总结 */ 
-    c-&gt;DYNAMIC_F1 = &#34;v_check&#34;, ;
-    c-&gt;DYNAMIC_F2 = &#34;bind_engine&#34;;
-    c-&gt;dir_load = 1;
-    CRYPTO_THREAD_write_lock(global_engine_lock);
-    /* 第一次进来为NULL(然而正常是为ctx = NULL才会调用这个函数，可能是冗余校验)*/
-    if ((*ctx = (dynamic_data_ctx *)ENGINE_get_ex_data(e,
-                                                       dynamic_ex_data_idx))
-        == NULL) {
-        /* Good, we&#39;re the first */
-        /* 把ctx挂在engine-&gt;ex_data上 */
-        ret = ENGINE_set_ex_data(e, dynamic_ex_data_idx, c);
-        if (ret) {
-            *ctx = c;
-            c = NULL;
-        }
-    }
-    CRYPTO_THREAD_unlock(global_engine_lock);
-    /*
-     * If we lost the race to set the context, c is non-NULL and *ctx is the
-     * context of the thread that won.
-     */
-    if (c)
-        sk_OPENSSL_STRING_free(c-&gt;dirs);
-    OPENSSL_free(c);
-    return ret;
-}
-
-/* 
- * 得到最后的结果 dynamic-&gt;ex_data = ctx;
- * ctx = {.DYNAMIC_F1 = &#34;v_check&#34;, .DYNAMIC_F2 = &#34;bind_engine&#34;, c-&gt;dir_load = 1}
- * 惊奇的发现了 bind_engine 虽然他只是个字符串，但是我相信你已经知道原因了
- * 他需要在动态库中去寻找这个符号
- */
-</code></pre><p>之后我们逐一分析这三个<code>cmd</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cm">/* 动态库加载的上下文 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">st_dynamic_data_ctx</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* The DSO object we load that supplies the ENGINE code */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DSO</span> <span class="o">*</span><span class="n">dynamic_dso</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * The function pointer to the version checking shared library function
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dynamic_v_check_fn</span> <span class="n">v_check</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * The function pointer to the engine-binding shared library function
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dynamic_bind_engine</span> <span class="n">bind_engine</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* The default name/path for loading the shared library */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">DYNAMIC_LIBNAME</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Whether to continue loading on a version check failure */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">no_vcheck</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* If non-NULL, stipulates the &#39;id&#39; of the ENGINE to be loaded */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">engine_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * If non-zero, a successfully loaded ENGINE should be added to the
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * internal ENGINE list. If 2, the add must succeed or the entire load
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * should fail.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">list_add_value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* The symbol name for the version checking function */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">DYNAMIC_F1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* The symbol name for the &#34;initialise ENGINE structure&#34; function */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">DYNAMIC_F2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Whether to never use &#39;dirs&#39;, use &#39;dirs&#39; as a fallback, or only use
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * &#39;dirs&#39; for loading. Default is to use &#39;dirs&#39; as a fallback.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">dir_load</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* A stack of directories from which ENGINEs could be loaded */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">STACK_OF</span><span class="p">(</span><span class="n">OPENSSL_STRING</span><span class="p">)</span> <span class="o">*</span><span class="n">dirs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">dynamic_ctrl</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 这个函数将会初始化并保存动态库数据的ctx，这也是为什么可以反复调用这个接口的原因 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">dynamic_get_data_ctx</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">initialised</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctx</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_CTRL</span><span class="p">,</span> <span class="n">ENGINE_R_NOT_LOADED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 可以看到，加载完成的标志是dynamic_dso钩子已经挂上了 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">initialised</span> <span class="o">=</span> <span class="p">((</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* All our control commands require the ENGINE to be uninitialised */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">initialised</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_CTRL</span><span class="p">,</span> <span class="n">ENGINE_R_ALREADY_LOADED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="cm">/* cmd解析，底下逐个分析 */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * This function retrieves the context structure from an ENGINE&#39;s &#34;ex_data&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * or if it doesn&#39;t exist yet, sets it up.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="nf">dynamic_get_data_ctx</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dynamic_ex_data_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * Create and register the ENGINE ex_data, and associate our &#34;free&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * function with it to ensure any allocated contexts get freed when
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * an ENGINE goes underground.
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">new_idx</span> <span class="o">=</span> <span class="n">ENGINE_get_ex_new_index</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                              <span class="n">dynamic_data_ctx_free_func</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">new_idx</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_GET_DATA_CTX</span><span class="p">,</span> <span class="n">ENGINE_R_NO_INDEX</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CRYPTO_THREAD_write_lock</span><span class="p">(</span><span class="n">global_engine_lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* Avoid a race by checking again inside this lock */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">dynamic_ex_data_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* Good, someone didn&#39;t beat us to it */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dynamic_ex_data_idx</span> <span class="o">=</span> <span class="n">new_idx</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">CRYPTO_THREAD_unlock</span><span class="p">(</span><span class="n">global_engine_lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * In theory we could &#34;give back&#34; the index here if (new_idx&gt;-1), but
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * it&#39;s not possible and wouldn&#39;t gain us much if it were.
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ctx</span> <span class="o">=</span> <span class="p">(</span><span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="p">)</span><span class="n">ENGINE_get_ex_data</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">dynamic_ex_data_idx</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Check if the context needs to be created */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">ctx</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">dynamic_set_data_ctx</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ctx</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* &#34;set_data&#34; will set errors if necessary */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ctx</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 简单的说就是去查挂在engine-&gt;ex_data，
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 这个就是动态库加载的上下文，ex_data是个栈可能有多个上下文，
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 根据一个全局变量dynamic_ex_data_idx确定当前使用上下文
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 当然第一次调用ctx是空的，所以需要调用一下dynamic_set_data_ctx初始化
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">dynamic_set_data_ctx</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="n">dynamic_data_ctx</span> <span class="o">**</span><span class="n">ctx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 申请ctx的mem */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="n">OPENSSL_zalloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">c</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_SET_DATA_CTX</span><span class="p">,</span> <span class="n">ERR_R_MALLOC_FAILURE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">-&gt;</span><span class="n">dirs</span> <span class="o">=</span> <span class="n">sk_OPENSSL_STRING_new_null</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">dirs</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_SET_DATA_CTX</span><span class="p">,</span> <span class="n">ERR_R_MALLOC_FAILURE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">OPENSSL_free</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 初始化一些字段，下面总结 */</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">-&gt;</span><span class="n">DYNAMIC_F1</span> <span class="o">=</span> <span class="s">&#34;v_check&#34;</span><span class="p">,</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">-&gt;</span><span class="n">DYNAMIC_F2</span> <span class="o">=</span> <span class="s">&#34;bind_engine&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">-&gt;</span><span class="n">dir_load</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CRYPTO_THREAD_write_lock</span><span class="p">(</span><span class="n">global_engine_lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 第一次进来为NULL(然而正常是为ctx = NULL才会调用这个函数，可能是冗余校验)*/</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="o">*</span><span class="n">ctx</span> <span class="o">=</span> <span class="p">(</span><span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="p">)</span><span class="n">ENGINE_get_ex_data</span><span class="p">(</span><span class="n">e</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                                       <span class="n">dynamic_ex_data_idx</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* Good, we&#39;re the first */</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 把ctx挂在engine-&gt;ex_data上 */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ret</span> <span class="o">=</span> <span class="n">ENGINE_set_ex_data</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">dynamic_ex_data_idx</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="o">*</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">c</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CRYPTO_THREAD_unlock</span><span class="p">(</span><span class="n">global_engine_lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * If we lost the race to set the context, c is non-NULL and *ctx is the
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * context of the thread that won.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sk_OPENSSL_STRING_free</span><span class="p">(</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">dirs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OPENSSL_free</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 得到最后的结果 dynamic-&gt;ex_data = ctx;
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * ctx = {.DYNAMIC_F1 = &#34;v_check&#34;, .DYNAMIC_F2 = &#34;bind_engine&#34;, c-&gt;dir_load = 1}
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 惊奇的发现了 bind_engine 虽然他只是个字符串，但是我相信你已经知道原因了
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 他需要在动态库中去寻找这个符号
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后我们逐一分析这三个<code>cmd</code></p>
 <h4 id="dynamic_cmd_so_path和dynamic_cmd_list_add">DYNAMIC_CMD_SO_PATH和DYNAMIC_CMD_LIST_ADD</h4>
-<pre tabindex="0"><code>static int dynamic_ctrl(ENGINE *e, int cmd, long i, void *p, void (*f) (void))
-{
-    ...
-	switch (cmd) {
-    /* 注意， p就是ctrlvalue，即从conf中取下来的值 */
-    case DYNAMIC_CMD_SO_PATH:
-        /* a NULL &#39;p&#39; or a string of zero-length is the same thing */
-        if (p &amp;&amp; (strlen((const char *)p) &lt; 1))
-            p = NULL;
-        OPENSSL_free(ctx-&gt;DYNAMIC_LIBNAME);
-        if (p)
-            /* 很明显只是做了个简单的复制，此时路径已经赋值上了 */
-            ctx-&gt;DYNAMIC_LIBNAME = OPENSSL_strdup(p);
-        else
-            ctx-&gt;DYNAMIC_LIBNAME = NULL;
-        return (ctx-&gt;DYNAMIC_LIBNAME ? 1 : 0);
-    case DYNAMIC_CMD_LIST_ADD:
-        if ((i &lt; 0) || (i &gt; 2)) {
-           ENGINEerr(ENGINE_F_DYNAMIC_CTRL, ENGINE_R_INVALID_ARGUMENT);
-           return 0;
-        }
-        /* 很简单，赋值而已 */
-    	ctx-&gt;list_add_value = (int)i;
-    	return 1;
-	...	
-    }
-}
-</code></pre><p>这两个都很简单，最后难点都给了LOAD</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">dynamic_ctrl</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 注意， p就是ctrlvalue，即从conf中取下来的值 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">DYNAMIC_CMD_SO_PATH</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* a NULL &#39;p&#39; or a string of zero-length is the same thing */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">p</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">OPENSSL_free</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 很明显只是做了个简单的复制，此时路径已经赋值上了 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span> <span class="o">=</span> <span class="n">OPENSSL_strdup</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">DYNAMIC_CMD_LIST_ADD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">           <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_CTRL</span><span class="p">,</span> <span class="n">ENGINE_R_INVALID_ARGUMENT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">           <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 很简单，赋值而已 */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">list_add_value</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这两个都很简单，最后难点都给了LOAD</p>
 <h4 id="dynamic_cmd_load">DYNAMIC_CMD_LOAD</h4>
 <p>最关键的函数，完成了全部的加载，解释都在注释里：</p>
-<pre tabindex="0"><code>static int dynamic_ctrl(ENGINE *e, int cmd, long i, void *p, void (*f) (void))
-{
-    ...
-	switch (cmd) {
-	case DYNAMIC_CMD_LOAD:
-        return dynamic_load(e, ctx);	
-	...	
-    }
-}
-
-static int dynamic_load(ENGINE *e, dynamic_data_ctx *ctx)
-{
-    ENGINE cpy;
-    dynamic_fns fns;
-	
-    /* 
-     * 先new一个DSO结构体，DSO这一套函数怎么玩的这里先不讲了，
-     * 可以理解为内部也有一个加载钩子，有4个挂载点，估计再展开讲读者疯了
-     */
-    if (ctx-&gt;dynamic_dso == NULL)
-        ctx-&gt;dynamic_dso = DSO_new();
-    if (ctx-&gt;dynamic_dso == NULL)
-        return 0;
-    /* 此处检查DYNAMIC_LIBNAME不能为空，这个就是dso的加载地址 */
-    if (!ctx-&gt;DYNAMIC_LIBNAME) {
-        if (!ctx-&gt;engine_id)
-            return 0;
-        DSO_ctrl(ctx-&gt;dynamic_dso, DSO_CTRL_SET_FLAGS,
-                 DSO_FLAG_NAME_TRANSLATION_EXT_ONLY, NULL);
-        ctx-&gt;DYNAMIC_LIBNAME =
-            DSO_convert_filename(ctx-&gt;dynamic_dso, ctx-&gt;engine_id);
-    }
-    
-    /* 核心加载函数int_load，看下面分析 */
-    if (!int_load(ctx)) {
-        ENGINEerr(ENGINE_F_DYNAMIC_LOAD, ENGINE_R_DSO_NOT_FOUND);
-        DSO_free(ctx-&gt;dynamic_dso);
-        ctx-&gt;dynamic_dso = NULL;
-        return 0;
-    }
-    
-    /* We have to find a bind function otherwise it&#39;ll always end badly */
-    /* 
-     * 此时engine动态库已经加载如内存，符号表与对应地址也准备完成 
-     * 所以肯定是需要去寻找这个绑定engine完成加载的函数了，胜利的曙光
-     * DSO_bind_func会在符号表中去匹配第二个参数字符串，这里就是我们要的&#34;bind_engine&#34;
-     * 并返回上它的函数地址，挂载在ctx-&gt;bind_engine上
-     */
-    if (!
-        (ctx-&gt;bind_engine =
-         (dynamic_bind_engine) DSO_bind_func(ctx-&gt;dynamic_dso,
-                                             ctx-&gt;DYNAMIC_F2))) {
-        ctx-&gt;bind_engine = NULL;
-        DSO_free(ctx-&gt;dynamic_dso);
-        ctx-&gt;dynamic_dso = NULL;
-        ENGINEerr(ENGINE_F_DYNAMIC_LOAD, ENGINE_R_DSO_FAILURE);
-        return 0;
-    }
-    /* Do we perform version checking? */
-    if (!ctx-&gt;no_vcheck) {
-        unsigned long vcheck_res = 0;
-        /*
-         * Now we try to find a version checking function and decide how to
-         * cope with failure if/when it fails.
-         */
-        ctx-&gt;v_check =
-            (dynamic_v_check_fn) DSO_bind_func(ctx-&gt;dynamic_dso,
-                                               ctx-&gt;DYNAMIC_F1);
-        if (ctx-&gt;v_check)
-            vcheck_res = ctx-&gt;v_check(OSSL_DYNAMIC_VERSION);
-        /*
-         * We fail if the version checker veto&#39;d the load *or* if it is
-         * deferring to us (by returning its version) and we think it is too
-         * old.
-         */
-        if (vcheck_res &lt; OSSL_DYNAMIC_OLDEST) {
-            /* Fail */
-            ctx-&gt;bind_engine = NULL;
-            ctx-&gt;v_check = NULL;
-            DSO_free(ctx-&gt;dynamic_dso);
-            ctx-&gt;dynamic_dso = NULL;
-            ENGINEerr(ENGINE_F_DYNAMIC_LOAD,
-                      ENGINE_R_VERSION_INCOMPATIBILITY);
-            return 0;
-        }
-    }
-    /*
-     * First binary copy the ENGINE structure so that we can roll back if the
-     * hand-over fails
-     */
-    memcpy(&amp;cpy, e, sizeof(ENGINE));
-    /*
-     * Provide the ERR, &#34;ex_data&#34;, memory, and locking callbacks so the
-     * loaded library uses our state rather than its own. FIXME: As noted in
-     * engine.h, much of this would be simplified if each area of code
-     * provided its own &#34;summary&#34; structure of all related callbacks. It
-     * would also increase opaqueness.
-     */
-    fns.static_state = ENGINE_get_static_state();
-    CRYPTO_get_mem_functions(&amp;fns.mem_fns.malloc_fn, &amp;fns.mem_fns.realloc_fn,
-                             &amp;fns.mem_fns.free_fn);
-    /*
-     * Now that we&#39;ve loaded the dynamic engine, make sure no &#34;dynamic&#34;
-     * ENGINE elements will show through.
-     */
-    engine_set_all_null(e);
-
-    /* Try to bind the ENGINE onto our own ENGINE structure */
-    /* !!!!Attension, 终于调用成功了，我们的engineX终于被设置好了！ */
-    if (!ctx-&gt;bind_engine(e, ctx-&gt;engine_id, &amp;fns)) {
-        ctx-&gt;bind_engine = NULL;
-        ctx-&gt;v_check = NULL;
-        DSO_free(ctx-&gt;dynamic_dso);
-        ctx-&gt;dynamic_dso = NULL;
-        ENGINEerr(ENGINE_F_DYNAMIC_LOAD, ENGINE_R_INIT_FAILED);
-        /* Copy the original ENGINE structure back */
-        memcpy(e, &amp;cpy, sizeof(ENGINE));
-        return 0;
-    }
-    /* Do we try to add this ENGINE to the internal list too? */
-    /* 把这个engine的副本add进上面engine全局链表，大功告成！*/
-    if (ctx-&gt;list_add_value &gt; 0) {
-        if (!ENGINE_add(e)) {
-            /* Do we tolerate this or fail? */
-            if (ctx-&gt;list_add_value &gt; 1) {
-                /*
-                 * Fail - NB: By this time, it&#39;s too late to rollback, and
-                 * trying to do so allows the bind_engine() code to have
-                 * created leaks. We just have to fail where we are, after
-                 * the ENGINE has changed.
-                 */
-                ENGINEerr(ENGINE_F_DYNAMIC_LOAD,
-                          ENGINE_R_CONFLICTING_ENGINE_ID);
-                return 0;
-            }
-            /* Tolerate */
-            ERR_clear_error();
-        }
-    }
-    return 1;
-}
-
-static int int_load(dynamic_data_ctx *ctx)
-{
-    int num, loop;
-    /* Unless told not to, try a direct load */
-    /* 
-     * DSO_load去打开ctx-&gt;DYNAMIC_LIBNAME，把egine对应的lib库加载进内存
-     * 解析符号表和对应地址到上面申请好的ctx-&gt;dynamic_dso结构体中
-     */
-    if ((ctx-&gt;dir_load != 2) &amp;&amp; (DSO_load(ctx-&gt;dynamic_dso,
-                                          ctx-&gt;DYNAMIC_LIBNAME, NULL,
-                                          0)) != NULL)
-        return 1;
-    /* If we&#39;re not allowed to use &#39;dirs&#39; or we have none, fail */
-    if (!ctx-&gt;dir_load || (num = sk_OPENSSL_STRING_num(ctx-&gt;dirs)) &lt; 1)
-        return 0;
-    for (loop = 0; loop &lt; num; loop++) {
-        /* 还有链接的dso这里会处理递归的去加载，对应的需要在ctx-&gt;dirs中 */
-        const char *s = sk_OPENSSL_STRING_value(ctx-&gt;dirs, loop);
-        char *merge = DSO_merge(ctx-&gt;dynamic_dso, ctx-&gt;DYNAMIC_LIBNAME, s);
-        if (!merge)
-            return 0;
-        if (DSO_load(ctx-&gt;dynamic_dso, merge, NULL, 0)) {
-            /* Found what we&#39;re looking for */
-            OPENSSL_free(merge);
-            return 1;
-        }
-        OPENSSL_free(merge);
-    }
-    return 0;
-}
-</code></pre><p>终于终于终于，找到目标了，这个叫做<code>'dynamic'</code>的engine副本完成了变成<code>engineX</code>的蜕变。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">dynamic_ctrl</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">long</span> <span class="n">i</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nl">DYNAMIC_CMD_LOAD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">dynamic_load</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">ctx</span><span class="p">);</span>    
+</span></span><span class="line"><span class="cl">    <span class="p">...</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">dynamic_load</span><span class="p">(</span><span class="n">ENGINE</span> <span class="o">*</span><span class="n">e</span><span class="p">,</span> <span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ENGINE</span> <span class="n">cpy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dynamic_fns</span> <span class="n">fns</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 先new一个DSO结构体，DSO这一套函数怎么玩的这里先不讲了，
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 可以理解为内部也有一个加载钩子，有4个挂载点，估计再展开讲读者疯了
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">=</span> <span class="n">DSO_new</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 此处检查DYNAMIC_LIBNAME不能为空，这个就是dso的加载地址 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">engine_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DSO_ctrl</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span> <span class="n">DSO_CTRL_SET_FLAGS</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">DSO_FLAG_NAME_TRANSLATION_EXT_ONLY</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DSO_convert_filename</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">engine_id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 核心加载函数int_load，看下面分析 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">int_load</span><span class="p">(</span><span class="n">ctx</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_LOAD</span><span class="p">,</span> <span class="n">ENGINE_R_DSO_NOT_FOUND</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DSO_free</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* We have to find a bind function otherwise it&#39;ll always end badly */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 此时engine动态库已经加载如内存，符号表与对应地址也准备完成 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 所以肯定是需要去寻找这个绑定engine完成加载的函数了，胜利的曙光
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * DSO_bind_func会在符号表中去匹配第二个参数字符串，这里就是我们要的&#34;bind_engine&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 并返回上它的函数地址，挂载在ctx-&gt;bind_engine上
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">bind_engine</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="n">dynamic_bind_engine</span><span class="p">)</span> <span class="n">DSO_bind_func</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                             <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_F2</span><span class="p">)))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">bind_engine</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DSO_free</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_LOAD</span><span class="p">,</span> <span class="n">ENGINE_R_DSO_FAILURE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Do we perform version checking? */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">no_vcheck</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">vcheck_res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * Now we try to find a version checking function and decide how to
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * cope with failure if/when it fails.
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">v_check</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="n">dynamic_v_check_fn</span><span class="p">)</span> <span class="n">DSO_bind_func</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                               <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_F1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">v_check</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">vcheck_res</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">v_check</span><span class="p">(</span><span class="n">OSSL_DYNAMIC_VERSION</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * We fail if the version checker veto&#39;d the load *or* if it is
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * deferring to us (by returning its version) and we think it is too
+</span></span></span><span class="line"><span class="cl"><span class="cm">         * old.
+</span></span></span><span class="line"><span class="cl"><span class="cm">         */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">vcheck_res</span> <span class="o">&lt;</span> <span class="n">OSSL_DYNAMIC_OLDEST</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* Fail */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">bind_engine</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">v_check</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DSO_free</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_LOAD</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">ENGINE_R_VERSION_INCOMPATIBILITY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * First binary copy the ENGINE structure so that we can roll back if the
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * hand-over fails
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cpy</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ENGINE</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Provide the ERR, &#34;ex_data&#34;, memory, and locking callbacks so the
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * loaded library uses our state rather than its own. FIXME: As noted in
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * engine.h, much of this would be simplified if each area of code
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * provided its own &#34;summary&#34; structure of all related callbacks. It
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * would also increase opaqueness.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fns</span><span class="p">.</span><span class="n">static_state</span> <span class="o">=</span> <span class="n">ENGINE_get_static_state</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CRYPTO_get_mem_functions</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fns</span><span class="p">.</span><span class="n">mem_fns</span><span class="p">.</span><span class="n">malloc_fn</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fns</span><span class="p">.</span><span class="n">mem_fns</span><span class="p">.</span><span class="n">realloc_fn</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                             <span class="o">&amp;</span><span class="n">fns</span><span class="p">.</span><span class="n">mem_fns</span><span class="p">.</span><span class="n">free_fn</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Now that we&#39;ve loaded the dynamic engine, make sure no &#34;dynamic&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * ENGINE elements will show through.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">engine_set_all_null</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Try to bind the ENGINE onto our own ENGINE structure */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* !!!!Attension, 终于调用成功了，我们的engineX终于被设置好了！ */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">bind_engine</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">engine_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fns</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">bind_engine</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">v_check</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DSO_free</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_LOAD</span><span class="p">,</span> <span class="n">ENGINE_R_INIT_FAILED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* Copy the original ENGINE structure back */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">memcpy</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cpy</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ENGINE</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Do we try to add this ENGINE to the internal list too? */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 把这个engine的副本add进上面engine全局链表，大功告成！*/</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">list_add_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ENGINE_add</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* Do we tolerate this or fail? */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">list_add_value</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">                 * Fail - NB: By this time, it&#39;s too late to rollback, and
+</span></span></span><span class="line"><span class="cl"><span class="cm">                 * trying to do so allows the bind_engine() code to have
+</span></span></span><span class="line"><span class="cl"><span class="cm">                 * created leaks. We just have to fail where we are, after
+</span></span></span><span class="line"><span class="cl"><span class="cm">                 * the ENGINE has changed.
+</span></span></span><span class="line"><span class="cl"><span class="cm">                 */</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ENGINEerr</span><span class="p">(</span><span class="n">ENGINE_F_DYNAMIC_LOAD</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                          <span class="n">ENGINE_R_CONFLICTING_ENGINE_ID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* Tolerate */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ERR_clear_error</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">int</span> <span class="nf">int_load</span><span class="p">(</span><span class="n">dynamic_data_ctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="n">loop</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Unless told not to, try a direct load */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * DSO_load去打开ctx-&gt;DYNAMIC_LIBNAME，把egine对应的lib库加载进内存
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 解析符号表和对应地址到上面申请好的ctx-&gt;dynamic_dso结构体中
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dir_load</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">DSO_load</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                          <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                          <span class="mi">0</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* If we&#39;re not allowed to use &#39;dirs&#39; or we have none, fail */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dir_load</span> <span class="o">||</span> <span class="p">(</span><span class="n">num</span> <span class="o">=</span> <span class="n">sk_OPENSSL_STRING_num</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dirs</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">loop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">loop</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="n">loop</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 还有链接的dso这里会处理递归的去加载，对应的需要在ctx-&gt;dirs中 */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="n">sk_OPENSSL_STRING_value</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dirs</span><span class="p">,</span> <span class="n">loop</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">char</span> <span class="o">*</span><span class="n">merge</span> <span class="o">=</span> <span class="n">DSO_merge</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">DYNAMIC_LIBNAME</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">merge</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">DSO_load</span><span class="p">(</span><span class="n">ctx</span><span class="o">-&gt;</span><span class="n">dynamic_dso</span><span class="p">,</span> <span class="n">merge</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* Found what we&#39;re looking for */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">OPENSSL_free</span><span class="p">(</span><span class="n">merge</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">OPENSSL_free</span><span class="p">(</span><span class="n">merge</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>终于终于终于，找到目标了，这个叫做<code>'dynamic'</code>的engine副本完成了变成<code>engineX</code>的蜕变。</p>
 <h2 id="后续">后续</h2>
 <p>难怪这么多人喷OpenSSL烂，这复杂的流程，这一个又一个的钩子。不过这一串源码读下来看明白的时候还是有神清气爽的感觉。</p>
 <p>有缘后面会分析密码算法具体挂载，如<code>ENGINE_set_digests</code>。</p>
