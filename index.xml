@@ -102,6 +102,40 @@
       </item>
       
       <item>
+        <title>OPTEE</title>
+        <link>https://summersummer3.github.io/posts/optee/</link>
+        <pubDate>Tue, 19 Oct 2021 14:03:23 +0000</pubDate>
+        <author>techsum8@live.com (Techsum)</author>
+        <atom:modified>Tue, 19 Oct 2021 14:03:23 +0000</atom:modified>
+        <guid>https://summersummer3.github.io/posts/optee/</guid>
+        <description>ARM-V8与Trustzone ARM v8 AArch64架构 由上图可知：ARM处理器有两种状态：Normal world与 Secure world; ARM处理器有四个异常</description>
+        
+        <dc:creator>Techsum</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>OPTEE</category>
+            
+          
+            
+              <category>Trustzone</category>
+            
+          
+        
+        
+          
+            
+              <category>Trusted</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
         <title>X.509系列（一）：X.509 v3格式下的证书</title>
         <link>https://summersummer3.github.io/posts/x509_1/</link>
         <pubDate>Wed, 23 Sep 2020 14:03:23 +0000</pubDate>

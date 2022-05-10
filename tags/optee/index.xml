@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>OPTEE on Techsum&#39;s Blog</title>
+    <link>https://summersummer3.github.io/tags/optee/</link>
+    <description>Recent content in OPTEE on Techsum&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <managingEditor>techsum8@live.com (Techsum)</managingEditor>
+    <webMaster>techsum8@live.com (Techsum)</webMaster>
+    <copyright>©2022, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 19 Oct 2021 14:03:23 +0000</lastBuildDate>
+    
+        <atom:link href="https://summersummer3.github.io/tags/optee/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>OPTEE</title>
+        <link>https://summersummer3.github.io/posts/optee/</link>
+        <pubDate>Tue, 19 Oct 2021 14:03:23 +0000</pubDate>
+        <author>techsum8@live.com (Techsum)</author>
+        <atom:modified>Tue, 19 Oct 2021 14:03:23 +0000</atom:modified>
+        <guid>https://summersummer3.github.io/posts/optee/</guid>
+        <description>ARM-V8与Trustzone ARM v8 AArch64架构 由上图可知：ARM处理器有两种状态：Normal world与 Secure world; ARM处理器有四个异常</description>
+        
+        <dc:creator>Techsum</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>OPTEE</category>
+            
+          
+            
+              <category>Trustzone</category>
+            
+          
+        
+        
+          
+            
+              <category>Trusted</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
