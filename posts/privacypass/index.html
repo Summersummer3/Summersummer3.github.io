@@ -1832,7 +1832,7 @@
 <h4 id="一个群儿">一个群儿</h4>
 <p>群是一个集合，有四个主要性质(封闭性，结合律，单位元，逆元)；但我们只讨论他的一个性质：阶</p>
 <p>定义一个群的阶N为：任意群里的一个元素他对自己做N次定义群的运算后会等于他自己，则该群的阶为N</p>
-<p>我们不搞抽象的，我们想一个具体的模乘群：$\mathbb{Z}_p = {1, 2, &hellip;, p-1}$, p为质数，其阶就为p</p>
+<p>我们不搞抽象的，我们想一个具体的模乘群：$\mathbb{Z}_p = \lbrace 1, 2, &hellip;, p-1 \rbrace $, p为质数，其阶就为p</p>
 <p>为啥？费马小定理，具体就不证明了：</p>
 <p><img src="../../images/blog/4/9.png" alt="image" /></p>
 <h4 id="voprf">VOPRF</h4>
@@ -1876,7 +1876,7 @@
 <p>该结论可以同时推广到一次通过n个数字$P_i$乘积，一次完成$D_k$的生成:</p>
 <ol>
 <li>验证者随机生成的n个随机数$c_1, c_2, &hellip;, c_n $并保存下来，同时发送$ P_1^{c_1} ,P_2^{c_2}, &hellip;, P_n^{c_n}$</li>
-<li>证明者计算${Q_i}_{i \in [n]} = {(P_i^{c_i})^k}; \ M = P_1^{c_1} \cdot P_2^{c_2}&hellip;\cdot P_n^{c_n}; \ Z = M^k = (P_1^{c_1})^k \cdot (P_2^{c_2})^k&hellip;\cdot (P_n^{c_n})^k$</li>
+<li>证明者计算$\lbrace Q_i \rbrace _{i \in [n]} = \lbrace (P_i^{c_i})^k \rbrace ; \\ M = P_1^{c_1} \cdot P_2^{c_2}&hellip;\cdot P_n^{c_n}; \\ Z = M^k = (P_1^{c_1})^k \cdot (P_2^{c_2})^k&hellip;\cdot (P_n^{c_n})^k$</li>
 <li>把替换成上面的$P,Q$, 完成证明值$\bar{D}_k \leftarrow \mathsf{DLEQ}_k(X, Y, M, Z)$;</li>
 <li>证明者一次把$Q_1, Q_2, &hellip; , Q_n, \bar{D}_k$发给验证者，验证者使用DLEQ验证方法完成验证</li>
 </ol>
@@ -1887,7 +1887,8 @@
 <li>Batch-DLEQ的可验证性：由DLEQ保证</li>
 </ul>
 <p>结论：Batch-DLEQ实现了一个VOPRF</p>
-<p>此时由n个随机数组成的DLEQ被称为n-DLEQ，用符号通常表示为(用Pi，Qi来替代了上面的M，Z)$\bar{D}<em>k \leftarrow n\text{-}\mathsf{DLEQ}<em>k(X, Y, {P_i}</em>{i \in [n]}, {Q_i}</em>{i \in [n]})$</p>
+<p>此时由n个随机数组成的DLEQ被称为n-DLEQ，用符号通常表示为(用Pi，Qi来替代了上面的M，Z)<br />
+$\bar{D}_k \leftarrow n\text{-}\mathsf{DLEQ}_k(X, Y, \lbrace P_i \rbrace _{i \in [n]}, \lbrace Q_i \rbrace _{i \in [n]})$</p>
 <h4 id="privacy-pass正式协议">Privacy Pass正式协议</h4>
 <p>整个协议其实分为两个阶段，简单来说就是，Token组签署下发阶段和Token组赎回阶段</p>
 <h5 id="token组签署下发阶段">Token组签署下发阶段</h5>
@@ -1895,9 +1896,9 @@
 <li>服务器发起挑战</li>
 <li>客户端响应挑战，并根据Batch-DLEQ的第一步，随机生成n个随机数$P_1, &hellip; ,P_n,$和n个盲化因子$c_1, c_2, &hellip;, c_n$, 保存下来，同时完成上面M的计算，将M随挑战响应回复给服务器</li>
 <li>服务器验证挑战，若验证失败则协议结束</li>
-<li>服务器验证挑战成功，计算Z，完成$\bar{D}<em>k \leftarrow n\text{-}\mathsf{DLEQ}<em>k(X, Y, {P_i}</em>{i \in [n]}, {Q_i}</em>{i \in [n]})$并下发结果</li>
+<li>服务器验证挑战成功，计算Z，完成$\bar{D}_k \leftarrow n\text{-}\mathsf{DLEQ}_k(X, Y, \lbrace P_i \rbrace _{i \in [n]}, \lbrace Q_i \rbrace _{i \in [n]})$并下发结果</li>
 <li>客户端验证下发结果，验证该Token的合法性</li>
-<li>去盲化：${P_i^k}<em>{i \in [n]} = {Q_i^{1/c_i}}</em>{i \in [n]}$, 将$(P_i, P_i^k)$成对保存下来，形成n个Token</li>
+<li>去盲化：$\lbrace P_i^k \rbrace _{i \in [n]} = \lbrace Q_i^{1/c_i} \rbrace _{i \in [n]}$, 将$(P_i, P_i^k)$成对保存下来，形成n个Token</li>
 </ol>
 <p>这一阶段主要保证了</p>
 <ul>
