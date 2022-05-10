@@ -1876,7 +1876,11 @@
 <p>该结论可以同时推广到一次通过n个数字$P_i$乘积，一次完成$D_k$的生成:</p>
 <ol>
 <li>验证者随机生成的n个随机数$c_1, c_2, &hellip;, c_n $并保存下来，同时发送$ P_1^{c_1} ,P_2^{c_2}, &hellip;, P_n^{c_n}$</li>
-<li>证明者计算$\lbrace Q_i \rbrace _{i \in [n]} = \lbrace (P_i^{c_i})^k \rbrace ; \\ M = P_1^{c_1} \cdot P_2^{c_2}&hellip;\cdot P_n^{c_n}; \\ Z = M^k = (P_1^{c_1})^k \cdot (P_2^{c_2})^k&hellip;\cdot (P_n^{c_n})^k$</li>
+<li>证明者计算$\begin{align}<br />
+\lbrace Q_i \rbrace _{i \in [n]} = \lbrace (P_i^{c_i})^k \rbrace ; \\<br />
+M = P_1^{c_1} \cdot P_2^{c_2}&hellip;\cdot P_n^{c_n}; \\<br />
+Z = M^k = (P_1^{c_1})^k \cdot (P_2^{c_2})^k&hellip;\cdot (P_n^{c_n})^k<br />
+\end{align}$</li>
 <li>把替换成上面的$P,Q$, 完成证明值$\bar{D}_k \leftarrow \mathsf{DLEQ}_k(X, Y, M, Z)$;</li>
 <li>证明者一次把$Q_1, Q_2, &hellip; , Q_n, \bar{D}_k$发给验证者，验证者使用DLEQ验证方法完成验证</li>
 </ol>
