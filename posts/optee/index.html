@@ -1836,7 +1836,7 @@ TA_OpenSessionEntryPoint
 <p><img src="../../images/blog/3/3.png" alt="image.png" /></p>
 <ol>
 <li>
-<p>在支持trustzone技术的微处理器中，AMR实现了对cortex的虚拟化，将每个物理的处理器虚拟化成两个虚拟核，一个为安全核，一个普通安全核，也就是一个物理核存在secure wrold态和normal world态。</p>
+<p>在支持trustzone技术的微处理器中，ARM实现了对物理PE的虚拟化，将每个物理的处理器单元虚拟化成两个虚拟核，一个为安全核，一个普通安全核，也就是一个物理核存在secure wrold态和normal world态。</p>
 </li>
 <li>
 <p>AXI总线上NS位的扩展：在原有的AXI基础上对每一个读写信道增加了一个额外的控制信号，用来表示当前的读写操作是安全操作还是非安全操作，被称为NS位或者Non-Secure位。当NS位信号为1时，拒绝访问安全资源</p>
@@ -1903,8 +1903,7 @@ TA_OpenSessionEntryPoint
 <p>CA是调用TEE安全服务的入口程序，运行在非安全用户态el0。</p>
 <p>TA是TEE服务的重点，大部分自定义的安全服务在TA中实现，运行在安全用户态SEL0.</p>
 <p>从CA到TA的invoke command，完成一次服务调用，将会经历一个漫长的层级及CPU安全态切换，通常的通路如下：</p>
-<pre><code>(链接)		(ioctl)                         (smc指令)		 (el3 eret sel1)                     (sel1 eret)
-</code></pre>
+<p>(链接)		   (ioctl)             (smc指令)	  (el3 eret sel1)     (sel1 eret)</p>
 <p>CA========&gt;libteec.so=======&gt;tee_driver=========&gt;ATF==========&gt;TEE_kernel==========&gt;TA</p>
 <p>若TEE/TA服务有部分工作需要返回非安全态执行，则需要返回tee_driver呼叫非安全侧守护进程tee_supplicant去完成工作：</p>
 <p>TA/TEE_kernel====&gt;ATF====&gt;tee_driver====&gt;tee_supplicant</p>

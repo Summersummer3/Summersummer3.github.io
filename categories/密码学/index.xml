@@ -14,11 +14,41 @@
     <managingEditor>techsum8@live.com (Techsum)</managingEditor>
     <webMaster>techsum8@live.com (Techsum)</webMaster>
     <copyright>©2022, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 23 Sep 2020 14:03:23 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jan 2022 14:03:23 +0000</lastBuildDate>
     
         <atom:link href="https://summersummer3.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Privacy Pass: Bypassing Internet Challenges Anonymously</title>
+        <link>https://summersummer3.github.io/posts/privacypass/</link>
+        <pubDate>Thu, 27 Jan 2022 14:03:23 +0000</pubDate>
+        <author>techsum8@live.com (Techsum)</author>
+        <atom:modified>Thu, 27 Jan 2022 14:03:23 +0000</atom:modified>
+        <guid>https://summersummer3.github.io/posts/privacypass/</guid>
+        <description>一些私货 为啥读论文儿 真正的一手资料，比书籍更强的时效性和专业性 启发思维和反常理的结论 读书与工作环境的影响 读论文儿的一些方法 搜论文：googl</description>
+        
+        <dc:creator>Techsum</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>Privacy Pass</category>
+            
+          
+        
+        
+          
+            
+              <category>密码学</category>
+            
+          
+        
+        
+      </item>
       
       <item>
         <title>X.509系列（一）：X.509 v3格式下的证书</title>
